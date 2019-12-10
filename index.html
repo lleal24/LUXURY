@@ -45,6 +45,26 @@
 <body data-spy="scroll" data-offset="60" data-target=".navbar-fixed-top" style="font-family: Hind, sans-serif"
 	class="onepage">
 
+	<!--Código HTML de la política de cookies -->
+	<div class="cookiesms" id="cookie1">
+		Esta web utiliza cookies, puedes ver nuestra
+
+		<a data-toggle="modal" data-target="#cookies" href="#" title="Login"
+			class="h-top-bar_link h-top-bar_link__sign-in">&nbsp;Política de cookies Aquí</a>
+
+		Si continuas navegando estás aceptándola
+		<button onclick="controlcookies()">Aceptar</button>
+		<div class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">Política de cookies
+			+
+		</div>
+	</div>
+	<script type="text/javascript">
+		if (localStorage.controlcookie > 0) {
+			document.getElementById('cookie1').style.bottom = '-50px';
+		}
+	</script>
+	<!-- Fin del codigo politcias cokies-->
+
 	<!-- Preloader -->
 	<div class="loader-mask">
 		<div class="loader">
@@ -1981,6 +2001,20 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			});
 		});
 	</script>
+	<!-- CONTROL DE COKIES -->
+	<script type="text/javascript">
+		function controlcookies() {
+			//debbuger;
+			// si variable no existe se crea (al clicar en Aceptar)
+			localStorage.controlcookie = (localStorage.controlcookie || 0);
+
+			localStorage.controlcookie++; // incrementamos cuenta de la cookies
+			cookie1.style.display = 'none'; // Esconde la política de cookies
+		}
+	</script>
+	<!-- FIN DE CONTROL DE COKIES -->
+
+
 	<!--MODAL INCIO SESION -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
@@ -2007,7 +2041,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 											id="Email" name="Email">
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<label>Ingresa Contraseña</label>
 									<input type="password" id="Password" name="password" class="form-control"
@@ -2018,7 +2052,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 								</div>
 
-							<!-- <div class="form-group">
+								<!-- <div class="form-group">
 									<label for="pass">Contraseña</label> <i class="fa fa-eye" id="show"></i>
 									<div class="input-group"  id="Password" name="password">
 										<span class="input-group-addon"><i class="fa fa-lock fa-lg"
@@ -2055,6 +2089,117 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		</div>
 	</div>
 	<!--FIN MODAL INICIO SESION--->
+
+	
+	<!-- MODAL COKIES -->
+	<div class="modal fade" id="cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="cookies">Politicas de Cookies</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p align="justify">Esta página web le informa, en esta sección, sobre la política de recogida y
+						tratamiento de
+						cookies.
+						¿Qué son las cookies?
+						Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web.
+						Las cookies
+						permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los
+						hábitos de
+						navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la
+						forma en que
+						utilice su equipo, pueden utilizarse para reconocer al usuario.
+						¿Qué tipos de cookies utiliza esta página web?
+						Esta página web utiliza los siguientes tipos de cookies:
+						<strong>Cookies de análisis:</strong> Son aquéllas que bien tratadas por nosotros o por
+						terceros, nos
+						permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de
+						la
+						utilización que hacen los usuarios del servicio ofertado. Para ello se analiza su navegación en
+						nuestra
+						página web con el fin de mejorar la oferta de productos o servicios que le ofrecemos.
+						<strong>Cookies de personalización:</strong> Son aquellas que permiten al usuario acceder al
+						servicio con
+						algunas características de carácter general predefinidas en función de una serie de criterios en
+						el terminal
+						del usuario como por ejemplo el idioma o el tipo de navegador a través del cual se conecta al
+						servicio.
+						<strong>Cookies publicitarias:</strong> Son aquéllas que, bien tratadas por esta web o por
+						terceros,
+						permiten gestionar de la forma más eficaz posible la oferta de los espacios publicitarios que
+						hay en la
+						página web, adecuando el contenido del anuncio al contenido del servicio solicitado o al uso que
+						realice de
+						nuestra página web. Para ello podemos analizar sus hábitos de navegación en Internet y podemos
+						mostrarle
+						publicidad relacionada con su perfil de navegación.
+						<strong>Cookies de publicidad comportamental:</strong> Son aquellas que permiten la gestión, de
+						la forma más
+						eficaz posible, de los espacios publicitarios que, en su caso, el editor haya incluido en una
+						página web,
+						aplicación o plataforma desde la que presta el servicio solicitado. Este tipo de cookies
+						almacenan
+						información del comportamiento de los visitantes obtenida a través de la observación continuada
+						de sus
+						hábitos de navegación, lo que permite desarrollar un perfil específico para mostrar avisos
+						publicitarios en
+						función del mismo.
+
+						<strong>Desactivar las Cookies.</strong>
+						Puede usted permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la
+						configuración de
+						las opciones del navegador instalado en su ordenador.
+						En la mayoría de los navegadores web se ofrece la posibilidad de permitir, bloquear o eliminar
+						las cookies
+						instaladas en su equipo.
+						A continuación puede acceder a la configuración de los navegadores webs más frecuentes para
+						aceptar,
+						instalar o desactivar las cookies:
+						<strong>Configurar cookies en Google Chrome
+							Configurar cookies en Microsoft Internet Explorer
+							Configurar cookies en Mozilla Firefox
+							Configurar cookies en Safari (Apple)
+							Cookies de terceros.</strong>
+						Esta página web utiliza servicios de terceros para recopilar información con fines estadísticos
+						y de uso de
+						la web. Se usan cookies de DoubleClick para mejorar la publicidad que se incluye en el sitio
+						web. Son
+						utilizadas para orientar la publicidad según el contenido que es relevante para un usuario,
+						mejorando así la
+						calidad de experiencia en el uso del mismo.
+						En concreto, usamos los servicios de Google Adsense y de Google Analytics para nuestras
+						estadísticas y
+						publicidad. Algunas cookies son esenciales para el funcionamiento del sitio, por ejemplo el
+						buscador
+						incorporado.
+						Nuestro sitio incluye otras funcionalidades proporcionadas por terceros. Usted puede fácilmente
+						compartir el
+						contenido en redes sociales como Facebook, Twitter o Google +, con los botones que hemos
+						incluido a tal
+						efecto.
+						Advertencia sobre eliminar cookies.
+						Usted puede eliminar y bloquear todas las cookies de este sitio, pero parte del sitio no
+						funcionará o la
+						calidad de la página web puede verse afectada.
+						Si tiene cualquier duda acerca de nuestra política de cookies, puede contactar con esta página
+						web a través
+						de nuestros canales de Contacto.
+
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--FIN MODAL COKIES -->
+
 
 
 	<!-- Modal Tarifas-->
@@ -2263,26 +2408,26 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</script>
 	<!-- FIN INICIO SESION	-->
 
-		<!-- MOSTRAR CONTRASEÑA -->
-		<script type="text/javascript">
-			function mostrarPassword() {
-				var cambio = document.getElementById("Password");
-				if (cambio.type == "password") {
-					cambio.type = "text";
-					$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-				} else {
-					cambio.type = "password";
-					$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-				}
+	<!-- MOSTRAR CONTRASEÑA -->
+	<script type="text/javascript">
+		function mostrarPassword() {
+			var cambio = document.getElementById("Password");
+			if (cambio.type == "password") {
+				cambio.type = "text";
+				$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+			} else {
+				cambio.type = "password";
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
 			}
-			$(document).ready(function () {
-				//CheckBox mostrar contraseña
-				$('#ShowPassword').click(function () {
-					$('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
-				});
+		}
+		$(document).ready(function () {
+			//CheckBox mostrar contraseña
+			$('#ShowPassword').click(function () {
+				$('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
 			});
-		</script>
-		<!-- FIN MOSTRAR CONTRASEÑA -->
+		});
+	</script>
+	<!-- FIN MOSTRAR CONTRASEÑA -->
 
 
 
