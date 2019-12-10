@@ -35,6 +35,29 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon.ico">
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon.ico">
 
+	<!-- Head Libs -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="vendor/modernizr.js"></script>
+
+	<!-- CSS
+	================================================== -->
+	<!-- Base + Vendors CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+
+	<!-- Theme CSS-->
+	<link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.css">
+	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="vendor/nouislider/jquery.nouislider.min.css">
+	<link rel="stylesheet" href="vendor/royalslider/royalslider.css">
+	<link rel="stylesheet" href="vendor/royalslider/skins/universal-custom/rs-universal.css">
+	<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+	<link rel="stylesheet" href="css/style.css">
+
+
+
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -835,7 +858,7 @@ w.ds " target="_blank" class="relative oh">
 	</section> <!-- end testimonials -->
 
 
-	<!-- calculadora -->
+	<!-------------------------- calculadora section ------------------------>
 	<section class="section-wrap-lg our-team pb-80" id="calculadora">
 		<div class="container padding-bottom-3x mb-2">
 			<div class="col-sm-8 col-sm-offset-2 text-center wow slideInUp" data-wow-duration="1.2s" data-wow-delay="0s"
@@ -849,7 +872,13 @@ w.ds " target="_blank" class="relative oh">
 			<div class="row">
 				<!-- Checkout Adress-->
 				<div class="col-xl-7 col-lg-8">
-					<input type="hidden" id="idConvenio" value="3">
+					<span class="intro-heading">Selecciona un plan</span>
+					<!-- <input type="hidden" id="idConvenio" value="3"> -->
+					<div class="checkout-steps">
+						<a  id='3' onclick="enviarConvenio(3)">Plan Gratis</a>
+						<a id='5' onclick="enviarConvenio(5)" class="active"><span class="angle"></span>Plan
+							VIP</a>
+					</div></br></br></br>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
@@ -869,9 +898,10 @@ w.ds " target="_blank" class="relative oh">
 								<label for="checkout-city">
 									<h4>Destino</h4> <br>
 								</label>
-								<input class="form-control form-control-rounded form-control-sm" type="text"
-									id="ciudadNombre" placeholder="Ciudad" data-toggle="tooltip" data-placement="bottom"
-									title="" required="" data-original-title="Espera a que aparezca la Ciudad">
+								<input class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
+									type="text" id="ciudadNombre" value="" placeholder="Ciudad" data-toggle="tooltip"
+									data-placement="top" title="" required=""
+									data-original-title="Espera a que aparezca la Ciudad">
 								<input type="hidden" id="ciudadId" value="0">
 								<input type="hidden" id="ciudadTipo" value="">
 							</div>
@@ -1464,11 +1494,17 @@ w.ds " target="_blank" class="relative oh">
 
 							</div>
 							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text"
-									id="ciudadNombre" value="" placeholder="Ciudad" data-toggle="popover"
-									data-placement="top" title="Espera a que aparezca la Ciudad" required=""><span
-									class="input-group-addon"><i class="fas fa-building"></i></span>
-							</div>
+									<!-- registro Ciudades-->
+									<input class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
+										type="text" id="ciudadNombreRegistro" name="ciudadNombreRegistro"
+										placeholder="Ciudad" data-toggle="tooltip" data-placement="auto" title=""
+										required="" data-original-title="Espera a que aparezca la Ciudad"><span
+										class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+									<input hidden="true" id="ciudadIdRegistro" value="0" />
+									<input hidden="true" id="ciudadTipoRegistro" />
+	
+								</div>
+						
 
 							<div class="form-group">
 								<input class="form-control form-control-rounded form-control-sm" type="text"
@@ -1934,7 +1970,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</div> <!-- end main-wrapper -->
 
 	<!-- jQuery Scripts -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.min.js"></script>  -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
@@ -2090,7 +2126,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</div>
 	<!--FIN MODAL INICIO SESION--->
 
-	
+
 	<!-- MODAL COKIES -->
 	<div class="modal fade" id="cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
 		aria-hidden="true">
@@ -2429,6 +2465,216 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</script>
 	<!-- FIN MOSTRAR CONTRASEÑA -->
 
+
+
+
+	<!-- CALCULADORA -->
+	<script type="text/javascript">
+		fivepaq.CargarCiudades();
+		debugger;
+		$(document).ready(function () {
+			$("#ciudadNombre").autocomplete({
+				minLength: 2,
+				source: fivepaq.getCiudades,
+				select: function (event, ui) {
+					var nombre = ui.item.label;
+					var id = ui.item.value;
+					var tipo = ui.item.type;
+					$("#ciudadNombre").val(nombre);
+					$("#ciudadId").val(id);
+					$("#ciudadTipo").val(tipo);
+					return false;
+				}
+			});
+		});
+		/* funcion para la ciudad y campos en el registro */
+		$(document).ready(function () {
+			$("#ciudadNombreRegistro").autocomplete({
+				minLength: 2,
+				source: fivepaq.getCiudades,
+				select: function (event, ui) {
+					var nombre = ui.item.label;
+					var id = ui.item.value;
+					var tipo = ui.item.type;
+					$("#ciudadNombreRegistro").val(nombre);
+					$("#ciudadIdRegistro").val(id);
+					$("#ciudadTipoRegistro").val(tipo);
+					return false;
+				}
+			});
+		});
+		function validarCiudad() {
+			var idCiudad = $("#ciudadId").val();
+			if (idCiudad <= "0") {
+				$("#ciudadNombre").val("");
+				$('#ciudadNombre').popover('show');
+				$('#ciudadNombre').focus();
+				return false;
+			}
+			return true;
+		}
+		function mostrarVolumetricas(checked) {
+			if (checked == true) {
+				divC = document.getElementById("MuestroVol");
+				divC.style.display = "";
+			} else {
+				divC = document.getElementById("MuestroVol");
+				divC.style.display = "none";
+			}
+		}
+		function validarCalculadora() {
+			if ($('#valorDeclarado').val() <= 0) {
+				$('#valorDeclarado').focus();
+				return false;
+			} else
+				if ($('#valorDeclarado').val() > 2000) {
+					swal("¡ha ocurrido un error! ", "Maximo Declarado USD 2000, para el envio", "error");
+					$('#valorDeclarado').focus();
+					return false;
+				}
+				else if ($('#pesoTotal').val() <= 0) {
+					$('#pesoTotal').focus();
+					return false;
+				} else if ($('#pesoTotal').val() > 110) {
+					swal("¡ha ocurrido un error! ", "Maximo peso 110", "error");
+					$('#pesoTotal').focus();
+					return false;
+				}
+			return true;
+		}
+		function validarConvenio() {
+			var convenio = $("#idConvenio").val();
+			if (convenio == "") {
+				swal("¡ha ocurrido un error! ", "Selecciona un Plan", "error");
+				$('#idConvenio').focus();
+				return false;
+			}
+			return true;
+		}
+		/* funcion lleal cambio */
+
+		sessionStorage.setItem('appData', '5')
+		function enviarConvenio(convenio) {
+			debugger;
+			limpiarClick();
+			if (convenio == 5) {
+				let elementAct = document.getElementById('5');
+				elementAct.classList.add('active');
+				let elementInac = document.getElementById('3');
+				elementInac.classList.remove('active')
+			} else {
+				let elementAct = document.getElementById('3');
+				elementAct.classList.add('active');
+				let elementInac = document.getElementById('5');
+				elementInac.classList.remove('active')
+			}
+			sessionStorage.setItem('appData', convenio);
+			console.log(convenio);
+
+		}
+
+		function calcularClick() {
+			if (!validarConvenio()) {
+				return;
+			}
+			else
+				if (!validarCiudad()) {
+					return;
+				}
+				else if (!validarCalculadora()) {
+					return;
+				}
+			$.ajax({
+				url: getUrlCalculadora(),
+				type: 'GET',
+				data: '',
+				success: function (resultado) {
+					CalculadoraResult(resultado);
+					debugger;
+					limpiarCalculadora();
+				},
+				error: function (request, message, error) {
+					debugger;
+					handleException(request, message, error);
+					swal("¡ha ocurrido un error! ", message, "error");
+				}
+			});
+		}
+		function limpiarCalculadora() {
+			$("#idConvenio").val('');
+			$("#ciudadTipo").val('');
+			$("#ciudadId").val('');
+			$("#ciudadNombre").val('');
+			$("#descripcion").val('');
+			$("#pesoTotal").val('');
+			$("#valorDeclarado").val('');
+			$("#largo").val('');
+			$("#ancho").val('');
+			$("#alto ").val('');
+		}
+		function limpiarClick() {
+			$("#lbflete").text("");
+			$("#lbseguro").text("");
+			$("#lbarancel").text("");
+			$("#lbiva").text("");
+			$("#lbTOTAL").text("");
+		}
+		function CalculadoraResult(request) {
+			console.log("request");
+			debugger;
+			console.log(request);
+			// var mensaje = "Exito ... ";
+			// mensaje += " <br /> "
+			// var mensaje = request.Error.ErrorMessage;
+			$("#lbflete").text("USD$ " + String(request.ValorFlete));
+			$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
+			$("#lbarancel").text("USD$ " + String(request.ValorArancel));
+			$("#lbiva").text("USD$ " + String(request.ValorIva));
+			$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+		}
+		var largo = "0";
+		if ($("#largo").val() != "") {
+			largo = $("#largo").val();
+		}
+		var ancho = "0";
+		if ($("#ancho").val() != "") {
+			ancho = $("#ancho").val();
+		}
+		var alto = "0";
+		if ($("#alto").val() != "") {
+			alto = $("#alto").val();
+		}
+		let data = sessionStorage.getItem('appData');
+		function getUrlCalculadora() {
+			var url = "https://fpaq.azurewebsites.net/api/calculators/";
+			//var url = "https://fpaq.azurewebsites.net/api/calculators/";
+			// var url = "https://localhost:44347/api/calculators/";			
+			console.log(data);
+			url += $("#ciudadTipo").val() + "/";
+			url += data + "/";
+			/* url += $("#idConvenio").val() + "/"; */
+			url += $("#idPaisOrigen").val() + "/";
+			url += $("#tUnidad").val() + "/";
+			url += $("#tDimension").val() + "/";
+			url += $("#pesoTotal").val() + "/";
+			url += $("#valorDeclarado").val() + "/";
+			url += largo + "/";
+			url += ancho + "/";
+			url += alto + "/";
+			debugger;
+			return url;
+		}
+		function handleException(request, message, error) {
+			var msg = "";
+			msg += "Code: " + request.status + "\n";
+			msg += "Text: " + request.statusText + "\n";
+			if (request.responseJSON != null) {
+				msg += "Message" + request.responseJSON.Message + "\n";
+			}
+			alert(msg);
+		}
+	</script>
+	<!-- FIN CALCULADORA-->
 
 
 
