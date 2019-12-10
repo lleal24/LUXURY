@@ -1,0 +1,84 @@
+::-moz-selection { color: #fff; background: #2cb8a5; }
+::-webkit-selection { color: #fff; background: #2cb8a5; }
+::selection { color: #fff; background: #2cb8a5; }
+
+.navbar-toggle:focus .icon-bar,
+.cart-inner a > span,
+.project-icons a:hover,
+#back-to-top:hover,
+.team-details .social-icons a:hover,
+.promo-section .btn.btn-white:hover,
+.nav-cart-remove:hover,
+.ui-slider .ui-slider-range,
+.product-remove .remove:hover,
+.widget.popular-latest .nav.nav-tabs > li.active > a,
+.widget.popular-latest .nav.nav-tabs > li.active > a:hover,
+.widget.popular-latest .nav.nav-tabs > li.active > a:focus,
+.tags a:hover,
+.blockquote-style-1,
+.dropcap.style-2,
+.highlight,
+.btn.btn-color,
+.btn-transparent:hover,
+.btn.btn-stroke:hover,
+.btn.btn-light:hover,
+.social-icons:not(.colored) a:hover,
+.meter .progress-bar,
+.nav-type-6 .overlay-menu ul li:hover {
+	background: rgba(164,110,30,1);
+background: -moz-linear-gradient(left, rgba(164,110,30,1) 0%, rgba(179,133,62,1) 37%, rgba(204,171,117,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,110,30,1)), color-stop(37%, rgba(179,133,62,1)), color-stop(100%, rgba(204,171,117,1)));
+background: -webkit-linear-gradient(left, rgba(164,110,30,1) 0%, rgba(179,133,62,1) 37%, rgba(204,171,117,1) 100%);
+background: -o-linear-gradient(left, rgba(164,110,30,1) 0%, rgba(179,133,62,1) 37%, rgba(204,171,117,1) 100%);
+background: -ms-linear-gradient(left, rgba(164,110,30,1) 0%, rgba(179,133,62,1) 37%, rgba(204,171,117,1) 100%);
+background: linear-gradient(to right, rgba(164,110,30,1) 0%, rgba(179,133,62,1) 37%, rgba(204,171,117,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a46e1e', endColorstr='#ccab75', GradientType=1 );
+}
+
+a,
+a:hover,
+a:focus,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover,
+.megamenu .menu-list > li > a:hover,
+.megamenu-wide .menu-list > li > a:hover,
+.work-item .work-description > span > a:hover,
+.top-bar-links li a:hover,
+.nav-cart-title > a:hover,
+.product-details > h3:hover > a,
+.product-list-widget a:hover,
+.product-img .product-add-to-wishlist a:hover,
+.product_meta span a:hover,
+.table.shop_table .product-name > a:hover,
+#ticker a:hover,
+.entry-meta li a:hover,
+.widget.categories ul li a:hover,
+#recent-comments li a:hover,
+.overlay-menu ul li.active > a,
+.overlay-menu ul li a:hover,
+.breadcrumb a:hover,
+.page-title.style-2 .breadcrumb a:hover,
+blockquote > span,
+.dropcap.style-1,
+.bullets li:before,
+.arrows i,
+.checks i,
+.counters i,
+.dark-link:hover,
+.icon-boxes.style-5 .service-item-wrap:hover .service-item-box i {
+	color: #c7a164;
+}
+
+.pagination a:hover,
+.pagination .current,
+.widget.popular-latest .nav.nav-tabs > li.active > a,
+.widget.popular-latest .nav.nav-tabs > li.active > a:hover,
+.widget.popular-latest .nav.nav-tabs > li.active > a:focus,
+.blockquote-style-2 {
+	border-color: #2cb8a5;
+}
+
+.dropdown-menu,
+.nav-cart-container {
+	border-top-color: #c7a069;
+}
