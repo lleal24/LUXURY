@@ -960,14 +960,66 @@ w.ds " target="_blank" class="relative oh">
 									id="pesoTotal" value="">
 							</div>
 						</div>
+						<!--------------------- Dimesiones volumetricas ------------->
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label for="checkout-ln">Dimensiones Volumétricas</label>
+								<input class="form-control form-control-rounded " type="checkbox" id='dimensionesVol'
+									data-toggle="tooltip" data-placement="auto"
+									title="Seleccione para Adicionar Dimensiones"
+									onchange="mostrarVolumetricas(this.checked)">
+							</div>
+						</div>
+					</div>
+					<div class="row" id="MuestroVol" style="display:none;">
+						<div class="col-sm-2">
+							<div class="form-group">
+								<label for="checkout-country"></br></label>
+								<select class="form-control form-control-rounded form-control-sm" id='tDimension'
+									value=''>
+									<!--<option>Pulgadas</option>-->
+									<option value='CM'>Centí</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="form-group">
+								<label for="checkout-ln"> </br> </label>
+								<input class="form-control form-control-rounded form-control-sm" type="number" id='alto'
+									value='' placeholder="Alto">
+								<br />
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="form-group">
+								<label for="checkout-ln"> </br> </label>
+								<input class="form-control form-control-rounded form-control-sm" type="text" id='largo'
+									value='' placeholder="Largo">
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="form-group">
+								<label for="checkout-ln"> </br> </label>
+								<input class="form-control form-control-rounded form-control-sm" type="text" id='ancho'
+									value='' placeholder="Ancho">
+							</div>
+						</div>
+					</div>
+
+
+				<!--------------------- Fin Dimesiones volumetricas ------------->			
+				<!-- ================================================================================================================== -->
+					<hr class="padding-bottom-1x">
+					<div class="row">			
 						<div class="checkout-footer">
 							<div class="column"></div>
 							<div class="column">
-								<button style="margin-top: 2.3rem; margin-left: 9rem;" class="btn btn-md btn-blue"
+								<button style="margin-bottom: 2.3rem; margin-left: 1.5rem;" class="btn btn-md btn-blue"
 									onclick="calcularClick()">Calcular</button>
 							</div>
 						</div>
 					</div>
+				   <!--=============================================================================================================== -->
 					<div class="col-sm-push-8 margin-top: 26px;">
 						<!-- order="" summary="" widget="" -->
 						<section class="widget widget-order-summary">
@@ -2658,9 +2710,9 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			url += $("#tDimension").val() + "/";
 			url += $("#pesoTotal").val() + "/";
 			url += $("#valorDeclarado").val() + "/";
-			url += largo + "/";
-			url += ancho + "/";
-			url += alto + "/";
+			url += $("#largo").val() + "/";
+			url += $("#ancho").val() + "/";
+			url += $("#alto").val() + "/";
 			debugger;
 			return url;
 		}
