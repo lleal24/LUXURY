@@ -875,7 +875,7 @@ w.ds " target="_blank" class="relative oh">
 					<span class="intro-heading">Selecciona un plan</span>
 					<!-- <input type="hidden" id="idConvenio" value="3"> -->
 					<div class="checkout-steps">
-						<a  id='3' onclick="enviarConvenio(3)">Plan Gratis</a>
+						<a id='3' onclick="enviarConvenio(3)">Plan Gratis</a>
 						<a id='5' onclick="enviarConvenio(5)" class="active"><span class="angle"></span>Plan
 							VIP</a>
 					</div></br></br></br>
@@ -1007,10 +1007,10 @@ w.ds " target="_blank" class="relative oh">
 					</div>
 
 
-				<!--------------------- Fin Dimesiones volumetricas ------------->			
-				<!-- ================================================================================================================== -->
+					<!--------------------- Fin Dimesiones volumetricas ------------->
+					<!-- ================================================================================================================== -->
 					<hr class="padding-bottom-1x">
-					<div class="row">			
+					<div class="row">
 						<div class="checkout-footer">
 							<div class="column"></div>
 							<div class="column">
@@ -1019,7 +1019,7 @@ w.ds " target="_blank" class="relative oh">
 							</div>
 						</div>
 					</div>
-				   <!--=============================================================================================================== -->
+					<!--=============================================================================================================== -->
 					<div class="col-sm-push-8 margin-top: 26px;">
 						<!-- order="" summary="" widget="" -->
 						<section class="widget widget-order-summary">
@@ -1432,353 +1432,424 @@ w.ds " target="_blank" class="relative oh">
 				<div class="col-md-12 mb-40">
 					<div class="row ml-5">
 						<div class="padding-top-3x hidden-md-up"></div>
-						<h3 class="margin-bottom-1x">Verificación de Email</h3>
-						<p>Esta información será empleada para la entrega de los paquetes.</p>
-						<div class="col-md-6">
-							<div class="form-group">
-								<select name="mostrarEmp" onchange="pagoOnChange(this)"
-									class="form-control form-control-rounded form-control-sm"
-									id="account-TipoIdentificacion">
-									<option selected="">Selecciona el plan</option>
-									<option value="MuestraEmp">BOXLUXURY STANDART</option>
-									<option value="MuestraEmp">BOXLUXURY CLUB</option>
-									<option value="MuestraEmp">PYMEBOX BOXLUXURY</option>
-								</select>
-							</div>
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="email"
-									placeholder="Email" id="email" value="" required="" data-toggle="tooltip"
-									data-placement="bottom" title="" data-original-title="Ingresa tu Email"><span
-									class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-							</div>
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="email"
-									placeholder="Confirmar Email" id="email" value="" required="" data-toggle="tooltip"
-									data-placement="bottom" title="" data-original-title="Confirma tu Email"><span
-									class="input-group-addon"><i class="fa fa-envelope fa"
-										aria-hidden="true"></i></span>
-							</div>
-							<h3 class="margin-bottom-1x">Información Personal</h3>
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text" id="nombre"
-									value="" placeholder="Nombres" required="" data-toggle="tooltip"
-									data-placement="bottom" title=""
-									data-original-title="Ingresa nombres y apellidos"><span class="input-group-addon"><i
-										class="fa fa-user fa" aria-hidden="true"></i></span>
-							</div>
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text" id="nombre"
-									value="" placeholder="Apellidos" required="" data-toggle="tooltip"
-									data-placement="bottom" title=""
-									data-original-title="Ingresa nombres y apellidos"><span class="input-group-addon"><i
-										class="fa fa-user fa" aria-hidden="true"></i></span>
-							</div>
-							<div class="col-sm-8">
+						<!-- FORMULARIO REGISTRO -->
+						<form id="registro">
+							<h3 class="margin-bottom-1x">Verificación de Email</h3>
+							<p>Esta información será empleada para la entrega de los paquetes.</p>
+							<div class="col-md-6">
 								<div class="form-group">
-									<select class="form-control form-control-rounded form-control-sm"
-										id="account-TipoIdentificacion">
-										<option selected="">Seleccione Tipo Documento</option>
-										<option>Cédula</option>
-										<option>Pasaporte</option>
-										<option>Nit</option>
+									<select name="mostrarEmp" onchange="pagoOnChange(this)"
+										class="form-control form-control-rounded form-control-sm"
+										id="convenioRegistro" name="convenioRegistro">
+										<option selected="">Selecciona el plan</option>
+										<option value="3">BOXLUXURY STANDART</option>
+										<option value="5">BOXLUXURY CLUB</option>
+										<option value="MuestraEmp">PYMEBOX BOXLUXURY</option>
 									</select>
 								</div>
-
+								<div class="form-group input-group">
+									<input class="form-control form-control-rounded form-control-sm" type="email"
+										placeholder="Email" id="email" value="" required="" data-toggle="tooltip"
+										data-placement="bottom" title="" data-original-title="Ingresa tu Email"><span
+										class="input-group-addon"><i class="fa fa-user fa"
+											aria-hidden="true"></i></span>
+								</div>
+								<div class="form-group input-group">
+									<input class="form-control form-control-rounded form-control-sm" type="email"
+										placeholder="Confirmar Email" id="email" value="" required=""
+										data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Confirma tu Email"><span class="input-group-addon"><i
+											class="fa fa-envelope fa" aria-hidden="true"></i></span>
+								</div>
+								<h3 class="margin-bottom-1x">Información Personal</h3>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="documento" value="" placeholder="Identificación" required=""
-										data-toggle="tooltip" data-placement="bottom" title=""
-										data-original-title="Digita tu Identificación"><span
-										class="input-group-addon"><i class="far fa-address-card"></i></span>
+										id="nombre" value="" placeholder="Nombres" required="" data-toggle="tooltip"
+										data-placement="bottom" title=""
+										data-original-title="Ingresa nombres y apellidos"><span
+										class="input-group-addon"><i class="fa fa-user fa"
+											aria-hidden="true"></i></span>
 								</div>
+								<div class="form-group input-group">
+									<input class="form-control form-control-rounded form-control-sm" type="text"
+										id="nombre" value="" placeholder="Apellidos" required="" data-toggle="tooltip"
+										data-placement="bottom" title=""
+										data-original-title="Ingresa nombres y apellidos"><span
+										class="input-group-addon"><i class="fa fa-user fa"
+											aria-hidden="true"></i></span>
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<select class="form-control form-control-rounded form-control-sm"
+											id="account-TipoIdentificacion">
+											<option selected="">Seleccione Tipo Documento</option>
+											<option>Cédula</option>
+											<option>Pasaporte</option>
+											<option>Nit</option>
+										</select>
+									</div>
 
-								<!-- contraseña -->
-								<div class="row">
-									<div class="col-md-12 mt-10">
-										<div class="input-group">
-											<label for="pass">Contraseña</label> <i class="fa fa-eye" id="show"></i>
-											<input type="Password"
-												class="form-control form-control-rounded form-control-sm" id="pass"
-												placeholder="Digíte contraseña">
-										</div>
+									<div class="form-group input-group">
+										<input class="form-control form-control-rounded form-control-sm" type="text"
+											id="documento" value="" placeholder="Identificación" required=""
+											data-toggle="tooltip" data-placement="bottom" title=""
+											data-original-title="Digita tu Identificación"><span
+											class="input-group-addon"><i class="far fa-address-card"></i></span>
 									</div>
-									<div class="col-md-12 mt-20 mb-20">
-										<div class="input-group">
-											<label for="pass">Confirmar Contraseña</label> <i class="fa fa-eye"
-												id="show2"></i>
-											<input type="Password"
-												class="form-control form-control-rounded form-control-sm" id="pass2"
-												placeholder="Confirmar Contraseña">
+
+									<!-- contraseña -->
+									<div class="row">
+										<div class="col-md-12 mt-10">
+											<div class="input-group">
+												<label for="pass">Contraseña</label> <i class="fa fa-eye-slash icon"
+													onclick="mostrarContrasena()"></i>
+												<input type="Password" id="passwordRegistro" name="passwordRegistro"
+													class="form-control form-control-rounded form-control-sm"
+													required="" maxlength="50" placeholder="Digíte contraseña">
+											</div>
 										</div>
+
+										<div class="col-md-12 mt-20 mb-20">
+											<div class="input-group">
+												<label for="pass">Confirmar Contraseña</label> <i
+													class="fa fa-eye-slash icon"
+													onclick="mostrarContrasenaConfirm()"></i>
+												<input type="Password" id="passwordRegistroConfirm"
+													name="passwordRegistroConfirm" required=""
+													class="form-control form-control-rounded form-control-sm" id="pass2"
+													placeholder="Confirmar Contraseña">
+											</div>
+										</div>
+
 									</div>
+
+									<!-- fin contraseña -->
+								</div>
+							</div>
+							<!-- end col -->
+
+							<div class="col-md-6 mt-3">
+
+								<div class="form-group">
+									<select name="mostrarEmp" onchange="pagoOnChange(this)"
+										class="form-control form-control-rounded form-control-sm"
+										id="account-TipoIdentificacion">
+										<option selected="">Tipo de Persona</option>
+										<option value="MuestraEmp">Persona Natural</option>
+										<option value="MuestraEmp">Persona Jurídica</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select name="AsesorID" id="AsesorID" onchange="pagoOnChange(this)"
+										class="form-control form-control-rounded form-control-sm">
+										<option selected="" value="0">Seleccione Asesor (web)</option>
+										<option value="1">Página WEB</option>
+									</select>
+								</div>
+								<div class="form-group input-group">
+									<input class="form-control form-control-rounded form-control-sm" type="text"
+										id="telefono" value="" placeholder="Teléfono" required="" data-toggle="tooltip"
+										data-placement="bottom" title=""
+										data-original-title="Ingresa tu número Telefónico"><span
+										class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
 
 								</div>
-
-								<!-- fin contraseña -->
-							</div>
-						</div>
-						<!-- end col -->
-
-						<div class="col-md-6 mt-3">
-
-							<div class="form-group">
-								<select name="mostrarEmp" onchange="pagoOnChange(this)"
-									class="form-control form-control-rounded form-control-sm"
-									id="account-TipoIdentificacion">
-									<option selected="">Tipo de Persona</option>
-									<option value="MuestraEmp">Persona Natural</option>
-									<option value="MuestraEmp">Persona Jurídica</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<select name="AsesorID" id="AsesorID" onchange="pagoOnChange(this)"
-									class="form-control form-control-rounded form-control-sm">
-									<option selected="" value="0">Seleccione Asesor (web)</option>
-									<option value="1">Página WEB</option>
-								</select>
-							</div>
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text"
-									id="telefono" value="" placeholder="Teléfono" required="" data-toggle="tooltip"
-									data-placement="bottom" title=""
-									data-original-title="Ingresa tu número Telefónico"><span
-									class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
-
-							</div>
-							<div class="form-group input-group">
+								<div class="form-group input-group">
 									<!-- registro Ciudades-->
-									<input class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
+									<input
+										class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
 										type="text" id="ciudadNombreRegistro" name="ciudadNombreRegistro"
 										placeholder="Ciudad" data-toggle="tooltip" data-placement="auto" title=""
 										required="" data-original-title="Espera a que aparezca la Ciudad"><span
 										class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 									<input hidden="true" id="ciudadIdRegistro" value="0" />
 									<input hidden="true" id="ciudadTipoRegistro" />
-	
+
 								</div>
-						
 
-							<div class="form-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text"
-									id="cpostal" value="" placeholder="Código Postal" required="" data-toggle="tooltip"
-									data-placement="bottom" title=""
-									data-original-title="Digita tu código postal, en caso contrario http://www.codigopostal.gov.co/">
-							</div>
 
-							<div class="form-group input-group">
-								<input class="form-control form-control-rounded form-control-sm" type="text"
-									id="direccion" value="" placeholder="Dirección" required="" data-toggle="tooltip"
-									data-placement="bottom" title=""
-									data-original-title="Escribe tu dirección de entregas"><span
-									class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
-							</div>
-
-							<div class="custom-control custom-checkbox">
-								<input class="custom-control-input" type="checkbox" id="ex-check-1">
-								<label class="custom-control-label" for="ex-check-1">Acepto términos y
-									condiciones</label>
-								<a href="" data-toggle="modal" data-target="#exampleModalScrollable">Ver Aquí</a>
-
-							</div>
-							<br><br>
-							<div class="gap-50"></div>
-							<div class="title-bordered border__dashed">
-								<h5>Código promocional</h5>
-							</div>
-							<div class="col-md-12">
 								<div class="form-group">
-									<input id="ticket" name="ticket" type="text" maxlength="50" class="form-control"
-										placeholder="Código promocional" onchange="getTicket()">
-									<p id="ticketLabel" name="ticketLabel" class="error" style="display: none"></p>
+									<input class="form-control form-control-rounded form-control-sm" type="text"
+										id="cpostal" value="" placeholder="Código Postal" required=""
+										data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Digita tu código postal, en caso contrario http://www.codigopostal.gov.co/">
 								</div>
-								<!-- Button trigger modal -->
 
-								<!-- Modal -->
-								<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-									aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-									<div class="modal-dialog modal-dialog-scrollable" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalScrollableTitle">Términos y
-													Condiciones</h5>
-												<button type="button" class="close" data-dismiss="modal"
-													aria-label="Close">
-													<span aria-hidden="true">×</span>
-												</button>
-											</div>
-											<div class="modal-body">
-												Auropaq Inc - Fivepaq es un servicio de entrega internacional para el
-												Comercio Electrónico, que genera para cada uno de nuestros clientes
-												(afiliados), una cuenta que provee entre otras herramientas, una
-												dirección permanente en los Estados Unidos, la cual es utilizada por los
-												afiliados como la dirección donde se dirigen tus compras "Ship to
-												Address" dentro de los Estados Unidos y que es a su vez, la misma
-												dirección de Auropaq Inc - Fivepaq en Miami. Auropaq Inc - Fivepaq se
-												encarga de recibir tus compras en USA y, además, enviarlas a tu país
-												atendiendo todo el proceso de nacionalización y entrega en tu casa u
-												oficina.
+								<div class="form-group input-group">
+									<input class="form-control form-control-rounded form-control-sm" type="text"
+										id="direccion" value="" placeholder="Dirección" required=""
+										data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Escribe tu dirección de entregas"><span
+										class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
+								</div>
 
-												El servicio de Auropaq Inc - Fivepaq consiste en:
+								<div class="custom-control custom-checkbox">
+									<input class="custom-control-input" type="checkbox" id="ex-check-1">
+									<label class="custom-control-label" for="ex-check-1">Acepto términos y
+										condiciones</label>
+									<a href="" data-toggle="modal" data-target="#exampleModalScrollable">Ver Aquí</a>
 
-												1. El Servicio de Auropaq Inc - Fivepaq es provisto por Auropaq Inc -
-												Fivepaq. Este es un convenio entre Auropaq Inc - Fivepaq y el afiliado.
-												Auropaq Inc - Fivepaq asignará al afiliado una dirección permanente en
-												los Estados Unidos para direccionar la entrega de todas tus compras por
-												internet.
+								</div>
+								<br><br>
+								<div class="gap-50"></div>
+								<div class="title-bordered border__dashed">
+									<h5>Código promocional</h5>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input id="ticket" name="ticket" type="text" maxlength="50" class="form-control"
+											placeholder="Código promocional" onchange="getTicket()">
+										<p id="ticketLabel" name="ticketLabel" class="error" style="display: none"></p>
+									</div>
+									<!-- Button trigger modal -->
 
-												2. El registro al Servicio de Casillero Internacional Auropaq Inc -
-												Fivepaq es gratuito. El afiliado sólo pagará los costos relacionados con
-												el proceso de envió de mercancía que aplican para cada país.
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-scrollable" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalScrollableTitle">Términos y
+														Condiciones</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Auropaq Inc - Fivepaq es un servicio de entrega internacional para
+													el
+													Comercio Electrónico, que genera para cada uno de nuestros clientes
+													(afiliados), una cuenta que provee entre otras herramientas, una
+													dirección permanente en los Estados Unidos, la cual es utilizada por
+													los
+													afiliados como la dirección donde se dirigen tus compras "Ship to
+													Address" dentro de los Estados Unidos y que es a su vez, la misma
+													dirección de Auropaq Inc - Fivepaq en Miami. Auropaq Inc - Fivepaq
+													se
+													encarga de recibir tus compras en USA y, además, enviarlas a tu país
+													atendiendo todo el proceso de nacionalización y entrega en tu casa u
+													oficina.
 
-												3. Mediante el servicio, Auropaq Inc - Fivepaq recibe, clasifica,
-												transporta a tu país, gestiona trámites aduanales y entrega en la
-												dirección designada por el afiliado toda la mercancía y pedidos en
-												general.
+													El servicio de Auropaq Inc - Fivepaq consiste en:
 
-												4. El Afiliado autoriza a Auropaq Inc - Fivepaq y/o al representante
-												local en cada país a cobrar de acuerdo con las siguientes modalidades de
-												pago, escogidas por el afiliado en el momento del registro de su
-												casillero Auropaq Inc - Fivepaq:
+													1. El Servicio de Auropaq Inc - Fivepaq es provisto por Auropaq Inc
+													-
+													Fivepaq. Este es un convenio entre Auropaq Inc - Fivepaq y el
+													afiliado.
+													Auropaq Inc - Fivepaq asignará al afiliado una dirección permanente
+													en
+													los Estados Unidos para direccionar la entrega de todas tus compras
+													por
+													internet.
 
-												• Por anticipado con cargo automático a su tarjeta de crédito.
+													2. El registro al Servicio de Casillero Internacional Auropaq Inc -
+													Fivepaq es gratuito. El afiliado sólo pagará los costos relacionados
+													con
+													el proceso de envió de mercancía que aplican para cada país.
 
-												• Pago contra entrega con cargo a su tarjeta de crédito.
+													3. Mediante el servicio, Auropaq Inc - Fivepaq recibe, clasifica,
+													transporta a tu país, gestiona trámites aduanales y entrega en la
+													dirección designada por el afiliado toda la mercancía y pedidos en
+													general.
 
-												• En efectivo.
+													4. El Afiliado autoriza a Auropaq Inc - Fivepaq y/o al representante
+													local en cada país a cobrar de acuerdo con las siguientes
+													modalidades de
+													pago, escogidas por el afiliado en el momento del registro de su
+													casillero Auropaq Inc - Fivepaq:
 
-												• Pagos a través de PayPal.
+													• Por anticipado con cargo automático a su tarjeta de crédito.
 
-												Débitos a paquetes prepagados obtenidos como consecuencia de promociones
-												u ofertas especiales. según las tarifas para cada país que aparecen en
-												las páginas de nuestro sitio web: www.fivepaq.com.
+													• Pago contra entrega con cargo a su tarjeta de crédito.
 
-												Igualmente, el afiliado autoriza a Auropaq Inc - Fivepaq por este mismo
-												medio a cobrar cargos incidentales —directos e indirectos— asociados con
-												el manejo de las compras, tales como: Impuestos aduanales, impuestos al
-												valor agregado (IVA), almacenaje, manejos especiales, reempaque, peso,
-												volumen y cualquier otro cargo que se genere por concepto del envío de
-												su mercancía.
+													• En efectivo.
 
-												5. Todos los envíos están sujetos a ser cobrados por el peso
-												dimensional, cuando se sobrepasa el peso físico. La siguiente es la
-												fórmula que se utiliza para calcular el peso dimensional (el mayor peso
-												se aplicará).
+													• Pagos a través de PayPal.
 
-												Largo x Ancho x Alto (en pulgadas) dividido por 166 = el peso
-												dimensional de la caja. Para obtener más información sobre este tema,
-												consulta nuestra página web: www.fivepaq.com
+													Débitos a paquetes prepagados obtenidos como consecuencia de
+													promociones
+													u ofertas especiales. según las tarifas para cada país que aparecen
+													en
+													las páginas de nuestro sitio web: www.fivepaq.com.
 
-												6. Las unidades utilizadas para efectos de cobro a la tarjeta de crédito
-												son: Dólares americanos y libras. La conversión de libras a kilos es:
-												450 gr. = 1 libra.
+													Igualmente, el afiliado autoriza a Auropaq Inc - Fivepaq por este
+													mismo
+													medio a cobrar cargos incidentales —directos e indirectos— asociados
+													con
+													el manejo de las compras, tales como: Impuestos aduanales, impuestos
+													al
+													valor agregado (IVA), almacenaje, manejos especiales, reempaque,
+													peso,
+													volumen y cualquier otro cargo que se genere por concepto del envío
+													de
+													su mercancía.
 
-												7. Seguro Básico: Auropaq Inc - Fivepaq, provee al afiliado sin costo
-												adicional, un seguro básico en caso de pérdida o daño, con cobertura de
-												U.S.$9.00/lb. hasta un máximo de U.S.$100.00. El afiliado tiene la
-												opción de asegurar por un mayor valor, a un costo adicional, el cual
-												debe solicitar por medio de un ticket en nuestra página web:
-												www.fivepaq.com. El seguro adicional está sujeto a restricciones y
-												deducibles.
+													5. Todos los envíos están sujetos a ser cobrados por el peso
+													dimensional, cuando se sobrepasa el peso físico. La siguiente es la
+													fórmula que se utiliza para calcular el peso dimensional (el mayor
+													peso
+													se aplicará).
 
-												8. Costos de transporte son cargados de acuerdo al método de pago
-												escogido por el afiliado al momento de registrarse. Envíos para entrega
-												en regiones o ciudades que no sean la capital del país están sujetos a
-												cargos adicionales. Verifica costos de manejo y transporte a tu país,
-												en: www.fivepaq.com o llamando a tu representante local.
+													Largo x Ancho x Alto (en pulgadas) dividido por 166 = el peso
+													dimensional de la caja. Para obtener más información sobre este
+													tema,
+													consulta nuestra página web: www.fivepaq.com
 
-												9. Auropaq Inc - Fivepaq., es el proveedor del servicio de entrega
-												internacional de tus compras por internet y como tal es responsable de
-												la efectividad del mismo. Todo reclamo debe hacerse mediante la creación
-												de un un ticket ingresando a: www.fivepaq.com, o dirigiéndote a tu
-												representante local, o… llamándonos al XXXXXXXXXX en USA
+													6. Las unidades utilizadas para efectos de cobro a la tarjeta de
+													crédito
+													son: Dólares americanos y libras. La conversión de libras a kilos
+													es:
+													450 gr. = 1 libra.
 
-												10. Las tarifas listadas en las páginas del sitio web: www.fivepaq.com ,
-												están sujetas a cambio sin previo aviso, no obstante, Auropaq Inc -
-												Fivepaq hará esfuerzos por comunicarte cualquier cambio realizado.
+													7. Seguro Básico: Auropaq Inc - Fivepaq, provee al afiliado sin
+													costo
+													adicional, un seguro básico en caso de pérdida o daño, con cobertura
+													de
+													U.S.$9.00/lb. hasta un máximo de U.S.$100.00. El afiliado tiene la
+													opción de asegurar por un mayor valor, a un costo adicional, el cual
+													debe solicitar por medio de un ticket en nuestra página web:
+													www.fivepaq.com. El seguro adicional está sujeto a restricciones y
+													deducibles.
 
-												11. Auropaq Inc - Fivepaq. no asume ninguna responsabilidad respecto a
-												la calidad, cantidad, marca o cualquier otro aspecto de las mercancías o
-												servicios que el Afiliado adquiera u obtenga para ser transportado por
-												el servicio Auropaq Inc - Fivepaq. Todo reclamo o disputa debe ser
-												resuelto directamente con el vendedor o con el establecimiento comercial
-												del cual el Afiliado obtuvo la mercancía o el servicio.
+													8. Costos de transporte son cargados de acuerdo al método de pago
+													escogido por el afiliado al momento de registrarse. Envíos para
+													entrega
+													en regiones o ciudades que no sean la capital del país están sujetos
+													a
+													cargos adicionales. Verifica costos de manejo y transporte a tu
+													país,
+													en: www.fivepaq.com o llamando a tu representante local.
 
-												12. El Afiliado al Servicio de Casillero Internacional Auropaq Inc -
-												Fivepaq es responsable de la información provista para la contratación
-												del servicio, y por lo tanto adquiere la obligación de notificar a
-												Auropaq Inc - Fivepaq, todo cambio relacionado con tu información
-												personal o de pagos.
+													9. Auropaq Inc - Fivepaq., es el proveedor del servicio de entrega
+													internacional de tus compras por internet y como tal es responsable
+													de
+													la efectividad del mismo. Todo reclamo debe hacerse mediante la
+													creación
+													de un un ticket ingresando a: www.fivepaq.com, o dirigiéndote a tu
+													representante local, o… llamándonos al XXXXXXXXXX en USA
 
-												13. El servicio Auropaq Inc - Fivepaq está diseñado única y
-												exclusivamente para fines lícitos. Auropaq Inc - Fivepaq., trabaja con
-												las autoridades respectivas locales e internacionales para la
-												identificación y procesamiento legal de personas naturales o jurídicas
-												que utilicen el servicio Auropaq Inc - Fivepaq de forma ilegal. Es
-												obligación del Afiliado reportar problemas de identidad o extravío de
-												documentación personal o de pagos, mediante la creación de un ticket,
-												accediendo a: www.fivepaq.com.
+													10. Las tarifas listadas en las páginas del sitio web:
+													www.fivepaq.com ,
+													están sujetas a cambio sin previo aviso, no obstante, Auropaq Inc -
+													Fivepaq hará esfuerzos por comunicarte cualquier cambio realizado.
 
-												14. Auropaq Inc - Fivepaq. se reserva el derecho de detener cualquier
-												mercancía que se sospeche o se identifique que fue adquirida mediante
-												una transacción fraudulenta o ilegal. La información obtenida en estos
-												casos es proveída a las autoridades locales e internacionales que
-												monitorean y combaten el fraude en-línea.
+													11. Auropaq Inc - Fivepaq. no asume ninguna responsabilidad respecto
+													a
+													la calidad, cantidad, marca o cualquier otro aspecto de las
+													mercancías o
+													servicios que el Afiliado adquiera u obtenga para ser transportado
+													por
+													el servicio Auropaq Inc - Fivepaq. Todo reclamo o disputa debe ser
+													resuelto directamente con el vendedor o con el establecimiento
+													comercial
+													del cual el Afiliado obtuvo la mercancía o el servicio.
 
-												15. Auropaq Inc - Fivepaq se reserva el derecho de disponer de tus
-												despachos de la manera que crea conveniente después de un periodo que no
-												exceda cinco (5) meses para paquetes y mercancía, y treinta (30) días
-												para correspondencia, catálogos y revistas.
+													12. El Afiliado al Servicio de Casillero Internacional Auropaq Inc -
+													Fivepaq es responsable de la información provista para la
+													contratación
+													del servicio, y por lo tanto adquiere la obligación de notificar a
+													Auropaq Inc - Fivepaq, todo cambio relacionado con tu información
+													personal o de pagos.
 
-												16. Mercancía Restringida:
-												A continuación, mencionamos algunos productos que cuentan con
-												restricciones internacionales o locales ya sea para el despacho vía
-												aérea desde los Estados Unidos o para el ingreso a diferentes países.
-												Auropaq Inc - Fivepaq ha creado la siguiente página de consulta con
-												información importante: Auropaq Inc - Fivepaq/ restringidos.html. Toda
-												mercancía de esta naturaleza que se reciba en nuestras instalaciones en
-												Miami, será manejada —Sujeto a costos adicionales por manejo— de acuerdo
-												con las instrucciones que nos proveas en www.fivepaq.com
+													13. El servicio Auropaq Inc - Fivepaq está diseñado única y
+													exclusivamente para fines lícitos. Auropaq Inc - Fivepaq., trabaja
+													con
+													las autoridades respectivas locales e internacionales para la
+													identificación y procesamiento legal de personas naturales o
+													jurídicas
+													que utilicen el servicio Auropaq Inc - Fivepaq de forma ilegal. Es
+													obligación del Afiliado reportar problemas de identidad o extravío
+													de
+													documentación personal o de pagos, mediante la creación de un
+													ticket,
+													accediendo a: www.fivepaq.com.
 
-												17. Tu Casillero Internacional Auropaq Inc - Fivepaq te permite hacer
-												actualizaciones a tu paquete básico de servicios con el fin de que
-												puedas obtener garantías adicionales por año, desde el momento del
-												registro. La renovación de estos servicios opcionales se realiza
-												automáticamente por términos sucesivos de un año. El Afiliado recibirá
-												con treinta días (30) de anticipación una notificación por correo
-												electrónico (e-mail) informándole que el servicio está por expirar y que
-												Auropaq Inc - Fivepaq. cargará el monto anual de renovación al Afiliado.
-												Si el Afiliado no desea renovar alguno de estos servicios por un nuevo
-												término, deberá notificarlo en su cuenta para evitar cargos adicionales
-												a su tarjeta de crédito. El monto anual de costos por estos servicios no
-												es reembolsable bajo ninguna circunstancia. El Afiliado, autoriza a
-												Auropaq Inc - Fivepaq. a cargar el monto anual de afiliación a los
-												servicios contratados bajo esta modalidad.
+													14. Auropaq Inc - Fivepaq. se reserva el derecho de detener
+													cualquier
+													mercancía que se sospeche o se identifique que fue adquirida
+													mediante
+													una transacción fraudulenta o ilegal. La información obtenida en
+													estos
+													casos es proveída a las autoridades locales e internacionales que
+													monitorean y combaten el fraude en-línea.
 
-												18. Para atender tu correspondencia en los Estados Unidos, puedes
-												autorizarnos este servicio sujeto a un costo anual de US$30. Solicítanos
-												esta opción mediante un ticket en: www.fivepaq.com Mediante este
-												servicio, Auropaq Inc - Fivepaq. recibe, clasifica, transporta hasta tu
-												país, gestiona trámites aduanales y entrega en la dirección designada
-												por el afiliado toda su correspondencia, mercancía y pedidos en general,
-												el envío de correspondencia recibida en la dirección de correo postal se
-												realizará dos veces por mes al país de destino.
+													15. Auropaq Inc - Fivepaq se reserva el derecho de disponer de tus
+													despachos de la manera que crea conveniente después de un periodo
+													que no
+													exceda cinco (5) meses para paquetes y mercancía, y treinta (30)
+													días
+													para correspondencia, catálogos y revistas.
 
-												Al utilizar una dirección postal en los Estados Unidos, el afiliado,
-												está expuesto a recibir correspondencia "No solicitada" en su apartado
-												postal y como tal es responsable de todos los costos asociados con el
-												transporte de esta a tu país de residencia.
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-md btn-blue"
-													data-dismiss="modal">Aceptar</button>
+													16. Mercancía Restringida:
+													A continuación, mencionamos algunos productos que cuentan con
+													restricciones internacionales o locales ya sea para el despacho vía
+													aérea desde los Estados Unidos o para el ingreso a diferentes
+													países.
+													Auropaq Inc - Fivepaq ha creado la siguiente página de consulta con
+													información importante: Auropaq Inc - Fivepaq/ restringidos.html.
+													Toda
+													mercancía de esta naturaleza que se reciba en nuestras instalaciones
+													en
+													Miami, será manejada —Sujeto a costos adicionales por manejo— de
+													acuerdo
+													con las instrucciones que nos proveas en www.fivepaq.com
+
+													17. Tu Casillero Internacional Auropaq Inc - Fivepaq te permite
+													hacer
+													actualizaciones a tu paquete básico de servicios con el fin de que
+													puedas obtener garantías adicionales por año, desde el momento del
+													registro. La renovación de estos servicios opcionales se realiza
+													automáticamente por términos sucesivos de un año. El Afiliado
+													recibirá
+													con treinta días (30) de anticipación una notificación por correo
+													electrónico (e-mail) informándole que el servicio está por expirar y
+													que
+													Auropaq Inc - Fivepaq. cargará el monto anual de renovación al
+													Afiliado.
+													Si el Afiliado no desea renovar alguno de estos servicios por un
+													nuevo
+													término, deberá notificarlo en su cuenta para evitar cargos
+													adicionales
+													a su tarjeta de crédito. El monto anual de costos por estos
+													servicios no
+													es reembolsable bajo ninguna circunstancia. El Afiliado, autoriza a
+													Auropaq Inc - Fivepaq. a cargar el monto anual de afiliación a los
+													servicios contratados bajo esta modalidad.
+
+													18. Para atender tu correspondencia en los Estados Unidos, puedes
+													autorizarnos este servicio sujeto a un costo anual de US$30.
+													Solicítanos
+													esta opción mediante un ticket en: www.fivepaq.com Mediante este
+													servicio, Auropaq Inc - Fivepaq. recibe, clasifica, transporta hasta
+													tu
+													país, gestiona trámites aduanales y entrega en la dirección
+													designada
+													por el afiliado toda su correspondencia, mercancía y pedidos en
+													general,
+													el envío de correspondencia recibida en la dirección de correo
+													postal se
+													realizará dos veces por mes al país de destino.
+
+													Al utilizar una dirección postal en los Estados Unidos, el afiliado,
+													está expuesto a recibir correspondencia "No solicitada" en su
+													apartado
+													postal y como tal es responsable de todos los costos asociados con
+													el
+													transporte de esta a tu país de residencia.
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-md btn-blue"
+														data-dismiss="modal">Aceptar</button>
+												</div>
 											</div>
 										</div>
 									</div>
+									<a href="" class="btn btn-lg btn-blue mt-30">Guardar tu cuenta</a>
 								</div>
-								<a href="" class="btn btn-lg btn-blue mt-30">Guardar tu cuenta</a>
 							</div>
-						</div>
 					</div> <!-- end col -->
+					</form>
 
 
 				</div>
@@ -2089,6 +2160,35 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			});
 		});
 	</script>
+
+	<!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
+	<script>
+		function mostrarContrasena() {
+			var tipo = document.getElementById("passwordRegistro");
+			if (tipo.type == "password") {
+				tipo.type = "text";
+				$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+			} else {
+				tipo.type = "password";
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+			}
+		}
+		function mostrarContrasenaConfirm() {
+			var tipo = document.getElementById("passwordRegistroConfirm");
+			if (tipo.type == "password") {
+				tipo.type = "text";
+				$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+			} else {
+				tipo.type = "password";
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+			}
+		}
+
+	</script>
+
+	<!--FIN MOSTRAR CONTRASEÑ REGISTRO-->
+
+
 	<!-- CONTROL DE COKIES -->
 	<script type="text/javascript">
 		function controlcookies() {
