@@ -1439,8 +1439,8 @@ w.ds " target="_blank" class="relative oh">
 							<div class="col-md-6">
 								<div class="form-group">
 									<select name="mostrarEmp" onchange="pagoOnChange(this)"
-										class="form-control form-control-rounded form-control-sm"
-										id="convenioRegistro" name="convenioRegistro">
+										class="form-control form-control-rounded form-control-sm" id="convenioRegistro"
+										name="convenioRegistro">
 										<option selected="">Selecciona el plan</option>
 										<option value="3">BOXLUXURY STANDART</option>
 										<option value="5">BOXLUXURY CLUB</option>
@@ -1456,19 +1456,18 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="email"
-										placeholder="Confirmar Email" id="email" value="" required=""
-										data-toggle="tooltip" data-placement="bottom" title=""
+										placeholder="Confirmar Email" id="emailRegistro" name="emailRegistro" value=""
+										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Confirma tu Email"><span class="input-group-addon"><i
 											class="fa fa-envelope fa" aria-hidden="true"></i></span>
 								</div>
 								<h3 class="margin-bottom-1x">Información Personal</h3>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="nombre" value="" placeholder="Nombres" required="" data-toggle="tooltip"
-										data-placement="bottom" title=""
-										data-original-title="Ingresa nombres y apellidos"><span
-										class="input-group-addon"><i class="fa fa-user fa"
-											aria-hidden="true"></i></span>
+										id="nombre" name="nombre" maxlength="20" value="" placeholder="Nombres"
+										required="" data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Ingresa nombres"><span class="input-group-addon"><i
+											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
@@ -1480,8 +1479,8 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 								<div class="col-sm-8">
 									<div class="form-group">
-										<select class="form-control form-control-rounded form-control-sm"
-											id="account-TipoIdentificacion">
+										<select class="form-control form-control-rounded form-control-sm" id="tipoDoc"
+											name="tipoDoc">
 											<option selected="">Seleccione Tipo Documento</option>
 											<option>Cédula</option>
 											<option>Pasaporte</option>
@@ -1491,8 +1490,8 @@ w.ds " target="_blank" class="relative oh">
 
 									<div class="form-group input-group">
 										<input class="form-control form-control-rounded form-control-sm" type="text"
-											id="documento" value="" placeholder="Identificación" required=""
-											data-toggle="tooltip" data-placement="bottom" title=""
+											id="documento" name="documento" value="" placeholder="Identificación"
+											required="" data-toggle="tooltip" data-placement="bottom" title=""
 											data-original-title="Digita tu Identificación"><span
 											class="input-group-addon"><i class="far fa-address-card"></i></span>
 									</div>
@@ -1531,16 +1530,22 @@ w.ds " target="_blank" class="relative oh">
 							<div class="col-md-6 mt-3">
 
 								<div class="form-group">
-									<select name="mostrarEmp" onchange="pagoOnChange(this)"
-										class="form-control form-control-rounded form-control-sm"
+									<select name="mostrarEmp" class="form-control form-control-rounded form-control-sm"
 										id="account-TipoIdentificacion">
 										<option selected="">Tipo de Persona</option>
 										<option value="MuestraEmp">Persona Natural</option>
 										<option value="MuestraEmp">Persona Jurídica</option>
-									</select>
+									</select> <!-- onchange="pagoOnChange(this)" -->
+								</div>
+								<div class="form-group" id="MuestroEmp" style="display:none;">
+									<input class="form-control form-control-rounded form-control-sm" type="text"
+										id="empresa" maxlength="100" placeholder="Empresa" data-toggle="tooltip"
+										data-placement="bottom" title=""
+										data-original-title="Ingresa nombre de la empresa">
+
 								</div>
 								<div class="form-group">
-									<select name="AsesorID" id="AsesorID" onchange="pagoOnChange(this)"
+									<select name="AsesorID" id="AsesorID" required=""
 										class="form-control form-control-rounded form-control-sm">
 										<option selected="" value="0">Seleccione Asesor (web)</option>
 										<option value="1">Página WEB</option>
@@ -1548,8 +1553,8 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="telefono" value="" placeholder="Teléfono" required="" data-toggle="tooltip"
-										data-placement="bottom" title=""
+										id="telefono" name="telefono" maxlength="20" value="" placeholder="Teléfono"
+										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Ingresa tu número Telefónico"><span
 										class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
 
@@ -1570,15 +1575,15 @@ w.ds " target="_blank" class="relative oh">
 
 								<div class="form-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="cpostal" value="" placeholder="Código Postal" required=""
-										data-toggle="tooltip" data-placement="bottom" title=""
+										id="cpostal" value="" name="cpostal" placeholder="Código Postal" required=""
+										maxlength="10" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Digita tu código postal, en caso contrario http://www.codigopostal.gov.co/">
 								</div>
 
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="direccion" value="" placeholder="Dirección" required=""
-										data-toggle="tooltip" data-placement="bottom" title=""
+										id="direccion" name="direccion" maxlength="100" placeholder="Dirección"
+										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Escribe tu dirección de entregas"><span
 										class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
 								</div>
@@ -1845,7 +1850,9 @@ w.ds " target="_blank" class="relative oh">
 											</div>
 										</div>
 									</div>
-									<a href="" class="btn btn-lg btn-blue mt-30">Guardar tu cuenta</a>
+									<input type="hidden" id="ticketId">
+									<input class="btn btn-lg btn-blue mt-30" type="submit" name="submit"
+										value="Guardar Cuenta" onclick="grabarClick()" />
 								</div>
 							</div>
 					</div> <!-- end col -->
@@ -2201,6 +2208,36 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		}
 	</script>
 	<!-- FIN DE CONTROL DE COKIES -->
+
+	<!-- ===================== INICIO REGISTRO ============================= -->
+
+	<script>
+		var numero = fivepaq.getUrlVariables()["convenioRegistro"];
+		$('#convenioRegistro').val(numero)
+		fivepaq.CargarCiudades();
+
+		$(document).ready(function () {
+			$('#ciudadNombreRegistro').autocomplete({
+				source: fivepaq.getCiudades,
+				select: function (event, ui) {
+					
+					var nombre = ui.item.label;
+					var id = ui.item.value;
+					var tipo = ui.item.type;
+					$('#cidudadNombreRegistro').val(nombre);
+					$('#ciudadIdRegistro').val(id);
+					$('#ciudadTipoRegistro').val(tipo);
+					return false;
+				}
+			});
+		});
+
+
+
+	</script>
+	<!-- ===================== FIN REGISTRO ================================ -->
+
+
 
 
 	<!--MODAL INCIO SESION -->
@@ -2635,22 +2672,6 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 					$("#ciudadNombre").val(nombre);
 					$("#ciudadId").val(id);
 					$("#ciudadTipo").val(tipo);
-					return false;
-				}
-			});
-		});
-		/* funcion para la ciudad y campos en el registro */
-		$(document).ready(function () {
-			$("#ciudadNombreRegistro").autocomplete({
-				minLength: 2,
-				source: fivepaq.getCiudades,
-				select: function (event, ui) {
-					var nombre = ui.item.label;
-					var id = ui.item.value;
-					var tipo = ui.item.type;
-					$("#ciudadNombreRegistro").val(nombre);
-					$("#ciudadIdRegistro").val(id);
-					$("#ciudadTipoRegistro").val(tipo);
 					return false;
 				}
 			});
