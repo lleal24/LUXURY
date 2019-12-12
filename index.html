@@ -39,21 +39,18 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
 		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="vendor/modernizr.js"></script>
+	<script src="js/sweetalert.min.js"></script>
+
+
+	<!-- Validator -->
+	<script src="vendor/jquery.validate.js"></script>
 
 	<!-- CSS
 	================================================== -->
 	<!-- Base + Vendors CSS -->
-	<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 
 	<!-- Theme CSS-->
-	<link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.css">
-	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
-	<link rel="stylesheet" href="vendor/nouislider/jquery.nouislider.min.css">
-	<link rel="stylesheet" href="vendor/royalslider/royalslider.css">
-	<link rel="stylesheet" href="vendor/royalslider/skins/universal-custom/rs-universal.css">
-	<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
 	<link rel="stylesheet" href="css/style.css">
 
 
@@ -1414,52 +1411,54 @@ w.ds " target="_blank" class="relative oh">
 
 		<div class="parallax" data-stellar-background-ratio="0.5" style="background-position: 50% -168.438px;"></div>
 	</section>
+	<!-- <hr width="60%"> -->
 
 	<!-- <hr width="60%"> -->
 	<!-- Registro -->
-	<section class="section-wrap mb-3" id="registro">
-		<div class="container align-middle">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 text-center wow slideInUp" data-wow-duration="1.2s"
-					data-wow-delay="0s"
-					style="visibility: visible; animation-duration: 1.2s; animation-delay: 0s; animation-name: slideInUp;">
-					<h2 class="intro-heading">
-						Regístrate<br>
-						<span style="font-size:19px;">¡Ten en cuenta lo que obtendrás utilizando tu Casillero
-							Boxluxury!</span>
-					</h2>
-				</div>
-				<div class="col-md-12 mb-40">
-					<div class="row ml-5">
-						<div class="padding-top-3x hidden-md-up"></div>
-						<!-- FORMULARIO REGISTRO -->
-						<form id="registro">
+	<section class="section-wrap mb-3">
+		<!-- id="registro" -->
+		<form id="registro">
+			<div class="container align-middle">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 text-center wow slideInUp" data-wow-duration="1.2s"
+						data-wow-delay="0s"
+						style="visibility: visible; animation-duration: 1.2s; animation-delay: 0s; animation-name: slideInUp;">
+						<h2 class="intro-heading">
+							Regístrate<br>
+							<span style="font-size:19px;">¡Ten en cuenta lo que obtendrás utilizando tu Casillero
+								Boxluxury!</span>
+						</h2>
+					</div>
+					<div class="col-md-12 mb-40">
+						<div class="row ml-5">
+							<div class="padding-top-3x hidden-md-up"></div>
+							<!-- FORMULARIO REGISTRO -->
 							<h3 class="margin-bottom-1x">Verificación de Email</h3>
 							<p>Esta información será empleada para la entrega de los paquetes.</p>
 							<div class="col-md-6">
 								<div class="form-group">
-									<select name="mostrarEmp" onchange="pagoOnChange(this)"
-										class="form-control form-control-rounded form-control-sm" id="convenioRegistro"
-										name="convenioRegistro">
-										<option selected="">Selecciona el plan</option>
-										<option value="3">BOXLUXURY STANDART</option>
+									<select class="form-control form-control-rounded form-control-sm"
+										id="convenioRegistro" name="convenioRegistro" title="Selecciona un plan">
+										<option selected value="">Escoge el Plan</option>
+										<option svalue="3">BOXLUXURY STANDART</option>
 										<option value="5">BOXLUXURY CLUB</option>
 										<option value="MuestraEmp">PYMEBOX BOXLUXURY</option>
 									</select>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="email"
-										placeholder="Email" id="email" value="" required="" data-toggle="tooltip"
-										data-placement="bottom" title="" data-original-title="Ingresa tu Email"><span
-										class="input-group-addon"><i class="fa fa-user fa"
-											aria-hidden="true"></i></span>
+										id="emailRegistro" name="emailRegistro" placeholder="Email" id="email" value=""
+										required="" data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Ingresa tu Email"><span class="input-group-addon"><i
+											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="email"
-										placeholder="Confirmar Email" id="emailRegistro" name="emailRegistro" value=""
-										required="" data-toggle="tooltip" data-placement="bottom" title=""
-										data-original-title="Confirma tu Email"><span class="input-group-addon"><i
-											class="fa fa-envelope fa" aria-hidden="true"></i></span>
+										placeholder="Confirmar Email" id="emailRegistroConfirm"
+										name="emailRegistroConfirm" value="" required="" data-toggle="tooltip"
+										data-placement="bottom" title="" data-original-title="Confirma tu Email"><span
+										class="input-group-addon"><i class="fa fa-envelope fa"
+											aria-hidden="true"></i></span>
 								</div>
 								<h3 class="margin-bottom-1x">Información Personal</h3>
 								<div class="form-group input-group">
@@ -1471,11 +1470,10 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="nombre" value="" placeholder="Apellidos" required="" data-toggle="tooltip"
-										data-placement="bottom" title=""
-										data-original-title="Ingresa nombres y apellidos"><span
-										class="input-group-addon"><i class="fa fa-user fa"
-											aria-hidden="true"></i></span>
+										iname="apellidos" id="apellidos" value="" placeholder="Apellidos" required=""
+										data-toggle="tooltip" data-placement="bottom" title=""
+										data-original-title="Ingresa apellidos"><span class="input-group-addon"><i
+											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
 								<div class="col-sm-8">
 									<div class="form-group">
@@ -1526,7 +1524,6 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 							</div>
 							<!-- end col -->
-
 							<div class="col-md-6 mt-3">
 
 								<div class="form-group">
@@ -1855,14 +1852,18 @@ w.ds " target="_blank" class="relative oh">
 										value="Guardar Cuenta" onclick="grabarClick()" />
 								</div>
 							</div>
-					</div> <!-- end col -->
-					</form>
 
+
+						</div> <!-- end col -->
+
+
+					</div>
 
 				</div>
-			</div>
+		</form>
 	</section>
 	<!-- End registro -->
+
 
 	<!-- Call to Action -->
 	<section class="call-to-action bg-light">
@@ -2220,17 +2221,200 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			$('#ciudadNombreRegistro').autocomplete({
 				source: fivepaq.getCiudades,
 				select: function (event, ui) {
-					
+
 					var nombre = ui.item.label;
 					var id = ui.item.value;
 					var tipo = ui.item.type;
-					$('#cidudadNombreRegistro').val(nombre);
+					$('#ciudadNombreRegistro').val(nombre);
 					$('#ciudadIdRegistro').val(id);
 					$('#ciudadTipoRegistro').val(tipo);
 					return false;
 				}
 			});
 		});
+		function getUrlTicket() {
+			var url = "https://fpaq.azurewebsites.net/api/Tickets/";
+			url += $("#ticket").val();
+			debugger;
+			return url;
+		}
+		function getTicket() {
+			$.ajax({
+				url: getUrlTicket(),
+				type: 'GET',
+				success: function (resultado) {
+					if (resultado != null) {
+						console.log(resultado.TicketId);
+						debugger;
+						$('#ticketId').val(resultado.TicketId);
+						$("#ticketLabel").val("");
+						$("#ticketLabel").hide();
+					} else {
+						debugger;
+						$("#ticketLabel").text("No existe este Código");
+						$("#ticketLabel").show();
+						$("#ticketId").val("");
+					}
+				},
+				error: function (request, message, error) {
+					debugger;
+					handleException(request, message, error);
+				}
+			});
+		}
+		/* 'form[id="registro"]' */
+		function grabarClick() {
+			debugger
+			$('form[id="registro"]').validate({
+				rules: {
+					convenioRegistro: {
+						required: true,
+					},
+					nombre: {
+						required: true,
+						maxlength: 20,
+					},
+					apellidos: {
+						required: true,
+						maxlength: 20,
+					},
+					emailRegistro: {
+						required: true,
+						email: true,
+					},
+					emailRegistroConfirm: {
+						required: true,
+						email: true,
+						equalTo: "#emailRegistro"
+					},
+					telefono: {
+						required: true,
+						regex: true,
+						maxlength: 20,
+					},
+					ciudadNombreRegistro: {
+						required: true,
+					},
+					direccion: {
+						required: true,
+						maxlength: 100,
+					},
+					AsesorID: {
+						required: true,
+					},
+					tipoDoc: {
+						required: true,
+					},
+					documento: {
+						required: true,
+					},
+					cpostal: {
+						required: true,
+					},
+					passwordRegistro: {
+						required: true,
+						maxlength: 50,
+						minlength: 5
+					},
+					passwordRegistroConfirm: {
+						required: true,
+						maxlength: 50,
+						equalTo: "#passwordRegistro",
+						minlength: 5
+					}
+				},
+				messages: {
+					nombre: 'El campo es requerido',
+					apellidos: 'El campo es requerido',
+					emailRegistro: 'Ingrese un email valido',
+					telefono: 'Ingrese un teléfono valido',
+					ciudadNombreRegistro: 'El campo es requerido',
+					direccion: 'El campo es requerido',
+					AsesorID: 'El campo es requerido',
+					tipoDoc: 'El campo es requerido',
+					documento: 'El campo es requerido',
+					cpostal: 'El campo es requerido',
+					passwordRegistro: 'Contraseña minimo 6 caracteres',
+
+				},
+				submitHandler: function (form) {
+					debugger;
+					var datos = {
+						ConvenioCta: $("#convenioRegistro").val(),
+						Documento: $("#documento").val(),
+						Empresa: $("#empresa").val(),
+						Nombre: $("#nombre").val() + " " + $("#apellidos").val(),
+						Direccion: $("#direccion").val(),
+						CiudadId: $("#ciudadIdRegistro").val(),
+						CodigoPostal: $("#cpostal").val(),
+						Telefono: $("#telefono").val(),
+						Password: $("#passwordRegistro").val(),
+						EMail: $("#emailRegistro").val(),
+						Asesor: $("#AsesorID").val(),
+						TicketId: $("#ticketId").val()
+					};
+					fivepaq.CuentaAdd(datos.ConvenioCta, datos.Documento, datos.Empresa, datos.Nombre, datos.Direccion, datos.CiudadId, datos.CodigoPostal, datos.Telefono, datos.Password, datos.EMail, datos.Asesor, datos.TicketId);
+				}
+			});
+
+			$.validator.addMethod(
+				"regex",
+				function (value, element, regexp) {
+					var re = new RegExp(regexp);
+					return this.optional(element) || re.test(value);
+				},
+				"Please check your input."
+			);
+
+			$("#telefono").rules("add", { regex: "^\\d{1,20}$" })
+			$("#cpostal").rules("add", { regex: "^\\d{1,10}$" })
+
+		}
+		function limpiarRegistro() {
+			$("#convenioRegistro").val('');
+			$("#nombre").val('');
+			$("#apellidos").val('');
+			$("#emailRegistro").val('');
+			$("#telefono").val('');
+			$("#ciudadIdRegistro").val('');
+			$("#ciudadNombreRegistro").val('');
+			$("#direccion").val('');
+			$("#AsesorID").val('');
+			$("#tipoDoc").val('');
+			$("#documento").val('');
+			$("#empresa").val('');
+			$("#cpostal").val('');
+			$("#passwordRegistro").val('');
+			$("#ticket").val('');
+			$("#ticketLabel").val('');
+			$("#ticketId").val('');
+		}
+		function CuentaSuccess(noCuenta) {
+			if (noCuenta.Error != null) {
+				swal("¡ha ocurrido un error! ", noCuenta.Error.ErrorMessage, "error");
+			} else {
+				limpiarRegistro();
+				swal("¡Ya eres un Fivepaq! ", "Tu casillero es: " + noCuenta.noCuenta, "success").then((value) => {
+					if (value) {
+						debugger;
+						location.href = "index.html";
+					}
+				});;
+
+			}
+
+		}
+
+		function handleException(request, message, error) {
+			var msg = "";
+			msg += "Code: " + request.status + "\n";
+			msg += "Text: " + request.statusText + "\n";
+			if (request.responseJSON != null) {
+				msg += "Message" + request.responseJSON.Message + "\n";
+			}
+			swal("¡ha ocurrido un error! ", "por favor comunique con nosotros al Email: soporte@Fivepaq.com ", "error");
+		}
+
 
 
 

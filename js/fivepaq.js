@@ -155,7 +155,7 @@ var fivepaq = {
 	},
 	CuentaAdd: function (ConvenioCta, Documento, Empresa, Nombre, Direccion, CiudadId, CodigoPostal, Telefono, Password, EMail, Asesor, Ticket) {
 		Cuenta = new Object();
-
+		debugger;
 		if (ConvenioCta == 3) {
 			Cuenta.Convenio = "BX";
 			Cuenta.LlaveConvenio = "AAF1A8FD-199C-49E7-BC1F-830A922B4089";
