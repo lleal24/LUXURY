@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Boxluxury | Calculadora</title>
+	<title>Boxluxury | Registro</title>
 
 	<meta charset="utf-8">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<link rel="author" href="https://plus.google.com/u/0/104296509460513856975" />
-	 
+
 	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,800,400,300%7CMontserrat:400,700%7CRaleway:600,400' rel='stylesheet'>
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,800,400,300%7CMontserrat:400,700%7CRaleway:600,400'
+		rel='stylesheet'>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 	<!-- Css -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" />
-	<link rel="stylesheet" href="revolution/css/settings.css" />
-	<link rel="stylesheet" href="css/rev-slider.css" />
-	<link rel="stylesheet" href="css/font-icons.css" />
-	<link rel="stylesheet" href="css/sliders.css" /> 
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/responsive.css" />
-	<link rel="stylesheet" href="css/spacings.css" />
-	<link rel="stylesheet" href="css/animate.min.css" />
-	<link rel="stylesheet" href="css/color.css" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/magnific-popup.css" />
+	<link rel="stylesheet" href="../css/rev-slider.css" />
+	<link rel="stylesheet" href="../revolution/css/settings.css" />
+	<link rel="stylesheet" href="../css/font-icons.css" />
+	<link rel="stylesheet" href="../css/sliders.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/responsive.css" />
+	<link rel="stylesheet" href="../css/spacings.css" />
+	<link rel="stylesheet" href="../css/animate.min.css" />
+	<link rel="stylesheet" href="../css/color.css" />
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="../img/favicon.ico">
+	<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
 
+
+	<!-- Head Libs -->
+	<script src="../js/fivepaq.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-select@3.1.0/dist/vue-select.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="../js/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -50,7 +64,8 @@
 					<div class="top-bar-links">
 						<ul class="col-sm-6">
 							<li class="top-bar-email">
-								<i class="fa fa-envelope"></i><a href="mailto:afelasupport@gmail.com">acasillero@boxluxury.net</a>
+								<i class="fa fa-envelope"></i><a
+									href="mailto:afelasupport@gmail.com">acasillero@boxluxury.net</a>
 							</li>
 							<li class="top-bar-phone">
 								<i class="fa fa-phone"></i><span>+ +57 321 273 3038 | +571 495 48 08</span>
@@ -59,9 +74,9 @@
 
 						<div class="col-sm-6 social-icons text-right nopadding">
 							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>	
-							<a href="#"><i class="fa fa-instagram"></i></a>									
-								
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+
 						</div>
 
 					</div>
@@ -80,7 +95,8 @@
 					<div class="row">
 
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -92,7 +108,7 @@
 						<div class="logo-container">
 							<div class="logo-wrap">
 								<a href="index.html">
-									<img class="logo" src="img/logo_Luxury-2.png" alt="logo">
+									<img class="logo img-responsive" src="../img/logo_Luxury-2.png" alt="logo">
 								</a>
 							</div>
 						</div>
@@ -108,7 +124,7 @@
 										</a>
 									</div>
 								</div>
-							</div>	        		        	
+							</div>
 						</div>
 
 						<div class="col-md-9 nav-wrap right">
@@ -123,17 +139,18 @@
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Planes</a>
 									</li>
-
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Calculadora</a>
+										<a href="calculadora.html" class="dropdown-toggle"
+											data-toggle="dropdown">Calculadora</a>
 									</li> <!-- end portfolio -->
-								
+
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contáctanos</a>
 									</li>
 
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beneficios</a>
+										<a href="#" onclick="cerrarsesion()" id="salir" class="dropdown-toggle"
+											data-toggle="dropdown">Cerrar sesion</a>
 									</li> <!-- end features -->
 
 									<li id="mobile-search" class="hidden-lg hidden-md">
@@ -169,7 +186,7 @@
 			<div class="container relative clearfix">
 				<div class="title-holder">
 					<div class="title-text">
-						<h1 class="uppercase">Micuenta</h1>
+						<h1 class="uppercase">Bienvenido</h1>
 						<ol class="breadcrumb">
 							<li>
 								<a href="index.html">Inicio</a>
@@ -181,149 +198,418 @@
 		</section> <!-- end page title -->
 
 		<!-- Columnss -->
-		<section class="section-wrap pb-50">
+		<section class="section-wrap pb-1">
 			<div class="container">
 				<div class="row">
 
-					
-					<div class="col-md-9 section-columns mb-50">
 
-						<!-- 1/2 column -->
+					<div class="col-md-9 section-columns mb-1">
+
 						<div class="row">
+							<!-- Seccion Datos Personales -->
+							<section class="page-section" id="datos">
+								<div class="container">
+									<!-- Page Datos -->
+									<div class="section-title-wrapper">
+										<div class="section-title-inner">
+											<h3 class="section-title section-title__lg">Datos Personales</h3>
+										</div>
+									</div>
+									<!--Datos/ ini -->
+									<div class="row">
+										<div class="col-md-4">
+											<!-- Testimonial -->
+											<div class="testimonial">
+												<figure class="testimonial-thumb">
+													<img src="images/samples/person2.png" alt="" class="img-round">
+												</figure>
+												<div class="testimonial-body">
+													<h5 id="nomUsuario"></h5>
+													<p><strong style="font-size: 22px;">Casillero:</strong><br /><span
+															id="numCasillero"
+															style="font-size: 22px; color: #e91b43; font-weight: 800;"></span><br />
+														<!-- <strong>Direccion
+														</strong><span id="direccionPrincipal"
+														style="font-size: 1em"><br /></span> -->
+														<strong>Correo
+															Electrónico:</strong><br /><span id="emailUsuario"
+															style="font-size: 1em"><br /></span><br /><strong>Teléfono:</strong><br /><span
+															id="telefonoUsuario" style="font-size: 1em"><br /></span>
+													</p>
+												</div>
+											</div>
+											<!-- Testimonial / End -->
+										</div>
 
-							<div class="col-sm-12 text-center">
-								<h1 class="section-title section-title__lg">Calculadora</h1>
-							</div> <!-- end col -->
-						</div><br/><br/> <!-- end row -->
-					
-						<div class="row">
-							<div class="col-sm-12">
-								<h6>Selecciona un Plan</h6>
-								<select>
-									<option selected value="default">Select an option</option>
-									<option value="green">Fast</option>
-									<option value="black">Black</option>
-								</select>
-							</div> <!-- end col -->
+										<div class="col-md-8">
+											<!-- Datos Cambio -->
+											<div class="panel-group" id="accordion" role="tablist"
+												aria-multiselectable="true">
+												<h5>Gestión Cuenta</h5>
+												<div class="panel-group panel-group__with-icons panel-icon__effect1"
+													id="accordion2" role="tablist" aria-multiselectable="true">
+													<!-- cambio Contraseña -->
+													<div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingOne_2">
+															<h5 class="panel-title">
+																<!-- <a data-toggle="collapse" data-parent="#accordion2" href="mc-pass-reset.html"
+													aria-expanded="true" aria-controls="collapse2-1">
+													<i class="fa fa-key"></i>
+													Cambio de Contraseña
+													<span class="panel-icon"></span></a> -->
+																<a aria-expanded="true" aria-controls="collapse2-1"
+																	href="mc-cambio-password.html">
+																	<i class="fa fa-key"></i>
+																	Cambio de Contraseña
+																	<span class="panel-icon"></span>
+																</a>
+															</h5>
+														</div>
+													</div>
 
-							<!-- end col -->
-							</div><!-- end row -->
+													<!-- Direcion principal -->
+													<div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingThree_2">
+															<h5 class="panel-title">
+																<!-- <a class="collapsed" data-toggle="collapse" data-parent="#accordion2"
+													href="mc-direccion.html#collapse2-4" aria-expanded="false"
+													aria-controls="collapse2-3">
+													<i class="fa fa-plane"></i>
+													Ver y Agregar Direcciones de entrega
+													<span class="panel-icon"></span></a> -->
+																<a href="mc-direcciones.html" aria-expanded="false">
+																	<i class="fa fa-plane"></i>
+																	Ver y Agregar Direcciones de entrega
+																	<span class="panel-icon"></span></a>
+															</h5>
 
-							<!-- Origen -->
-						<div class="row">
+															<!-- Fin dirreccion Principal -->
 
-							<div class="col-sm-6">
-								<h6>ORIGEN</h6>
-									<select>
-									<option selected value="default">País</option>
-									<option value="green">USA</option>
-									<option value="black">ESPAÑA</option>
-									<option value="white">CHINA</option>
-								</select>
-							</div> <!-- end col -->
+														</div>
 
-							<div class="col-sm-6">
-								<h6>DESTINO</h6>
-								<input name="ciudad" type="search" placeholder="Ciudad">
-							</div> <!-- end col -->
+													</div>
 
-						</div> <!-- end row -->
-						
+												</div>
+											</div>
+											<!-- Datos personales / fin -->
+										</div>
+							</section>
+							<!-- Datos Personales/ Fin -->
 
-						 <!-- Costo -->
-						<div class="row">
-
-							<div class="col-sm-4">
-								<h6>COSTO DEL PRODUCTO</h6>
-							<input name="costo" type="number" placeholder="USD">
-
-							</div> <!-- end col -->
-
-							<div class="col-sm-4">
-								<h6>Valor</h6>
-								<input name="costo" type="date" placeholder="$">
-							</div> <!-- end col -->
-
-							<div class="col-sm-4">
-								<h6>Descripción</h6>
-							<textarea placeholder="Textarea" rows="3"></textarea>
-							</div> <!-- end col -->
-
-						</div> <!-- end row -->
-
-						 <!-- Detalles -->
-							<div class="row">
-
-							<div class="col-sm-4">
-								<h6>DETALLE DEL ENVÍO</h6>
-							<input name="costo" type="number" placeholder="USD">
-
-							</div> <!-- end col -->
-
-							<div class="col-sm-4">
-								<h6>Tipo de Peso</h6>
-								<input name="costo" type="date" placeholder="Libra">
-							</div> <!-- end col -->
-
-							<div class="col-sm-4">
-								<h6>Dimensiones Volumétricas</h6>
-							<input type="radio" class="input-radio" name="radio" id="radio3" value="radio3">
-												<label for="radio3">Dimensiones</label>
-							</div> <!-- end col -->
-						</div> <!-- end row -->
-					<div class="col-sm-6">
-								<h6>CALCULAR TU ENVÍO</h6>
-								<a href="#" class="btn btn-md btn-stroke">CALCULAR</a>
-
-							</div> 
+						</div>
 
 					</div> <!-- end col -->
-
-					<!-- Sidebar -->
-					<aside class="col-md-3 sidebar">
-						<div class="widget categories">
-							<h3 class="widget-title">Tus Datos</h3>
-							<ul class="list-dividers">
-								<li><a href="calculadora.html">Calculadora</a></li>
-								<li><a href="icon-boxes.html">Planes</a></li>
-								<li><a href="registro.html">Registro</a></li>
-								<li><a href="alert-boxes.html">mc-actuales</a></li>
-								<li><a href="animations.html">mc-alerta</a></li>
-								<li><a href="buttons.html">mc-cambio-password</a></li>
-								<li><a href="columns.html">mc-direcciones</a></li>
-								<li><a href="counters.html">mc-historico</a></li>
-								<li><a href="forms.html">mc-pass-reset</a></li>
-								<li><a href="lightboxes.html">mc-tracking</a></li>
-							</ul>
-						</div>
-					</aside>
 
 				</div> <!-- end row -->
 			</div> <!-- end container -->
 		</section> <!-- end columns -->
-		
-
-
-		<!-- Call to Action -->
-		<section class="call-to-action bg-light">
+		<!-- Seccion Casillero -->
+		<section class="" id="casillero">
 			<div class="container">
-				<div class="row">
-
-					<div class="col-sm-9 col-xs-12">		
-						<h2 class="mb-0">¿Estás listo para disfrutar? </h2>
-					</div>
-					
-					<div class="col-sm-3 col-xs-12 cta-button">
-						<a href="#" class="btn btn-lg btn-dark">Regístrate</a>
-					</div>
-
+				<div class="title-bordered border__dashed">
+					<h3>Consultas de tus Compras</h3>
 				</div>
-			</div>
-		</section> <!-- end call to action -->
+				<!-- Accordion with Icons -->
+				<div class="panel-group panel-group__with-icons panel-icon__effect1 col-md-12" id="accordion2"
+					role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne_2">
+							<h5 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion2" href="#collapse3-1"
+									aria-expanded="true" aria-controls="collapse3-1">
+									<i class="fa fa-eye"></i>
+									Envios Actuales
+									<span class="panel-icon"></span></a>
+							</h5>
+						</div>
+						<div id="collapse3-1" class="panel-collapse collapse in" role="tabpanel"
+							aria-labelledby="headingOne_2">
+							<div class="panel-body">
+								<div class="gap-10"></div>
+								<!-- Table – Bordered -->
+								<div id="appPaq" class="table-responsive" v-cloak>
+									<table class="table table-bordered table-striped  table-bordered ">
+										<thead class="table-responsive">
+											<th>Fecha</th>
+											<th>Guía</th>
+											<th>Contenido</th>
+											<th>VR-USD</th>
+											<th>Peso (Grs)</th>
+											<th>Estado</th>
+											<th>&nbsp;</th>
+										</thead>
+										<tbody v-for="paq in results" class="table-responsive">
+											<tr>
+												<td class="table-responsive">
+													{{ paq.ArrivalWinery | formatDate }} </td>
+												<td class="table-responsive">{{ paq.PackageId }}</td>
+												<td class="table-responsive" v-if="paq.Description.length <20">
+													{{ paq.Description }}</td>
+												<td class="table-responsive" v-else="paq.Description.length >=20">
+													{{ paq.Description.substring(0,18)+".."}}</td>
+												<td class="table-responsive">{{ paq.DeclaredValue }}</td>
+												<td class="table-responsive">{{ paq.Weight }}</td>
+												<td class="table-responsive">{{ paq.StateDescription }}</td>
+												<td class="table-responsive"><a
+														:href="'mc-tracking.html?id=' + paq.PackageId +'#headingTrack'">Tracking</a>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+
+								</div>
+								<!-- Table – Bordered / End -->
+								<div class="gap-100"></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTwo_2">
+							<h5 class="panel-title">
+								<a href="mc-alerta.html#headingAlerta" aria-expanded="false"
+									aria-controls="collapse3-2">
+									<i class="fa fa-exclamation-triangle"></i>
+									Alerta tu Envío
+									<span class="panel-icon"></span></a>
+							</h5>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingCalculadora">
+							<h5 class="panel-title">
+								<a href="calculadora.html">
+									<i class="fa fa-calculator"></i>
+									Calculadora
+									<span class="panel-icon"></span></a>
+							</h5>
+							<!-- INICIO CALCULADORA -->
+							<div class="row">
+								<!-- Checkout Adress-->
+								<div class="col-xl-7 col-lg-8">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-city">
+													<h4>Origen</h4> <br>
+												</label>
+												<select class="form-control form-control-rounded form-control-sm"
+													id="idPaisOrigen" value="">
+													<option value="1" selected="">USA</option>
+													<option value="75" selected="">China</option>
+													<option value="76" selected="">España</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-city">
+													<h4>Destino</h4> <br>
+												</label>
+												<input
+													class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
+													type="text" id="ciudadNombre" value="" placeholder="Ciudad"
+													data-toggle="tooltip" data-placement="top" title="" required=""
+													data-original-title="Espera a que aparezca la Ciudad">
+												<input type="hidden" id="ciudadId" value="0">
+												<input type="hidden" id="ciudadTipo" value="">
+											</div>
+										</div>
+									</div>
+									<div class="row padding-bottom-1x">
+									</div>
+									<h4>Producto</h4>
+									<hr class="padding-bottom-1x">
+									<div class="row">
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-country"><br></label>
+												<select class="form-control form-control-rounded form-control-sm"
+													id="moneda">
+													<option>USD</option>
+													<!--<option>COP</option>-->
+												</select>
+											</div>
+										</div>
+
+										<div class="col-sm-3">
+											<div class="form-group">
+												<label for="checkout-ln"><br></label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="text" id="valorDeclarado" value=""
+													placeholder="Valor Declarado">
+											</div>
+										</div>
+
+										<div class="col-sm-7">
+											<div class="form-group">
+												<label for="checkout-fn"><br></label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="text" id="descripcion" value=""
+													placeholder="Descripción del Producto">
+											</div>
+										</div>
+
+									</div>
+
+									<h4>Detalles de Envío</h4>
+									<hr class="padding-bottom-1x">
+									<div class="row">
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-country">Tipo Peso</label>
+												<select class="form-control form-control-rounded form-control-sm"
+													id="tUnidad" value="">
+													<option value="LB">Libras</option>
+													<!--<option>kg</option>-->
+												</select>
+											</div>
+										</div>
+
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-ln">Peso</label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="text" id="pesoTotal" value="">
+											</div>
+										</div>
+										<!--------------------- Dimesiones volumetricas ------------->
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label for="checkout-ln">Dimensiones Volumétricas</label>
+												<input class="form-control form-control-rounded " type="checkbox"
+													id='dimensionesVol' data-toggle="tooltip" data-placement="auto"
+													title="Seleccione para Adicionar Dimensiones"
+													onchange="mostrarVolumetricas(this.checked)">
+											</div>
+										</div>
+									</div>
+									<div class="row" id="MuestroVol" style="display:none;">
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-country"></br></label>
+												<select class="form-control form-control-rounded form-control-sm"
+													id='tDimension' value=''>
+													<!--<option>Pulgadas</option>-->
+													<option value='CM'>Centí</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-ln"> </br> </label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="number" id='alto' value='' placeholder="Alto">
+												<br />
+											</div>
+										</div>
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-ln"> </br> </label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="text" id='largo' value='' placeholder="Largo">
+											</div>
+										</div>
+										<div class="col-sm-2">
+											<div class="form-group">
+												<label for="checkout-ln"> </br> </label>
+												<input class="form-control form-control-rounded form-control-sm"
+													type="text" id='ancho' value='' placeholder="Ancho">
+											</div>
+										</div>
+									</div>
+
+
+									<!--------------------- Fin Dimesiones volumetricas ------------->
+									<!-- ================================================================================================================== -->
+									<hr class="padding-bottom-1x">
+									<div class="row">
+										<div class="checkout-footer">
+											<div class="column"></div>
+											<div class="column">
+												<button style="margin-bottom: 2.3rem; margin-left: 1.5rem;"
+													class="btn btn-md btn-blue"
+													onclick="calcularClick()">Calcular</button>
+											</div>
+										</div>
+									</div>
+									<!--=============================================================================================================== -->
+									<div class="col-sm-push-8 margin-top: 26px;">
+										<!-- order="" summary="" widget="" -->
+										<section class="widget widget-order-summary">
+											<h3 class="widget-title">Estimación de Costos</h3>
+											<table class="table">
+												<tbody>
+													<tr>
+														<td>Flete Estimado: </td>
+														<td class="text-medium" id="lbflete"> </td>
+													</tr>
+
+													<tr>
+														<td>Seguro: </td>
+														<td class="text-medium" id="lbseguro"> </td>
+													</tr>
+													<tr>
+														<td>Arancel: </td>
+														<td class="text-medium" id="lbarancel"> </td>
+													</tr>
+
+													<tr>
+														<td>IVA: </td>
+														<td class="text-medium" id="lbiva"> </td>
+													</tr>
+
+
+													<tr>
+														<td>Valor Total en USD </td>
+														<td class="text-lg text-medium" id="lbTOTAL"> </td>
+													</tr>
+												</tbody>
+											</table>
+										</section><br>
+									</div>
+									<!-- Featured Products Widget-->
+								</div>
+								<!-- Sidebar          -->
+								<div class="col-xl-5 col-lg-4">
+									<aside class="sidebar">
+										<div class="padding-top-2x hidden-lg-up"></div>
+
+										<section class="widget widget-featured-products">
+											<h3 class="widget-title">¿Cómo funciona el cálculo?</h3>
+											<!-- Entry-->
+											<div class="entry">
+												<p>La calculadora dará un costo aproximado de los envíos puestos en el
+													país de destino
+													con base en los datos suministrados.
+													<br><br>Este valor podrá variar por la fluctuación de la tasa
+													representativa de
+													cambio (TRM) a la fecha de recibido de su paquete o mercancia. <br>
+													<br><br>
+													<a href="#contact" class="btn btn-lg btn-blue">Cualquier
+														Inquietud</a>
+
+												</p>
+											</div>
+										</section>
+										<!-- Promo Banner-->
+
+									</aside>
+								</div>
+							</div>
+
+
+							<!-- FIN CALCULADORA -->
+						</div>
+
+					</div>
+
+		</section>
+		<!-- Page Section (calculadora) / End -->
 
 
 		<!-- Footer Type-1 -->
-<footer class="footer footer-type-1">
+		<footer class="footer footer-type-1">
 			<div class="container">
 				<div class="footer-widgets">
 					<div class="row">
@@ -332,18 +618,24 @@
 							<div class="widget footer-about-us">
 								<h5 class="uppercase">Boxluxury</h5>
 								<p style="color: white;" class="mb-20"><strong>Asistencia de compras:</strong>
-									Si no tienes forma de hacer esta compra no hay ningún problema, te contactas con alguno de nuestros asesores y te ayudaremos a buscar un mejor precio, con una cotización gratuita, puedes contactar al teléfono: <strong>321 273 3038.</strong> <br>
+									Si no tienes forma de hacer esta compra no hay ningún problema, te contactas con
+									alguno de nuestros asesores y te ayudaremos a buscar un mejor precio, con una
+									cotización gratuita, puedes contactar al teléfono: <strong>321 273 3038.</strong>
+									<br>
 									<strong>Servicios especializados:</strong>
-									Transporte de Carga Área, Tramites Aduaneros y Tramites de Exportación, llámanos y te informamos</p>
+									Transporte de Carga Área, Tramites Aduaneros y Tramites de Exportación, llámanos y
+									te informamos</p>
 								<p>Mail-marketing:</p>
 								<form class="relative newsletter-form style-2">
 									<input type="email" class="newsletter-input" placeholder="e-mail">
 									<i class="icon_mail"></i>
-									<input type="submit" class="btn btn-md btn-dark newsletter-submit" value="Suscríbete">
+									<input type="submit" class="btn btn-md btn-dark newsletter-submit"
+										value="Suscríbete">
 								</form>
 
 							</div>
-						</div> <!-- end about us --> <!-- end about us -->				
+						</div> <!-- end about us -->
+						<!-- end about us -->
 
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="widget footer-posts with-thumbs">
@@ -355,18 +647,21 @@
 											<article class="post-small clearfix">
 												<div class="entry-img hover-scale">
 													<a href="magazine-single-article.html">
-														<img src="img/magazine/thumb_11.jpg" alt="">
+														<img src="../img/magazine/thumb_11.jpg" alt="">
 													</a>
 												</div>
 												<div class="entry">
-													<h3 class="entry-title"><a href="magazine-single-article.html">Tiendas Online sólo para ellas.</a></h3>
+													<h3 class="entry-title"><a
+															href="magazine-single-article.html">Tiendas Online sólo para
+															ellas.</a></h3>
 													<ul class="entry-meta list-inline">
 														<li class="entry-date">
-															<a href="https://www.carolinaherrera.com/co/es/?gclid=EAIaIQobChMIpcCqg4yp5QIVjcDACh3AY
-AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
+															<a href="https://www.carolinaherrera.com/co/es/?gclid=EAIaIQobChMIpcCqg4yp5QIVjcDACh3AYAR3EAAYASAAEgILG_D_BwE "
+																target="_blank">Para un gusto femenino.</a>
 														</li>
 														<li class="entry-comments">
-															<i class="fa fa-comments"></i><a href="magazine-single-article.html">Visitanos</a>
+															<i class="fa fa-comments"></i><a
+																href="magazine-single-article.html">Visitanos</a>
 														</li>
 													</ul>
 												</div>
@@ -376,17 +671,21 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 											<article class="post-small clearfix">
 												<div class="entry-img hover-scale">
 													<a href="magazine-single-article.html">
-														<img src="img/magazine/thumb_12.jpg" alt="">
+														<img src="../img/magazine/thumb_12.jpg" alt="">
 													</a>
 												</div>
 												<div class="entry">
-													<h3 class="entry-title"><a href="magazine-single-article.html">Tiendas Online sólo para ellos.</a></h3>
+													<h3 class="entry-title"><a
+															href="magazine-single-article.html">Tiendas Online sólo para
+															ellos.</a></h3>
 													<ul class="entry-meta list-inline">
 														<li class="entry-date">
-															<a href="https://www.versace.com/international/en/home/" target="_blank">Para un gusto masculino.</a>
+															<a href="https://www.versace.com/international/en/home/"
+																target="_blank">Para un gusto masculino.</a>
 														</li>
 														<li class="entry-comments">
-															<i class="fa fa-comments"></i><a href="magazine-single-article.html">Visitanos</a>
+															<i class="fa fa-comments"></i><a
+																href="magazine-single-article.html">Visitanos</a>
 														</li>
 													</ul>
 												</div>
@@ -396,33 +695,35 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 								</div>
 							</div>
-						</div> <!-- end recent posts --> <!-- end latest posts -->
+						</div> <!-- end recent posts -->
+						<!-- end latest posts -->
 					</div>
-				</div>		
+				</div>
 			</div> <!-- end container -->
 
-	<div class="bottom-footer">
+			<div class="bottom-footer">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-4 col-xs-12 copyright">
 							<span>
-								© 2019  |  Por Boxluxury - Dynamic Enterprises SAS
+								© 2019 | Por Boxluxury - Dynamic Enterprises SAS
 							</span>
 						</div>
-							
+
 						<div class="col-md-3 col-xs-12 footer-socials mt-mdm-10 text-right">
 							<div class="social-icons dark">
 								<a href="#"><i class="fa fa-instagram"></i></a>
 								<a href="#"><i class="fa fa-facebook"></i></a>
-							
+
 							</div>
 						</div>
 
 					</div>
 				</div>
 			</div> <!-- end bottom footer -->
-		</footer> <!-- end footer --><!-- end footer -->
+		</footer> <!-- end footer -->
+		<!-- end footer -->
 
 		<div id="back-to-top">
 			<a href="#top"><i class="fa fa-angle-up"></i></a>
@@ -430,24 +731,246 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 	</div> <!-- end main-wrapper -->
 
-	<!-- jQuery Scripts -->		
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
-	<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
-	<script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="js/rev-slider.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<!-- jQuery Scripts -->
+	<!-- <script type="text/javascript" src="../js/jquery.min.js"></script> -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins.js"></script>
+	<script type="text/javascript" src="../revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="../js/rev-slider.js"></script>
+	<script type="text/javascript" src="../js/scripts.js"></script>
 
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-	  
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.video.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.actions.min.js"></script>
+	<script type="text/javascript"
+		src="../revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.migration.min.js"></script>
+	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+</html>
+
+<!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
+<script>
+
+	function cerrarsesion() {
+		fivepaq.logOut();
+		location.href = "../index.html";
+	}
+	var dataout = fivepaq.dataOut();
+
+	if (dataout == null || dataout.L !== true) {
+		location.href = "../index.html";
+	}
+
+	$("#nomUsuario").html(dataout.U);//este es el campo del usuario
+	$("#emailUsuario").html(dataout.E);//este es el campo del Email
+	$("#numCasillero").html(dataout.N);//Este es campo del casillero
+	$("#telefonoUsuario").html(dataout.Tel);//Este es campo del telefono
+
+</script>
+<!-- CALCULADORA -->
+<script type="text/javascript">
+	fivepaq.CargarCiudades();
+	$(document).ready(function () {
+
+		$("#ciudadNombre").autocomplete({
+			minLength: 2,
+			source: fivepaq.getCiudades,
+			select: function (event, ui) {
+
+				var nombre = ui.item.label;
+				var id = ui.item.value;
+				var tipo = ui.item.type;
+				$("#ciudadNombre").val(nombre);
+				$("#ciudadId").val(id);
+				$("#ciudadTipo").val(tipo);
+
+				return false;
+
+			}
+		});
+
+	});
+
+	function validarCiudad() {
+		var idCiudad = $("#ciudadId").val();
+		if (idCiudad <= "0") {
+			$("#ciudadNombre").val("");
+			$('#ciudadNombre').popover('show');
+			$('#ciudadNombre').focus();
+			return false;
+		}
+		return true;
+	}
+
+
+	function mostrarVolumetricas(checked) {
+		if (checked == true) {
+			divC = document.getElementById("MuestroVol");
+			divC.style.display = "";
+		} else {
+			divC = document.getElementById("MuestroVol");
+			divC.style.display = "none";
+
+		}
+	}
+
+
+	function validarCalculadora() {
+		if ($('#valorDeclarado').val() <= 0) {
+			$('#valorDeclarado').focus();
+
+			return false;
+		} else
+			if ($('#valorDeclarado').val() > 2000) {
+				swal("¡ha ocurrido un error! ", "Maximo Declarado USD 2000, para el envio", "error");
+				$('#valorDeclarado').focus();
+				return false;
+			}
+			else if ($('#pesoTotal').val() <= 0) {
+				$('#pesoTotal').focus();
+				return false;
+			} else if ($('#pesoTotal').val() > 110) {
+				swal("¡ha ocurrido un error! ", "Maximo peso 110", "error");
+				$('#pesoTotal').focus();
+				return false;
+			}
+
+		return true;
+	}
+
+	function validarIdConvenio() {
+		let data = sessionStorage.getItem('appData');
+		let datFormat = JSON.parse(data);
+		if (datFormat.Con == 3 || datFormat.Con == 5) {
+			return true;
+		} else {
+			swal("¡ha ocurrido un error! ", "Por favor comuníquese con un asesor para adquirir una cotización personalizada.", "error");
+			return false;
+		}
+
+	}
+
+
+	function calcularClick() {
+		if (!validarIdConvenio()) { /* cambio agregado */
+			return;
+		}
+		if (!validarCiudad()) {
+			return;
+		}
+		else if (!validarCalculadora()) {
+			return;
+		}
+		$.ajax({
+			url: getUrlCalculadora(),
+			type: 'GET',
+			data: '',
+			success: function (resultado) {
+				CalculadoraResult(resultado);
+				debugger;
+				limpiarCalculadora();
+			},
+			error: function (request, message, error) {
+				debugger;
+				handleException(request, message, error);
+				swal("¡ha ocurrido un error! ", message, "error");
+			}
+
+		});
+	}
+
+	function limpiarCalculadora() {
+		$("#idConvenio").val('');
+		$("#ciudadTipo").val('');
+		$("#ciudadId").val('');
+		$("#ciudadNombre").val('');
+		$("#descripcion").val('');
+		$("#pesoTotal").val('');
+		$("#valorDeclarado").val('');
+		$("#largo").val('');
+		$("#ancho").val('');
+		$("#alto ").val('');
+
+	}
+
+	function CalculadoraResult(request) {
+		console.log("request");
+		debugger;
+		console.log(request);
+		// var mensaje = "Exito ... ";
+		// mensaje += " <br /> "
+		// var mensaje = request.Error.ErrorMessage;
+		$("#lbflete").text("USD$ " + String(request.ValorFlete));
+		$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
+		$("#lbarancel").text("USD$ " + String(request.ValorArancel));
+		$("#lbiva").text("USD$ " + String(request.ValorIva));
+		$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+
+	}
+	var largo = "0";
+	if ($("#largo").val() != "") {
+		largo = $("#largo").val();
+	}
+
+	var ancho = "0";
+	if ($("#ancho").val() != "") {
+		ancho = $("#ancho").val();
+	}
+	var alto = "0";
+	if ($("#alto").val() != "") {
+		alto = $("#alto").val();
+	}
+
+	function getUrlCalculadora() {
+		/* obtener dato del sessionStorage */
+		let data = sessionStorage.getItem('appData');
+		let datFormat = JSON.parse(data)
+		console.log(datFormat.Con);
+		/* ---------------------------------------------------------- */
+		var url = "https://fpaq.azurewebsites.net/api/calculators/";
+		// var url = "https://localhost:44347/api/calculators/";
+		url += $("#ciudadTipo").val() + "/";
+		/* url += $("#idConvenio").val() + "/"; */
+		url += datFormat.Con + "/";
+		url += $("#idPaisOrigen").val() + "/";
+		url += $("#tUnidad").val() + "/";
+		url += $("#tDimension").val() + "/";
+		url += $("#pesoTotal").val() + "/";
+		url += $("#valorDeclarado").val() + "/";
+		url += $("#largo").val() + "/";
+		url += $("#ancho").val() + "/";
+		url += $("#alto").val() + "/";
+		debugger;
+		return url;
+
+	}
+
+	function handleException(request, message, error) {
+		var msg = "";
+
+		msg += "Code: " + request.status + "\n";
+
+		msg += "Text: " + request.statusText + "\n";
+
+		if (request.responseJSON != null) {
+
+			msg += "Message" + request.responseJSON.Message + "\n";
+
+		}
+
+		alert(msg);
+
+	}
+</script>
+<!-- FIN CALCULADORA-->
+
+<script src="../js/mc-actuales.js"></script>
+<script src="../js/moment.js"></script>
+
 </body>
+
 </html>

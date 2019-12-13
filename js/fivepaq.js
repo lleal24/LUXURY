@@ -243,10 +243,11 @@ var fivepaq = {
 		});
 		return vars;
 	},
-	changePass: function (OldPassword, NewPassword) {	
+	changePass: function (Email, OldPassword, NewPassword) {
+		debugger;	
 		Datos = new Object();
 		var code = JSON.parse(sessionStorage.getItem('appData'));
-		Datos.Email = code.E;
+		Datos.Email = Email;
 		Datos.OldPassword = OldPassword;
 		Datos.NewPassword = NewPassword;
 
