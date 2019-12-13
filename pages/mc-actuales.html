@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Boxluxury | Registro</title>
 
@@ -8,9 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<link rel="author" href="https://plus.google.com/u/0/104296509460513856975" />
-	 
+
 	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,800,400,300%7CMontserrat:400,700%7CRaleway:600,400' rel='stylesheet'>
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,800,400,300%7CMontserrat:400,700%7CRaleway:600,400'
+		rel='stylesheet'>
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 	<!-- Css -->
@@ -19,7 +22,7 @@
 	<link rel="stylesheet" href="../css/rev-slider.css" />
 	<link rel="stylesheet" href="../revolution/css/settings.css" />
 	<link rel="stylesheet" href="../css/font-icons.css" />
-	<link rel="stylesheet" href="../css/sliders.css" /> 
+	<link rel="stylesheet" href="../css/sliders.css" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/responsive.css" />
 	<link rel="stylesheet" href="../css/spacings.css" />
@@ -32,6 +35,16 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
 
+
+	<!-- Head Libs -->
+	<script src="../js/fivepaq.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="vendor/modernizr.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-select@3.1.0/dist/vue-select.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -51,7 +64,8 @@
 					<div class="top-bar-links">
 						<ul class="col-sm-6">
 							<li class="top-bar-email">
-								<i class="fa fa-envelope"></i><a href="mailto:afelasupport@gmail.com">acasillero@boxluxury.net</a>
+								<i class="fa fa-envelope"></i><a
+									href="mailto:afelasupport@gmail.com">acasillero@boxluxury.net</a>
 							</li>
 							<li class="top-bar-phone">
 								<i class="fa fa-phone"></i><span>+ +57 321 273 3038 | +571 495 48 08</span>
@@ -60,9 +74,9 @@
 
 						<div class="col-sm-6 social-icons text-right nopadding">
 							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>	
-							<a href="#"><i class="fa fa-instagram"></i></a>									
-								
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+
 						</div>
 
 					</div>
@@ -81,7 +95,8 @@
 					<div class="row">
 
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -93,7 +108,7 @@
 						<div class="logo-container">
 							<div class="logo-wrap">
 								<a href="index.html">
-									<img class="logo" src="../img/Luxury-mc.png" alt="logo">
+									<img class="logo img-responsive" src="../img/Luxury-mc.png" alt="logo">
 								</a>
 							</div>
 						</div>
@@ -109,7 +124,7 @@
 										</a>
 									</div>
 								</div>
-							</div>	        		        	
+							</div>
 						</div>
 
 						<div class="col-md-9 nav-wrap right">
@@ -128,13 +143,14 @@
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Calculadora</a>
 									</li> <!-- end portfolio -->
-								
+
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contáctanos</a>
 									</li>
 
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beneficios</a>
+										<a href="#" onclick="cerrarsesion()" id="salir" class="dropdown-toggle"
+											data-toggle="dropdown">Cerrar sesion</a>
 									</li> <!-- end features -->
 
 									<li id="mobile-search" class="hidden-lg hidden-md">
@@ -182,134 +198,199 @@
 		</section> <!-- end page title -->
 
 		<!-- Columnss -->
-		<section class="section-wrap pb-50">
+		<section class="section-wrap pb-1">
 			<div class="container">
 				<div class="row">
 
-					
-					<div class="col-md-9 section-columns mb-50">
 
-						<!-- 1/2 column -->
+					<div class="col-md-9 section-columns mb-1">
+
 						<div class="row">
+							<!-- Seccion Datos Personales -->
+							<section class="page-section" id="datos">
+								<div class="container">
+									<!-- Page Datos -->
+									<div class="section-title-wrapper">
+										<div class="section-title-inner">
+											<h3 class="section-title section-title__lg">Datos Personales</h3>
+										</div>
+									</div>
+									<!--Datos/ ini -->
+									<div class="row">
+										<div class="col-md-4">
+											<!-- Testimonial -->
+											<div class="testimonial">
+												<figure class="testimonial-thumb">
+													<img src="images/samples/person2.png" alt="" class="img-round">
+												</figure>
+												<div class="testimonial-body">
+													<h5 id="nomUsuario"></h5>
+													<p><strong style="font-size: 22px;">Casillero:</strong><br /><span
+															id="numCasillero"
+															style="font-size: 22px; color: #e91b43; font-weight: 800;"></span><br />
+														<!-- <strong>Direccion
+														</strong><span id="direccionPrincipal"
+														style="font-size: 1em"><br /></span> -->
+														<strong>Correo
+															Electrónico:</strong><br /><span id="emailUsuario"
+															style="font-size: 1em"><br /></span><br /><strong>Teléfono:</strong><br /><span
+															id="telefonoUsuario" style="font-size: 1em"><br /></span>
+													</p>
+												</div>
+											</div>
+											<!-- Testimonial / End -->
+										</div>
 
-							<div class="col-sm-12 text-center">
-								<h1 class="section-title section-title__lg">CREA TU CASILLERO</h1>
-							</div> <!-- end col -->
-						</div><br/><br/> <!-- end row -->
-					
-						<div class="row">
-							<div class="col-sm-12">
-								<h6>Selecciona un Plan</h6>
-								<select>
-									<option selected value="default">Selecione el plan</option>
-									<option value="green">Fast</option>
-									<option value="black">Black</option>
-								</select>
-							</div> <!-- end col -->
+										<div class="col-md-8">
+											<!-- Datos Cambio -->
+											<div class="panel-group" id="accordion" role="tablist"
+												aria-multiselectable="true">
+												<h5>Gestión Cuenta</h5>
+												<div class="panel-group panel-group__with-icons panel-icon__effect1"
+													id="accordion2" role="tablist" aria-multiselectable="true">
+													<!-- cambio Contraseña -->
+													<div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingOne_2">
+															<h5 class="panel-title">
+																<!-- <a data-toggle="collapse" data-parent="#accordion2" href="mc-pass-reset.html"
+													aria-expanded="true" aria-controls="collapse2-1">
+													<i class="fa fa-key"></i>
+													Cambio de Contraseña
+													<span class="panel-icon"></span></a> -->
+																<a aria-expanded="true" aria-controls="collapse2-1"
+																	href="mc-cambio-password.html">
+																	<i class="fa fa-key"></i>
+																	Cambio de Contraseña
+																	<span class="panel-icon"></span>
+																</a>
+															</h5>
+														</div>
+													</div>
 
-							<!-- end col -->
-							</div><!-- end row -->
+													<!-- Direcion principal -->
+													<div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingThree_2">
+															<h5 class="panel-title">
+																<!-- <a class="collapsed" data-toggle="collapse" data-parent="#accordion2"
+													href="mc-direccion.html#collapse2-4" aria-expanded="false"
+													aria-controls="collapse2-3">
+													<i class="fa fa-plane"></i>
+													Ver y Agregar Direcciones de entrega
+													<span class="panel-icon"></span></a> -->
+																<a href="mc-direcciones.html" aria-expanded="false">
+																	<i class="fa fa-plane"></i>
+																	Ver y Agregar Direcciones de entrega
+																	<span class="panel-icon"></span></a>
+															</h5>
 
-							<div class="row">
+															<!-- Fin dirreccion Principal -->
 
-							<div class="col-sm-4">
-								<h6>Información personal</h6>
-								<input name="text" type="text" placeholder="Nombre">
-								<input name="text" type="text" placeholder="Apellido">
-								<input name="text" type="email" placeholder="Correo">
-								<input name="text" type="number" placeholder="Télefono">
-								<input name="text" type="text" placeholder="Ciudad">
-								<input name="text" type="number" placeholder="Dirección">
+														</div>
 
-								<h6>Información Adicional</h6>
-								<select>
-									<option selected value="default">Persona</option>
-									<option value="green">Persona Natural</option>
-									<option value="black">Persona Jurídica</option>
-								</select>
-								<select>
-									<option selected value="default">Asesor</option>
-									<option value="green">William Veloza</option>
-									<option value="black">Pagina web</option>
-								</select>
-							</div> <!-- end col -->
+													</div>
 
-							<div class="col-sm-4">
-								<h6>Documentos</h6>
-								<select>
-									<option selected value="default">Tipo de Documento</option>
-									<option value="green">Cédula</option>
-									<option value="black">Nit</option>
-									<option value="black">Pasaporte</option>
-								</select>
-								<input name="text" type="number" placeholder="Identificación">
-									<input name="text" type="number" placeholder="Código Postal">
+												</div>
+											</div>
+											<!-- Datos personales / fin -->
+										</div>
+							</section>
+							<!-- Datos Personales/ Fin -->
 
-									<label for="input-label">Contraseña</label>  <i class="fa fa-eye-slash icon"
-										onclick="mostrarContrasena()"></i>
-								<input name="name" id="input-label" type="password">
-
-								<ul>
-									<li>
-										<input type="checkbox" class="input-checkbox" name="checkbox" id="checkbox2" value="2">
-												<label for="checkbox2">Acepto terminos</label>
-												<a style="cursor: help;" data-toggle="modal" data-target="#Contrato">Ver Aquí</a>
-											</li>
-								</ul><br/>
-
-								<h6>Codígo Promocional</h6>
-								<input name="text" type="number" placeholder="Promocional"><br/>
-
-
-								<a href="#" class="btn btn-lg btn-stroke">Guardar cuenta</a>
-							
-
-							</div> <!-- end col -->
-							
-						
-							<div class="col-sm-4">
-								<a href=""><i class="fa fa-bell fa-3x"></i></a><br/><br/>
-									<h3>Usos del Casillero</h3>
-									<ul style="font-weight: 400;">
-										<li>* Comprador Internacional. Utiliza Fivepaq como tu dirección de compras en Estados Unidos, Europa y China</li><br/>
-										<li>* Manejo un Negocio. Compra con proveedores de confianza, recibimos y traemos tus mercancías desde cualquier parte del mundo.</li><br/>
-										<li>* Necesito Ayuda Para comprar en el mundo. Utiliza nuestro servicio de transporte de Carga Aérea.</li><br/>
-										<li>* Para tarifas adicionales o preferenciales comunícate con nosotros al: +57 1 4954808 para darte más información.</li><br/>
-										
-									</ul>
-
-							</div> <!-- end col -->
-
-						</div> <!-- end row -->
-
-						<!-- end col -->
-
-				
-					</div> <!-- end col -->
-
-					<!-- Sidebar -->
-					<aside class="col-md-3 sidebar">
-						<div class="widget categories">
-							<h3 class="widget-title">Tus Datos</h3>
-							<ul class="list-dividers">
-								<li><a href="calculadora.html">Calculadora</a></li>
-								<li><a href="icon-boxes.html">Planes</a></li>
-								<li><a href="registro.html">Registro</a></li>
-								<li><a href="alert-boxes.html">mc-actuales</a></li>
-								<li><a href="animations.html">mc-alerta</a></li>
-								<li><a href="buttons.html">mc-cambio-password</a></li>
-								<li><a href="columns.html">mc-direcciones</a></li>
-								<li><a href="counters.html">mc-historico</a></li>
-								<li><a href="forms.html">mc-pass-reset</a></li>
-								<li><a href="lightboxes.html">mc-tracking</a></li>
-							</ul>
 						</div>
-					</aside>
+
+					</div> <!-- end col -->
 
 				</div> <!-- end row -->
 			</div> <!-- end container -->
 		</section> <!-- end columns -->
-		
+		<!-- Seccion Casillero -->
+		<section class="" id="casillero">
+			<div class="container">
+				<div class="title-bordered border__dashed">
+					<h3>Consultas de tus Compras</h3>
+				</div>
+				<!-- Accordion with Icons -->
+				<div class="panel-group panel-group__with-icons panel-icon__effect1 col-md-12" id="accordion2"
+					role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne_2">
+							<h5 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion2" href="#collapse3-1"
+									aria-expanded="true" aria-controls="collapse3-1">
+									<i class="fa fa-eye"></i>
+									Envios Actuales
+									<span class="panel-icon"></span></a>
+							</h5>
+						</div>
+						<div id="collapse3-1" class="panel-collapse collapse in" role="tabpanel"
+							aria-labelledby="headingOne_2">
+							<div class="panel-body">
+								<div class="gap-10"></div>
+								<!-- Table – Bordered -->
+								<div id="appPaq" class="table-responsive" v-cloak>
+									<table class="table table-bordered table-striped  table-bordered ">
+										<thead class="table-responsive">
+											<th>Fecha</th>
+											<th>Guía</th>
+											<th>Contenido</th>
+											<th>VR-USD</th>
+											<th>Peso (Grs)</th>
+											<th>Estado</th>
+											<th>&nbsp;</th>
+										</thead>
+										<tbody v-for="paq in results" class="table-responsive">
+											<tr>
+												<td class="table-responsive">
+													{{ paq.ArrivalWinery | formatDate }} </td>
+												<td class="table-responsive">{{ paq.PackageId }}</td>
+												<td class="table-responsive" v-if="paq.Description.length <20">
+													{{ paq.Description }}</td>
+												<td class="table-responsive" v-else="paq.Description.length >=20">
+													{{ paq.Description.substring(0,18)+".."}}</td>
+												<td class="table-responsive">{{ paq.DeclaredValue }}</td>
+												<td class="table-responsive">{{ paq.Weight }}</td>
+												<td class="table-responsive">{{ paq.StateDescription }}</td>
+												<td class="table-responsive"><a
+														:href="'mc-tracking.html?id=' + paq.PackageId +'#headingTrack'">Tracking</a>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+
+								</div>
+								<!-- Table – Bordered / End -->
+								<div class="gap-100"></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTwo_2">
+							<h5 class="panel-title">
+								<a href="mc-alerta.html#headingAlerta" aria-expanded="false"
+									aria-controls="collapse3-2">
+									<i class="fa fa-exclamation-triangle"></i>
+									Alerta tu Envío
+									<span class="panel-icon"></span></a>
+							</h5>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingCalculadora">
+							<h5 class="panel-title">
+								<a href="calculadora-interna.html#headingCalculadora">
+									<i class="fa fa-calculator"></i>
+									Calculadora
+									<span class="panel-icon"></span></a>
+							</h5>
+						</div>
+
+					</div>
+		</section>
+		<!-- Page Section (calculadora) / End -->
+
+
+
 
 
 		<!-- Call to Action -->
@@ -317,9 +398,9 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-sm-9 col-xs-12">		
+					<div class="col-sm-9 col-xs-12">
 						<h2 class="mb-0">¿Estás listo para disfrutar?</h2>
-					</div> 
+					</div>
 					<div class="col-sm-3 col-xs-12 cta-button">
 						<a href="#" class="btn btn-lg btn-dark">Regístrate</a>
 					</div>
@@ -330,7 +411,7 @@
 
 
 		<!-- Footer Type-1 -->
-<footer class="footer footer-type-1">
+		<footer class="footer footer-type-1">
 			<div class="container">
 				<div class="footer-widgets">
 					<div class="row">
@@ -339,18 +420,24 @@
 							<div class="widget footer-about-us">
 								<h5 class="uppercase">Boxluxury</h5>
 								<p style="color: white;" class="mb-20"><strong>Asistencia de compras:</strong>
-									Si no tienes forma de hacer esta compra no hay ningún problema, te contactas con alguno de nuestros asesores y te ayudaremos a buscar un mejor precio, con una cotización gratuita, puedes contactar al teléfono: <strong>321 273 3038.</strong> <br>
+									Si no tienes forma de hacer esta compra no hay ningún problema, te contactas con
+									alguno de nuestros asesores y te ayudaremos a buscar un mejor precio, con una
+									cotización gratuita, puedes contactar al teléfono: <strong>321 273 3038.</strong>
+									<br>
 									<strong>Servicios especializados:</strong>
-									Transporte de Carga Área, Tramites Aduaneros y Tramites de Exportación, llámanos y te informamos</p>
+									Transporte de Carga Área, Tramites Aduaneros y Tramites de Exportación, llámanos y
+									te informamos</p>
 								<p>Mail-marketing:</p>
 								<form class="relative newsletter-form style-2">
 									<input type="email" class="newsletter-input" placeholder="e-mail">
 									<i class="icon_mail"></i>
-									<input type="submit" class="btn btn-md btn-dark newsletter-submit" value="Suscríbete">
+									<input type="submit" class="btn btn-md btn-dark newsletter-submit"
+										value="Suscríbete">
 								</form>
 
 							</div>
-						</div> <!-- end about us --> <!-- end about us -->				
+						</div> <!-- end about us -->
+						<!-- end about us -->
 
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="widget footer-posts with-thumbs">
@@ -366,13 +453,17 @@
 													</a>
 												</div>
 												<div class="entry">
-													<h3 class="entry-title"><a href="magazine-single-article.html">Tiendas Online sólo para ellas.</a></h3>
+													<h3 class="entry-title"><a
+															href="magazine-single-article.html">Tiendas Online sólo para
+															ellas.</a></h3>
 													<ul class="entry-meta list-inline">
 														<li class="entry-date">
-															<a href="https://www.carolinaherrera.com/co/es/?gclid=EAIaIQobChMIpcCqg4yp5QIVjcDACh3AYAR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
+															<a href="https://www.carolinaherrera.com/co/es/?gclid=EAIaIQobChMIpcCqg4yp5QIVjcDACh3AYAR3EAAYASAAEgILG_D_BwE "
+																target="_blank">Para un gusto femenino.</a>
 														</li>
 														<li class="entry-comments">
-															<i class="fa fa-comments"></i><a href="magazine-single-article.html">Visitanos</a>
+															<i class="fa fa-comments"></i><a
+																href="magazine-single-article.html">Visitanos</a>
 														</li>
 													</ul>
 												</div>
@@ -386,13 +477,17 @@
 													</a>
 												</div>
 												<div class="entry">
-													<h3 class="entry-title"><a href="magazine-single-article.html">Tiendas Online sólo para ellos.</a></h3>
+													<h3 class="entry-title"><a
+															href="magazine-single-article.html">Tiendas Online sólo para
+															ellos.</a></h3>
 													<ul class="entry-meta list-inline">
 														<li class="entry-date">
-															<a href="https://www.versace.com/international/en/home/" target="_blank">Para un gusto masculino.</a>
+															<a href="https://www.versace.com/international/en/home/"
+																target="_blank">Para un gusto masculino.</a>
 														</li>
 														<li class="entry-comments">
-															<i class="fa fa-comments"></i><a href="magazine-single-article.html">Visitanos</a>
+															<i class="fa fa-comments"></i><a
+																href="magazine-single-article.html">Visitanos</a>
 														</li>
 													</ul>
 												</div>
@@ -402,33 +497,35 @@
 
 								</div>
 							</div>
-						</div> <!-- end recent posts --> <!-- end latest posts -->
+						</div> <!-- end recent posts -->
+						<!-- end latest posts -->
 					</div>
-				</div>		
+				</div>
 			</div> <!-- end container -->
 
-	<div class="bottom-footer">
+			<div class="bottom-footer">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-4 col-xs-12 copyright">
 							<span>
-								© 2019  |  Por Boxluxury - Dynamic Enterprises SAS
+								© 2019 | Por Boxluxury - Dynamic Enterprises SAS
 							</span>
 						</div>
-							
+
 						<div class="col-md-3 col-xs-12 footer-socials mt-mdm-10 text-right">
 							<div class="social-icons dark">
 								<a href="#"><i class="fa fa-instagram"></i></a>
 								<a href="#"><i class="fa fa-facebook"></i></a>
-							
+
 							</div>
 						</div>
 
 					</div>
 				</div>
 			</div> <!-- end bottom footer -->
-		</footer> <!-- end footer --><!-- end footer -->
+		</footer> <!-- end footer -->
+		<!-- end footer -->
 
 		<div id="back-to-top">
 			<a href="#top"><i class="fa fa-angle-up"></i></a>
@@ -436,7 +533,7 @@
 
 	</div> <!-- end main-wrapper -->
 
-	<!-- jQuery Scripts -->		
+	<!-- jQuery Scripts -->
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/plugins.js"></script>
@@ -449,7 +546,8 @@
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.carousel.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.actions.min.js"></script>
-	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript"
+		src="../revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.migration.min.js"></script>
@@ -623,19 +721,31 @@
 		</div>
 	</div>
 	<!--FIN MODAL CONTRATO-->
+
 </html>
 
-		<!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
-	<script>
-		function mostrarContrasena() {
-			var tipo = document.getElementById("passwordRegistro");
-			if (tipo.type == "password") {
-				tipo.type = "text";
-			} else {
-				tipo.type = "password";
-			}
-		}
-	</script>
-	  
+<!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
+<script>
+	function cerrarsesion() {
+		fivepaq.logOut();
+		location.href = "../index.html";
+	}
+	var dataout = fivepaq.dataOut();
+
+	if (dataout == null || dataout.L !== true) {
+		location.href = "";
+	}
+
+	$("#nomUsuario").html(dataout.U);//este es el campo del usuario
+	$("#emailUsuario").html(dataout.E);//este es el campo del Email
+	$("#numCasillero").html(dataout.N);//Este es campo del casillero
+	$("#telefonoUsuario").html(dataout.Tel);//Este es campo del telefono
+
+
+</script>
+<script src="../js/mc-actuales.js"></script>
+<script src="../js/moment.js"></script>
+
 </body>
+
 </html>

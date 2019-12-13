@@ -18,7 +18,7 @@ Table of Content
 
 .oh { overflow: hidden; }
 .relative { position: relative; }
-.section-wrap { padding: 100px 0; overflow: hidden; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.section-wrap { padding: 50px 0; overflow: hidden; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 .section-wrap-lg { padding: 120px 0; overflow: hidden; position: relative; background-attachment: fixed; background-size: cover; }
 .mobile section { background-attachment: scroll !important; }
 .static { position: static; }
