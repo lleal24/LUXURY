@@ -1,4 +1,3 @@
-
 var fivepaq = {
 	Login: function (email, password, rememberMe, LoginOk, LoginFail) {
 		sessionStorage.removeItem('appData')
@@ -243,11 +242,11 @@ var fivepaq = {
 		});
 		return vars;
 	},
-	changePass: function (Email, OldPassword, NewPassword) {
-		debugger;	
+	changePass: function (OldPassword, NewPassword) {
+		debugger
 		Datos = new Object();
 		var code = JSON.parse(sessionStorage.getItem('appData'));
-		Datos.Email = Email;
+		Datos.Email = code.E;
 		Datos.OldPassword = OldPassword;
 		Datos.NewPassword = NewPassword;
 
@@ -263,17 +262,18 @@ var fivepaq = {
 				console.log(result);
 				sessionStorage.removeItem("appData");
 				debugger;
-				Swal.fire({
+				swal({
 					title: '¡Se  ha cambiado tu contraseña.!',
 					text: "Por favor inicia sesión nuevamente",
 					type: 'success',
 					confirmButtonText: 'Ok',
-					allowOutsideClick: false,	
+					allowOutsideClick: false,
 				}).then((result) => {
-					if (result.value) {
+					location.href = "../index.html"
+				/* 	if (result.value) {
 						debugger;
-						location.href = "index.html";
-					}
+						location.href = "../index.html";
+					} */
 				})
 				
 			})

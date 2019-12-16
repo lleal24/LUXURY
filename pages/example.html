@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script src="../vendor/jquery.validate.js"></script>
+
+</head>
+
+<body>
+    <form id="ejemplo">
+        <label for="">Nombre</label><br>
+        <input type="text" name="nombre" id="nombre" required><br>
+        <label for="">Apellido</label><br>
+        <input type="text" name="apellido" id="apellido"><br>
+        <label for="">edad</label><br><br>
+        <input type="number" name="edad" id="edad"><br>
+        <input type="submit" value="enviar" ><br>
+        
+    </form>
+
+    <script>
+        $("#ejemplo").validate({
+            rules: {
+                nombre: {
+                    required: true,
+                    maxlength: 50,
+                },
+                apellido: {
+                    required: true,
+                    maxlength: 50,
+                },
+                edad: {
+                    required: true,
+                    maxlength: 50
+                }
+            },
+            messages: {
+                nombre: 'El campo es requerido',
+                apellido: 'Contraseña minimo 6 caracteres',
+                edad: 'Contraseña minimo 6 caracteres',
+            }
+        });
+    </script>
+
+</body>
+
+</html>
