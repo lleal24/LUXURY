@@ -750,6 +750,7 @@
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.migration.min.js"></script>
 	<script type="text/javascript" src="../revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+
 </html>
 
 <!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
@@ -772,6 +773,7 @@
 
 </script>
 <!-- CALCULADORA -->
+
 <script type="text/javascript">
 	fivepaq.CargarCiudades();
 	$(document).ready(function () {
@@ -856,6 +858,7 @@
 
 
 	function calcularClick() {
+
 		if (!validarIdConvenio()) { /* cambio agregado */
 			return;
 		}
@@ -884,6 +887,7 @@
 	}
 
 	function limpiarCalculadora() {
+
 		$("#idConvenio").val('');
 		$("#ciudadTipo").val('');
 		$("#ciudadId").val('');
@@ -924,8 +928,22 @@
 	if ($("#alto").val() != "") {
 		alto = $("#alto").val();
 	}
+	/* VALIDACION DE LAS DIMENSIONES  */
+	function validarDimensiones(){
+		if(document.getElementById('ancho').value == ''){
+			document.getElementById('ancho').value = '0';
+		}
+		if(document.getElementById('largo').value == ''){
+			document.getElementById('largo').value = '0';
+		}
+		if(document.getElementById('alto').value == ''){
+			document.getElementById('alto').value = '0';
+		}
+
+	}
 
 	function getUrlCalculadora() {
+		validarDimensiones();
 		/* obtener dato del sessionStorage */
 		let data = sessionStorage.getItem('appData');
 		let datFormat = JSON.parse(data)
