@@ -393,7 +393,7 @@ p {
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  z-index: 1200;
+  z-index: 1200; 
 }
 
 .logo-container {
@@ -446,6 +446,7 @@ p {
   font-size: 13px;
   padding: 0 20px;
   line-height: 100px;
+ 
 }
 
 .navbar-nav > li:last-child > a {
@@ -517,7 +518,7 @@ header.transparent .navigation.scrolling .navbar-nav > .active > a:hover {
   height: 60px;
   top: 0;
   box-shadow: 0 0 5px rgba(0,0,0,.1);
-  z-index: 1009;
+  z-index: 1009; 
 }
 
 .navigation.scrolling {

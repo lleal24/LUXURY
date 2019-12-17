@@ -180,6 +180,10 @@ const vmodal = new Vue({
         .then(function (response) {
             debugger
           console.log(response);
+          let modal = document.getElementById('show-modal');
+      
+          
+
           // this.limpiar();
           // limpiar();
           Swal.fire({
