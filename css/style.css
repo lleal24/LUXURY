@@ -6772,6 +6772,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a46e1e', end
 .alert-warning { background-color: #faf8f0; color: #cc9c69; }
 .alert-danger { background-color: #faefee; color: #ef5659; }
 
+/* Solucion al alert por detras del modal */
+.swal2-container {
+  z-index: 1600;
+}
+
 
 
 /* Form Elements
