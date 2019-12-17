@@ -3001,8 +3001,22 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		if ($("#alto").val() != "") {
 			alto = $("#alto").val();
 		}
+		/* VALIDACION DE LAS DIMENSIONES  */
+	function validarDimensiones(){
+		if(document.getElementById('ancho').value == ''){
+			document.getElementById('ancho').value = '0';
+		}
+		if(document.getElementById('largo').value == ''){
+			document.getElementById('largo').value = '0';
+		}
+		if(document.getElementById('alto').value == ''){
+			document.getElementById('alto').value = '0';
+		}
+
+	}
 		let data = sessionStorage.getItem('appData');
 		function getUrlCalculadora() {
+			validarDimensiones();
 			var url = "https://fpaq.azurewebsites.net/api/calculators/";
 			//var url = "https://fpaq.azurewebsites.net/api/calculators/";
 			// var url = "https://localhost:44347/api/calculators/";			
