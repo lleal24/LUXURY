@@ -297,7 +297,7 @@ var fivepaq = {
 		$.ajax(ajaxObj)
 			.done(function (result) {
 				console.log("Envio mail");
-				swal.fire({
+				Swal.fire({
 					title: '¡Te Enviamos un Email!',
 					text: "Te hemos enviado un correo electrónico con instrucciones para volver a establecer tu contraseña.",
 					type: 'success',
