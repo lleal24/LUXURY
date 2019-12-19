@@ -374,8 +374,6 @@ var fivepaq = {
 						location.href = "index.html";
 					}
 				})
-
-
 			})
 
 	},

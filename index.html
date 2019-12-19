@@ -141,7 +141,7 @@
 										<a href="#services">Beneficios</a>
 									</li>-->
 									<li>
-										<a href="pages/calculadora.html#headingCalculadora">Calculadora</a>
+										<a href="#calculadora">Calculadora</a>
 									</li>
 
 									<!--<li>
@@ -872,9 +872,12 @@ w.ds " target="_blank" class="relative oh">
 					<span class="intro-heading">Selecciona un plan</span>
 					<!-- <input type="hidden" id="idConvenio" value="3"> -->
 					<div class="checkout-steps">
-						<a id='3' onclick="enviarConvenio(3)">BOXLUXURY STANDART</a>
+						<a id='2' onclick="enviarConvenio(2)"><span class="angle"></span>PYMEBOX
+							BOXLUXURY</a>
+						<a id='3' onclick="enviarConvenio(3)"><span class="angle"></span>BOXLUXURY STANDART</a>
 						<a id='5' onclick="enviarConvenio(5)" class="active"><span class="angle"></span>BOXLUXURY
 							CLUB</a>
+
 					</div></br></br></br>
 					<div class="row">
 						<div class="col-sm-6">
@@ -1586,9 +1589,11 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 
 								<div class="custom-control custom-checkbox">
-									<input class="custom-control-input" type="checkbox" id="ex-check-1">
-									<label class="custom-control-label" for="ex-check-1">Acepto términos y
+									<label class="custom-control-label" for="check">Acepto términos y
 										condiciones</label>
+									<input class="custom-control-input" name="checkbox[]" type="checkbox"
+										id="checkbox1">
+
 									<a href="" data-toggle="modal" data-target="#exampleModalScrollable">Ver Aquí</a>
 
 								</div>
@@ -2321,7 +2326,12 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 						maxlength: 50,
 						equalTo: "#passwordRegistro",
 						minlength: 5
+					},
+					"checkbox[]": {
+						required: true,
+						minlength: 1
 					}
+
 				},
 				messages: {
 					nombre: 'El campo es requerido',
@@ -2335,6 +2345,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 					documento: 'El campo es requerido',
 					cpostal: 'El campo es requerido',
 					passwordRegistro: 'Contraseña minimo 6 caracteres',
+					"checkbox[]": 'Valide las condiciones'
 
 				},
 				submitHandler: function (form) {
@@ -2473,9 +2484,9 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 								<div class="d-flex flex-row d-flex justify-content-around mb-5">
 									<div class="custom-control custom-checkbox mt-4">
-										<input class="custom-control-input" type="checkbox" id="RememberMe">
 										<label class="custom-control-label" for="RememberMe">Recordar
 											Contraseña</label>
+										<input class="custom-control-input" type="checkbox" id="RememberMe">
 										<a style="margin-left: 7rem;" class="navi-link_1"
 											href="pages/account-password-recovery.html">¿Olvidaste
 											tu contraseña?</a>
@@ -2915,16 +2926,25 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			debugger;
 			limpiarClick();
 			if (convenio == 5) {
-				let elementAct = document.getElementById('5');
-				elementAct.classList.add('active');
-				let elementInac = document.getElementById('3');
-				elementInac.classList.remove('active')
-			} else {
-				let elementAct = document.getElementById('3');
-				elementAct.classList.add('active');
-				let elementInac = document.getElementById('5');
-				elementInac.classList.remove('active')
+				document.getElementById('5').classList.add('active');
+				document.getElementById('3').classList.remove('active');
+				document.getElementById('2').classList.remove('active');
+
+
 			}
+			if (convenio == 3) {
+				document.getElementById('3').classList.add('active');
+				document.getElementById('5').classList.remove('active');
+				document.getElementById('2').classList.remove('active');
+
+
+			}
+			if (convenio == 2) {
+				document.getElementById('2').classList.add('active');
+				document.getElementById('5').classList.remove('active');
+				document.getElementById('3').classList.remove('active');
+			}
+
 			sessionStorage.setItem('appData', convenio);
 			console.log(convenio);
 
@@ -3002,20 +3022,21 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			alto = $("#alto").val();
 		}
 		/* VALIDACION DE LAS DIMENSIONES  */
-	function validarDimensiones(){
-		if(document.getElementById('ancho').value == ''){
-			document.getElementById('ancho').value = '0';
-		}
-		if(document.getElementById('largo').value == ''){
-			document.getElementById('largo').value = '0';
-		}
-		if(document.getElementById('alto').value == ''){
-			document.getElementById('alto').value = '0';
+		function validarDimensiones() {
+			if (document.getElementById('ancho').value == '') {
+				document.getElementById('ancho').value = '0';
+			}
+			if (document.getElementById('largo').value == '') {
+				document.getElementById('largo').value = '0';
+			}
+			if (document.getElementById('alto').value == '') {
+				document.getElementById('alto').value = '0';
+			}
+
 		}
 
-	}
-		let data = sessionStorage.getItem('appData');
 		function getUrlCalculadora() {
+			let data = sessionStorage.getItem('appData');
 			validarDimensiones();
 			var url = "https://fpaq.azurewebsites.net/api/calculators/";
 			//var url = "https://fpaq.azurewebsites.net/api/calculators/";
