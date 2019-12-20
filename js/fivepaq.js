@@ -270,18 +270,24 @@ var fivepaq = {
 					allowOutsideClick: false,
 				}).then((result) => {
 					location.href = "../index.html"
-				/* 	if (result.value) {
-						debugger;
-						location.href = "../index.html";
-					} */
+					/* 	if (result.value) {
+							debugger;
+							location.href = "../index.html";
+						} */
 				})
-				
+
 			})
 			.fail(function (jqXHR, textStatus) {
 				console.log("sadRequest");
 				console.log(jqXHR);
 				console.log(textStatus);
-				
+				Swal.fire({
+					title: '¡Algo paso!',
+					text: "Revisa tu contraseña actual",
+					type: 'error',
+					confirmButtonText: 'Ok',
+				})
+
 			})
 
 	},
@@ -306,7 +312,7 @@ var fivepaq = {
 				}).then((result) => {
 					if (result.value) {
 						debugger;
-						location.href = "index.html";
+						location.href = "../index.html";
 					}
 				})
 			})
@@ -354,7 +360,7 @@ var fivepaq = {
 					allowOutsideClick: false,
 				}).then((result) => {
 					if (result.value) {
-						location.href = "index.html";
+						location.href = "../index.html";
 					}
 				})
 			})
@@ -371,33 +377,36 @@ var fivepaq = {
 					allowOutsideClick: false,
 				}).then((result) => {
 					if (result.value) {
-						location.href = "index.html";
+						location.href = "../index.html";
 					}
 				})
 			})
 
 	},
-	prealertaImage: function (clientID, trackingNumber, ImageUrl, idCarrier, description, idLocation, TariffCode) {
+	prealertaImage: function (clientID,
+		trackingNumber, idCarrier, idLocation, TariffCode, description) {
 		debugger;
 		var dataIn = fivepaq.dataOut();
-		Alerta = new Object();
-		Alerta.clientID = clientID;
-		Alerta.trackingNumber = trackingNumber;
-		Alerta.ImageUrl = ImageUrl;
-		Alerta.idCarrier = idCarrier;
-		Alerta.description = description;
-		Alerta.idLocation = idLocation;
-		Alerta.TariffCode = TariffCode;
+		let formData = new FormData();
+		formData.append('clientID', clientID); 
+		formData.append('trackingNumber', trackingNumber);
+		let imagen = document.getElementById('ImageUrl').files[0]; 
+		formData.append('ImageUrl',imagen);
+		formData.append('idCarrier', idCarrier);
+		formData.append('description', description); 
+		formData.append('idLocation', idLocation);
+		formData.append('TariffCode', TariffCode);
 
 		$.ajax({
 			// url: "https://fpaq.azurewebsites.net/api/PreAlerts/CreatePrealertWithImageAsync",
 			url: "https://fpaq.azurewebsites.net/api/PreAlerts/CreatePrealertWithImageAsync",
 			type: 'POST',
-			contentType: "application/json;charset=utf-8",
-			headers: {
+			contentType: false,
+			processData: false,
+			data: formData,
+			 headers: {
 				'Authorization': 'Bearer ' + dataIn.T
-			},
-			data: JSON.stringify(Alerta),
+			}, 	
 			success: function (response) {
 				AlertSuccessImage(response);
 			},

@@ -149,8 +149,9 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planes</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" onclick="javascript:location.href='calculadora.html#headingCalculadora'"  class="dropdown-toggle"
-                                            data-toggle="dropdown">Calculadora</a>
+                                        <a href="#"
+                                            onclick="javascript:location.href='calculadora.html#headingCalculadora'"
+                                            class="dropdown-toggle" data-toggle="dropdown">Calculadora</a>
                                     </li> <!-- end portfolio -->
 
                                     <li class="dropdown">
@@ -324,8 +325,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne_2">
                             <h5 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion2" href="mc-actuales.html"
-                                    aria-expanded="true" aria-controls="collapse3-1">
+                                <a  href="../pages/mc-actuales.html#collapse3-1">
                                     <i class="fa fa-eye"></i>
                                     Envios Actuales
                                     <span class="panel-icon"></span></a>
@@ -439,18 +439,12 @@
                                         <div class="form-group">
                                             <label for="idArchivo">Adjuntar factura de compra *</label>
                                             <div class="input-group">
-                                                <input type="file" id="ImagenUrl" onchange="readURL(this)">
+                                                <input type="file" id="ImageUrl" onchange="validarExtencion()">
                                                 <p> * Utilice archivos en formato: .gif, .jpg, .png para adjuntar la
                                                     factura.<br>
                                                     * Utilice archivos con un tamaño NO superior a 1 MB.</p>
-
-                                                <!-- 	<div class="input-group-addon"><i class="fa fa-calculator mt-3"></i>
-                                                    </div>
-                                                    <input class="form-control form-control-rounded form-control-sm"
-                                                        type="number" placeholder="Valor USD" id="Valor" name="Valor"
-                                                        value='' data-toggle="tooltip" data-placement="auto" required=""
-                                                        title="Valor del producto"> -->
                                             </div>
+                                            <button onclick="quitarArchivo()">Quitar Archivo</button>
                                         </div>
                                     </div>
 
@@ -743,52 +737,35 @@
         $('#posicionArancelaria').val('');
         $('#descripcion').val('');
         $('#Valor').val('');
+        $('#ImageUrl').val('');
 
+    }
+    function quitarArchivo() {
+        $('#ImageUrl').val('');
     }
     function validarExtencion() {
-        var fileInput = (document.getElementById('ImagenUrl')).value;
-        var extPermitidas = /(.jpg|.png|.gif)$/i;
+        var fileInput = (document.getElementById('ImageUrl')).value;
+        var extPermitidas = /(.jpg|.png|.jpeg|.gif|.pdf)$/i;
         if (!extPermitidas.exec(fileInput)) {
             console.log('Extension invalida')
-        } else {
-            console.log(fileInput)
+            Swal.fire({
+                title: 'Extension invalida!',
+                text: 'Valida que el archivo sea extension .jpg, .png, .gif, .pdf',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+                type: 'error'
+            });
         }
     }
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            debugger;
-            reader.onload = function (e) {
-                /*   $('#blah')
-                      .attr('src', e.target.result); */
-                console.log(e.target.result);
-
-
-            };
-
-            reader.readAsDataURL(input.files[0]);
-            console.log(input.files[0]);
-            sessionStorage.setItem('file', JSON.stringify(input.files[0]));
-        }
-    }
-
     function grabarClick() {
-
-        if (!validarAlerta()) {
-            return;
-        }
-        // else {
         debugger;
         var dataout = JSON.parse(sessionStorage.getItem('appData'));
         var fil = JSON.parse(sessionStorage.getItem('file'));
         console.log(fil);
-
         debugger;
         var datos = {
             clientID: dataout.C,
             trackingNumber: $("#trackingNumber").val(),
-            /* ImageUrl: fil, */
             idCarrier: $("#idCarrier").val(),
             idLocation: $("#direcciones").val(),
             destinatario: $("#destinatario").val(),
@@ -796,10 +773,25 @@
             description: $("#descripcion").val(),
             value: $("#Valor").val()
         }
-        fivepaq.prealertaValue(datos.clientID,
-            datos.trackingNumber, /* datos.ImageUrl,  */datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
-    } /*prealertaImage */
+        if (document.getElementById('ImageUrl').value == "") {
+            fivepaq.prealertaValue(datos.clientID,
+                datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
 
+        } else {
+
+            fivepaq.prealertaImage(datos.clientID,
+                datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
+
+        }
+    }
+    function AlertSuccessImage(response) { /* AlertSuccessValue */
+        limpiarAlerta();
+        Swal.fire(
+            '¡Se Alerto tu paquete! \n Con el Numero: ' + response.PreAlertId + ' ¡Guardalo!',
+            '¡Nosotros nos encargamos!',
+            'success'
+        );
+    }
     function AlertSuccessValue(response) {
         limpiarAlerta();
         Swal.fire(
