@@ -444,7 +444,12 @@
                                                     factura.<br>
                                                     * Utilice archivos con un tamaño NO superior a 1 MB.</p>
                                             </div>
-                                            <button onclick="quitarArchivo()">Quitar Archivo</button>
+                                            <p>
+                                                <span><b>*De no estar seguro de su factura por favor NO adjunte el archivo</b>
+                                                    <button onclick="quitarArchivo()" class="specialbtn">Eliminar Archivo</button>
+                                                </span>
+                                            </p>
+                                           <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
                                         </div>
                                     </div>
 
@@ -755,6 +760,7 @@
                 confirmButtonText: 'Ok',
                 type: 'error'
             });
+            $('#ImageUrl').val('');
         }
     }
     function grabarClick() {
