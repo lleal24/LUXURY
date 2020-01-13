@@ -552,7 +552,16 @@ header.transparent .navigation.scrolling .navbar-nav > .active > a:hover {
   left: auto;
   right: 0;
 }
+/* Alinear mostrar contraseña */
+.alinear{
+  float: right;
+  margin-top: -9%;
+  margin-right: 5%;
+  position: relative;
+  display: block; 
+  z-index: 2;
 
+}
 .dropdown-menu {
   min-width: 200px;
   margin: 0;
@@ -6477,6 +6486,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a46e1e', end
 .btn.btn-white:hover {
   background-color: #121212;
 }
+.specialbtn{
+  border: none;
+  color: #0a0f58;
+}
+.specialbtn:hover{
+  color: whitesmoke;
+  background: #286090;;
+}
+  
 
 
 /* Lightboxes
@@ -7031,3 +7049,15 @@ label {
     display: none;
   }
 }
+@media only screen and (max-width: 600px) {
+  .alinear{
+    float: right;
+    margin-top: -20%;
+    margin-right: 5%;
+    position: relative;
+    z-index: 2;
+
+  
+  }
+}
+
