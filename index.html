@@ -2464,23 +2464,17 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 								<div class="form-group">
 									<label>Ingresa Contraseña</label>
+
 									<input type="password" id="Password" name="password" class="form-control"
 										placeholder="Contraseña" aria-label="Recipient's username"
 										aria-describedby="button-addon2" style=" margin-bottom: 2rem;">
+
+
 									<span style="margin-left: 1rem;" id="password" onclick="mostrarPassword()"
-										class="fa fa-eye-slash icon"></span>
+										class="fa fa-eye-slash icon alinear"></span>
+
 
 								</div>
-
-								<!-- <div class="form-group">
-									<label for="pass">Contraseña</label> <i class="fa fa-eye" id="show"></i>
-									<div class="input-group"  id="Password" name="password">
-										<span class="input-group-addon"><i class="fa fa-lock fa-lg"
-												aria-hidden="true"></i></span>
-										<input type="password" class="form-control" name="password"
-											placeholder="Tu Password" />
-									</div>
-								</div>  -->
 
 								<div class="d-flex flex-row d-flex justify-content-around mb-5">
 									<div class="custom-control custom-checkbox mt-4">
@@ -2792,18 +2786,49 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			$("#mensajeLogin").addClass('alert alert-danger');
 			$("#loader").hide();
 		}
+		function obtenerCookieUsername() {
+			var name = username + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+			}
+			return "";
+		}
+		function leerCookie(nombre) {
+         var lista = document.cookie.split(";");
+         for (i in lista) {
+             var busca = lista[i].search(nombre);
+             if (busca > -1) {micookie=lista[i]}
+             }
+         var igual = micookie.indexOf("=");
+         var valor = micookie.substring(igual+1);
+         return valor;
+         }
 
 		function logueo() {
 			debugger
+			let user = leerCookie("username");
+			console.log(user);
+			let expiresdate = new Date(2068, 1, 02, 11, 20);
 			$("#loader").show();
 			var datos = {
 				Email: $("#Email").val(),
 				Password: $("#Password").val(),
 				RememberMe: $("#RememberMe").prop('checked')
 			};
+			/* Guardar datos recordar contraseña  */
+			if ($("#RememberMe").prop('checked')) {
+				document.cookie = "username=" + encodeURIComponent(btoa(datos.Email)) + "; expires=" + expiresdate.toUTCString();
+				document.cookie = "password=" + encodeURIComponent(btoa(datos.Password)) + "; expires=" + expiresdate.toUTCString();
+			}
 
 			fivepaq.Login(datos.Email, datos.Password, datos.RememberMe, LoginOk, LoginFail);
+			console.log(obtenerCookiePassword());
+
 		}
+
 
 		function validar(id) {
 			var elemento = document.getElementById(id);
