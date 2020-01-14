@@ -262,7 +262,7 @@ var fivepaq = {
 				console.log(result);
 				sessionStorage.removeItem("appData");
 				debugger;
-				swal({
+				Swal.fire({
 					title: '¡Se  ha cambiado tu contraseña.!',
 					text: "Por favor inicia sesión nuevamente",
 					type: 'success',
