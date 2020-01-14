@@ -651,8 +651,10 @@
     $("#telefonoUsuario").html(dataout.Tel);//Este es campo del telefono
 </script>
 <script>
-    function DireccionesOk(data) {
-        // $('#direcciones').append('<option value='' selected>Selecciona la Dirección de Destino</option>')
+    let direcciones = document.getElementById('direcciones');
+    direcciones.onclick = DireccionesOk(data);
+
+     function DireccionesOk(data) {
         $.each(data, function (i, item) {
             $('#direcciones').append(
 
@@ -661,7 +663,8 @@
 
         });
 
-    }
+    } 
+
     function validarTrack() {
         debugger;
         var tracking = $('#trackingNumber').val();
