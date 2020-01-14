@@ -2796,21 +2796,9 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			}
 			return "";
 		}
-		function leerCookie(nombre) {
-			var lista = document.cookie.split(";");
-			for (i in lista) {
-				var busca = lista[i].search(nombre);
-				if (busca > -1) { micookie = lista[i] }
-			}
-			var igual = micookie.indexOf("=");
-			var valor = micookie.substring(igual + 1);
-			return valor;
-		}
-
+	
 		function logueo() {
 			debugger
-			let user = leerCookie("username");
-			console.log(user);
 			let expiresdate = new Date(2068, 1, 02, 11, 20);
 			$("#loader").show();
 			var datos = {
@@ -2823,10 +2811,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				document.cookie = "username=" + encodeURIComponent(btoa(datos.Email)) + "; expires=" + expiresdate.toUTCString();
 				document.cookie = "password=" + encodeURIComponent(btoa(datos.Password)) + "; expires=" + expiresdate.toUTCString();
 			}
-
 			fivepaq.Login(datos.Email, datos.Password, datos.RememberMe, LoginOk, LoginFail);
-			console.log(obtenerCookiePassword());
-
 		}
 
 

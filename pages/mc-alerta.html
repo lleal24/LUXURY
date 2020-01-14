@@ -48,12 +48,15 @@
 
     <!-- Head Libs -->
     <script src="../js/fivepaq.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-select@3.1.0/dist/vue-select.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Validator -->
+    <script src="../vendor/jquery.validate.js"></script>
+    <script src="../vendor/modernizr.js"></script>
 
 </head>
 
@@ -325,7 +328,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne_2">
                             <h5 class="panel-title">
-                                <a  href="../pages/mc-actuales.html#collapse3-1">
+                                <a href="../pages/mc-actuales.html#collapse3-1">
                                     <i class="fa fa-eye"></i>
                                     Envios Actuales
                                     <span class="panel-icon"></span></a>
@@ -335,6 +338,7 @@
 
 
                     <!-- SECCION ALERTA TU ENVIO -->
+
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingAlerta">
                             <h5 class="panel-title">
@@ -346,7 +350,6 @@
                             </h5>
                             <div id="collapseAlerta" class="panel-collapse collapse in" role="tabpanel"
                                 aria-labelledby="headingAlerta">
-
                                 <div class="panel-body">
                                     <div class="gap-10"></div>
                                     <div class="col-md-6">
@@ -354,7 +357,7 @@
                                             <select class="form-control form-control-rounded form-control-sm"
                                                 id="idCarrier" name="idCarrier" data-toggle="tooltip"
                                                 data-placement="auto" title="Selecciona la Compañía Transportadora">
-                                                <option selected value=''>Compañía Transportadora</option>
+                                                <option selected value='default'>Compañía Transportadora</option>
                                                 <option value='1'>USPS</option>
                                                 <option value='2'>Fedex</option>
                                                 <option value='3'>Amazon</option>
@@ -381,7 +384,8 @@
                                             <select class="form-control form-control-rounded form-control-sm"
                                                 id="direcciones" name="direcciones" data-toggle="tooltip"
                                                 data-placement="auto" title="Selecciona la Dirección de Destino"
-                                                placeholder="Selecciona la Dirección de Destino">
+                                                placeholder="Selecciona la Dirección de Destino"
+                                                onclick="DireccionesOK(data)">
                                                 <!-- envioIdLocation -->
                                                 <option value=''>Selecciona la Dirección de Destino </option>
                                             </select>
@@ -411,7 +415,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-shopping-bag"></i></div>
+                                                <div class="input-group-addon"><i class="fa fa-shopping-bag"></i>
+                                                </div>
                                                 <input class="form-control form-control-rounded form-control-sm"
                                                     type="text" id="descripcion" name="descripcion" value=''
                                                     placeholder="Descripción del producto" data-toggle="tooltip"
@@ -440,16 +445,18 @@
                                             <label for="idArchivo">Adjuntar factura de compra *</label>
                                             <div class="input-group">
                                                 <input type="file" id="ImageUrl" onchange="validarExtencion()">
-                                                <p> * Utilice archivos en formato: .gif, .jpg, .png para adjuntar la
+                                                <p> * Utilice archivos en formato: .gif, .jpg, .png, .pdf para adjuntar la
                                                     factura.<br>
                                                     * Utilice archivos con un tamaño NO superior a 1 MB.</p>
                                             </div>
                                             <p>
-                                                <span><b>*De no estar seguro de su factura por favor NO adjunte el archivo</b>
-                                                    <button onclick="quitarArchivo()" class="specialbtn">Eliminar Archivo</button>
+                                                <span><b>*De no estar seguro de su factura por favor NO adjunte el
+                                                        archivo</b>
+                                                    <button onclick="quitarArchivo()" class="specialbtn">Eliminar
+                                                        Archivo</button>
                                                 </span>
                                             </p>
-                                           <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
+                                            <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
                                         </div>
                                     </div>
 
@@ -466,7 +473,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
 
@@ -610,8 +616,8 @@
     </div> <!-- end main-wrapper -->
 
     <!-- jQuery Scripts -->
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <!--  <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="../js/plugins.js"></script>
     <script type="text/javascript" src="../revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="../revolution/js/jquery.themepunch.revolution.min.js"></script>
@@ -651,10 +657,7 @@
     $("#telefonoUsuario").html(dataout.Tel);//Este es campo del telefono
 </script>
 <script>
-    let direcciones = document.getElementById('direcciones');
-    direcciones.onclick = DireccionesOk(data);
-
-     function DireccionesOk(data) {
+    function DireccionesOk(data) {
         $.each(data, function (i, item) {
             $('#direcciones').append(
 
@@ -663,7 +666,7 @@
 
         });
 
-    } 
+    }
 
     function validarTrack() {
         debugger;
@@ -752,8 +755,11 @@
         $('#ImageUrl').val('');
     }
     function validarExtencion() {
-        var fileInput = (document.getElementById('ImageUrl')).value;
-        var extPermitidas = /(.jpg|.png|.jpeg|.gif|.pdf)$/i;
+        let fileInput = (document.getElementById('ImageUrl')).value;
+        let fileSize = $('#ImageUrl')[0].files[0].size;
+        console.log(fileSize);
+        let sizekiloByte = parseInt(fileSize / 1024);
+        let extPermitidas = /(.jpg|.png|.jpeg|.gif|.pdf)$/i;
         if (!extPermitidas.exec(fileInput)) {
             console.log('Extension invalida')
             Swal.fire({
@@ -765,9 +771,17 @@
             });
             $('#ImageUrl').val('');
         }
+        if(fileSize > 1000000){
+            alert('Archivo muy pesado');
+        }
+
     }
+
     function grabarClick() {
         debugger;
+        //codigin
+
+
         var dataout = JSON.parse(sessionStorage.getItem('appData'));
         var fil = JSON.parse(sessionStorage.getItem('file'));
         console.log(fil);
