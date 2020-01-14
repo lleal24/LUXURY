@@ -2797,15 +2797,15 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			return "";
 		}
 		function leerCookie(nombre) {
-         var lista = document.cookie.split(";");
-         for (i in lista) {
-             var busca = lista[i].search(nombre);
-             if (busca > -1) {micookie=lista[i]}
-             }
-         var igual = micookie.indexOf("=");
-         var valor = micookie.substring(igual+1);
-         return valor;
-         }
+			var lista = document.cookie.split(";");
+			for (i in lista) {
+				var busca = lista[i].search(nombre);
+				if (busca > -1) { micookie = lista[i] }
+			}
+			var igual = micookie.indexOf("=");
+			var valor = micookie.substring(igual + 1);
+			return valor;
+		}
 
 		function logueo() {
 			debugger
@@ -2873,10 +2873,6 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		});
 	</script>
 	<!-- FIN MOSTRAR CONTRASEÑA -->
-
-
-
-
 	<!-- CALCULADORA -->
 	<script type="text/javascript">
 		fivepaq.CargarCiudades();
@@ -2964,7 +2960,9 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 
 			}
+			/* convenio temporal de pruebas */
 			if (convenio == 2) {
+				convenio = 3; 
 				document.getElementById('2').classList.add('active');
 				document.getElementById('5').classList.remove('active');
 				document.getElementById('3').classList.remove('active');
