@@ -54,7 +54,6 @@
     <script src="https://unpkg.com/vue-select@3.1.0/dist/vue-select.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Validator -->
     <script src="../vendor/jquery.validate.js"></script>
     <script src="../vendor/modernizr.js"></script>
 
@@ -340,139 +339,144 @@
                     <!-- SECCION ALERTA TU ENVIO -->
 
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingAlerta">
-                            <h5 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2"
-                                    href="#collapseAlerta" aria-expanded="false" aria-controls="collapse3-2">
-                                    <i class="fa fa-exclamation-triangle"></i>
-                                    Alerta tu Envío
-                                    <span class="panel-icon"></span></a>
-                            </h5>
-                            <div id="collapseAlerta" class="panel-collapse collapse in" role="tabpanel"
-                                aria-labelledby="headingAlerta">
-                                <div class="panel-body">
-                                    <div class="gap-10"></div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select class="form-control form-control-rounded form-control-sm"
-                                                id="idCarrier" name="idCarrier" data-toggle="tooltip"
-                                                data-placement="auto" title="Selecciona la Compañía Transportadora">
-                                                <option selected value='default'>Compañía Transportadora</option>
-                                                <option value='1'>USPS</option>
-                                                <option value='2'>Fedex</option>
-                                                <option value='3'>Amazon</option>
-                                                <option value='4'>UPS</option>
-                                                <option value='5'>DHL</option>
-                                                <option value='1006'>Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
-                                                <input class="form-control form-control-rounded form-control-sm"
-                                                    type="number" id="trackingNumber" name="trackingNumber" value=''
-                                                    placeholder="#Tracking" data-toggle="tooltip" data-placement="auto"
-                                                    title="entre 6 a 100 numeros" maxlength="50"
-                                                    onchange="validarTrack()">
+                        <form id="alertar">
+                            <div class="panel-heading" role="tab" id="headingAlerta">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion2"
+                                        href="#collapseAlerta" aria-expanded="false" aria-controls="collapse3-2">
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                        Alerta tu Envío
+                                        <span class="panel-icon"></span></a>
+                                </h5>
+                                <div id="collapseAlerta" class="panel-collapse collapse in" role="tabpanel"
+                                    aria-labelledby="headingAlerta">
+                                    <div class="panel-body">
+                                        <div class="gap-10"></div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <select required
+                                                    class="form-control form-control-rounded form-control-sm"
+                                                    id="idCarrier" name="idCarrier" data-toggle="tooltip"
+                                                    data-placement="auto" title="Selecciona la Compañía Transportadora">
+                                                    <option value=''>Compañía Transportadora</option>
+                                                    <option value='1'>USPS</option>
+                                                    <option value='2'>Fedex</option>
+                                                    <option value='3'>Amazon</option>
+                                                    <option value='4'>UPS</option>
+                                                    <option value='5'>DHL</option>
+                                                    <option value='1006'>Otro</option>
+                                                </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select class="form-control form-control-rounded form-control-sm"
-                                                id="direcciones" name="direcciones" data-toggle="tooltip"
-                                                data-placement="auto" title="Selecciona la Dirección de Destino"
-                                                placeholder="Selecciona la Dirección de Destino"
-                                                onclick="DireccionesOK(data)">
-                                                <!-- envioIdLocation -->
-                                                <option value=''>Selecciona la Dirección de Destino </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input class="form-control form-control-rounded form-control-sm" type="text"
-                                                id="destinatario" name="destinatario" maxlength="100" value=''
-                                                placeholder="Destinatario" data-toggle="tooltip" data-placement="auto"
-                                                title="Ingresa el nombre de destino">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="idposicion">Escoje la categoría</label>
-                                            <select class="form-control form-control-rounded form-control-sm"
-                                                id="posicionArancelaria" name="posicionArancelaria" required="">
-                                                <option value="9807200000" selected>Otros envíos Urgentes </option>
-                                                <option value="6114909000">Ropa</option>
-                                                <option value="8471300000">Tecnología</option>
-                                                <option value="8522905000">Otras categorias</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-shopping-bag"></i>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
+                                                    <input class="form-control form-control-rounded form-control-sm"
+                                                        type="number" id="trackingNumber" name="trackingNumber" value=''
+                                                        placeholder="#Tracking" data-toggle="tooltip"
+                                                        data-placement="auto" title="entre 6 a 100 numeros" required
+                                                        maxlength="50" onchange="validarTrack()">
                                                 </div>
-                                                <input class="form-control form-control-rounded form-control-sm"
-                                                    type="text" id="descripcion" name="descripcion" value=''
-                                                    placeholder="Descripción del producto" data-toggle="tooltip"
-                                                    data-placement="auto" required=""
-                                                    title="Ingresa breve descripcion del producto">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div style="margin-top: 2em;" class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-calculator mt-3"></i>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <select required
+                                                    class="form-control form-control-rounded form-control-sm"
+                                                    id="direcciones" name="direcciones" data-toggle="tooltip"
+                                                    data-placement="auto" title="Selecciona la Dirección de Destino"
+                                                    placeholder="Selecciona la Dirección de Destino"
+                                                    onclick="DireccionesOK(data)">
+                                                    <!-- envioIdLocation -->
+                                                    <option value=''>Selecciona la Dirección de Destino </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control form-control-rounded form-control-sm"
+                                                    type="text" id="destinatario" name="destinatario" maxlength="100"
+                                                    value='' placeholder="Destinatario" data-toggle="tooltip" required
+                                                    data-placement="auto" title="Ingresa el nombre de destino">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="idposicion">Escoje la categoría</label>
+                                                <select class="form-control form-control-rounded form-control-sm"
+                                                    id="posicionArancelaria" name="posicionArancelaria" required="">
+                                                    <option value="9807200000" selected>Otros envíos Urgentes </option>
+                                                    <option value="6114909000">Ropa</option>
+                                                    <option value="8471300000">Tecnología</option>
+                                                    <option value="8522905000">Otras categorias</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-shopping-bag"></i>
+                                                    </div>
+                                                    <input class="form-control form-control-rounded form-control-sm"
+                                                        type="text" id="descripcion" name="descripcion" value=''
+                                                        placeholder="Descripción del producto" data-toggle="tooltip"
+                                                        data-placement="auto" required=""
+                                                        title="Ingresa breve descripcion del producto">
                                                 </div>
-                                                <input class="form-control form-control-rounded form-control-sm"
-                                                    type="number" placeholder="Valor USD" id="Valor" name="Valor"
-                                                    value='' data-toggle="tooltip" data-placement="auto" required=""
-                                                    title="Valor del producto">
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <!-- SECCION CARGA DE ARCHIVO -->
-
-                                    <div style="margin-top: 2em;" class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="idArchivo">Adjuntar factura de compra *</label>
-                                            <div class="input-group">
-                                                <input type="file" id="ImageUrl" onchange="validarExtencion()">
-                                                <p> * Utilice archivos en formato: .gif, .jpg, .png, .pdf para adjuntar la
-                                                    factura.<br>
-                                                    * Utilice archivos con un tamaño NO superior a 1 MB.</p>
+                                        <div style="margin-top: 2em;" class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-calculator mt-3"></i>
+                                                    </div>
+                                                    <input class="form-control form-control-rounded form-control-sm"
+                                                        type="number" placeholder="Valor USD" id="Valor" name="Valor"
+                                                        value='' data-toggle="tooltip" data-placement="auto" required=""
+                                                        title="Valor del producto">
+                                                </div>
                                             </div>
-                                            <p>
-                                                <span><b>*De no estar seguro de su factura por favor NO adjunte el
-                                                        archivo</b>
-                                                    <button onclick="quitarArchivo()" class="specialbtn">Eliminar
-                                                        Archivo</button>
-                                                </span>
-                                            </p>
-                                            <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input class="btn btn-primary margin-bottom-none" type="button"
-                                                value="Alertar Paquete" onclick="grabarClick()" />
-                                            <!-- validarExtencion() -->
                                         </div>
 
-                                    </div>
+                                        <!-- SECCION CARGA DE ARCHIVO -->
 
+                                        <div style="margin-top: 2em;" class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="idArchivo">Adjuntar factura de compra *</label>
+                                                <div class="input-group">
+                                                    <input type="file" id="ImageUrl" onchange="validarArchivo()">
+                                                    <p> * Utilice archivos en formato: .gif, .jpg, .png, .pdf para
+                                                        adjuntar la
+                                                        factura.<br>
+                                                        * Utilice archivos con un tamaño NO superior a 1 MB.</p>
+                                                </div>
+                                                <p>
+                                                    <span><b>*De no estar seguro de su factura por favor NO adjunte el
+                                                            archivo</b>
+                                                        <button onclick="quitarArchivo()" class="specialbtn">Eliminar
+                                                            Archivo</button>
+                                                    </span>
+                                                </p>
+                                                <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="btn btn-primary margin-bottom-none" type="submit"
+                                                    value="Alertar Paquete" onclick="grabarClick()" />
+                                                <!-- validarExtencion() -->
+                                            </div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
 
 
@@ -754,7 +758,7 @@
     function quitarArchivo() {
         $('#ImageUrl').val('');
     }
-    function validarExtencion() {
+    function validarArchivo() {
         let fileInput = (document.getElementById('ImageUrl')).value;
         let fileSize = $('#ImageUrl')[0].files[0].size;
         console.log(fileSize);
@@ -771,41 +775,49 @@
             });
             $('#ImageUrl').val('');
         }
-        if(fileSize > 1000000){
-            alert('Archivo muy pesado');
+        if (fileSize > 1000000) {
+            Swal.fire({
+                title: 'Archivo muy pesado',
+                text: 'El archivo es superior a 1MB',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+                type: 'error'
+            });
+             $('#ImageUrl').val('');
         }
-
     }
 
     function grabarClick() {
         debugger;
+        $('form[id="alertar"]').validate({
+            submitHandler: function (form) {
+                var dataout = JSON.parse(sessionStorage.getItem('appData'));
+                var fil = JSON.parse(sessionStorage.getItem('file'));
+                console.log(fil);
+                debugger;
+                var datos = {
+                    clientID: dataout.C,
+                    trackingNumber: $("#trackingNumber").val(),
+                    idCarrier: $("#idCarrier").val(),
+                    idLocation: $("#direcciones").val(),
+                    destinatario: $("#destinatario").val(),
+                    TariffCode: $("#posicionArancelaria").val(),
+                    description: $("#descripcion").val(),
+                    value: $("#Valor").val()
+                }
+                if (document.getElementById('ImageUrl').value == "") {
+                    fivepaq.prealertaValue(datos.clientID,
+                        datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
+
+                } else {
+
+                    fivepaq.prealertaImage(datos.clientID,
+                        datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
+
+                }
+            }
+        });
         //codigin
-
-
-        var dataout = JSON.parse(sessionStorage.getItem('appData'));
-        var fil = JSON.parse(sessionStorage.getItem('file'));
-        console.log(fil);
-        debugger;
-        var datos = {
-            clientID: dataout.C,
-            trackingNumber: $("#trackingNumber").val(),
-            idCarrier: $("#idCarrier").val(),
-            idLocation: $("#direcciones").val(),
-            destinatario: $("#destinatario").val(),
-            TariffCode: $("#posicionArancelaria").val(),
-            description: $("#descripcion").val(),
-            value: $("#Valor").val()
-        }
-        if (document.getElementById('ImageUrl').value == "") {
-            fivepaq.prealertaValue(datos.clientID,
-                datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
-
-        } else {
-
-            fivepaq.prealertaImage(datos.clientID,
-                datos.trackingNumber, datos.idCarrier, datos.idLocation, datos.TariffCode, datos.description, datos.value);
-
-        }
     }
     function AlertSuccessImage(response) { /* AlertSuccessValue */
         limpiarAlerta();
@@ -815,6 +827,8 @@
             'success'
         );
     }
+
+
     function AlertSuccessValue(response) {
         limpiarAlerta();
         Swal.fire(
