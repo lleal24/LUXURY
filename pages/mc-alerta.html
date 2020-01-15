@@ -386,8 +386,8 @@
                                                     class="form-control form-control-rounded form-control-sm"
                                                     id="direcciones" name="direcciones" data-toggle="tooltip"
                                                     data-placement="auto" title="Selecciona la Dirección de Destino"
-                                                    placeholder="Selecciona la Dirección de Destino"
-                                                    onclick="DireccionesOK(data)">
+                                                    placeholder="Selecciona la Dirección de Destino"></select>
+                                                    <!-- onclick="DireccionesOK(data)" -->
                                                     <!-- envioIdLocation -->
                                                     <option value=''>Selecciona la Dirección de Destino </option>
                                                 </select>
@@ -455,8 +455,9 @@
                                                 <p>
                                                     <span><b>*De no estar seguro de su factura por favor NO adjunte el
                                                             archivo</b>
-                                                        <button onclick="quitarArchivo()" class="specialbtn">Eliminar
-                                                            Archivo</button>
+                                                        <input type="button" class="specialbtn" value="Eliminar Archivo"
+                                                            onclick="quitarArchivo()">
+
                                                     </span>
                                                 </p>
                                                 <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
@@ -783,7 +784,7 @@
                 confirmButtonText: 'Ok',
                 type: 'error'
             });
-             $('#ImageUrl').val('');
+            $('#ImageUrl').val('');
         }
     }
 
@@ -842,10 +843,6 @@
 <script>
     fivepaq.cargarDireccionesCliente();
 </script>
-
-
-
-
 </body>
 
 </html>
