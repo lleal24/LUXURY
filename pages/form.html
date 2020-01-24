@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form id="prueba">
+        <input type="text" id="prueba1" name="prueba1">
+        <input type="text" id="prueba2" name="prueba2">
+        <input type="submit" value="prueba" onclick="validar()">
+    </form>
+    <!-- Validator -->
+    
+    <script src="../vendor/jquery.validate.js"></script>
+    <script src="../vendor/modernizr.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+        function validar() {
+            $('form[id="prueba"]').validate({
+                rules: {
+                    prueba1: {
+                        required: true
+                    },
+                    prueba2: {
+                        required: true
+                    }
+                },
+                messages: {
+                    prueba1: 'Es requerido',
+                    prueba2: 'Es requerido'
+                }
+            });
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
