@@ -153,7 +153,7 @@ box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
   display: block;
   position: relative;
   width: 33%;
-  height: 55px;
+  height: auto; /* 55px */
   float: right;
   transition: color .3s;
   border-top: 1px solid #e1e7ec;
@@ -682,6 +682,9 @@ header.transparent .navigation.scrolling .navbar-nav > .active > a:hover {
   top: 0;
   left: 100%;
   margin-top: -2px;
+}
+.navbar-brand{
+  padding: 8px 15px;
 }
 
 

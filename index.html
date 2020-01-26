@@ -95,13 +95,15 @@
 	<header class="nav-type-2 onepage-nav" id="home">
 
 		<nav class="navbar navbar-fixed-top">
-			<a  class="navbar-brand" href="#home">
-				<img class="logo" src="img/logo_Luxury-2.png" alt="logo">
-			</a>
+
 			<div class="navigation-overlay dark">
 				<div class="container-fluid semi-fluid relative">
 
 					<div class="row">
+
+						<a class="navbar-brand" href="#home">
+							<img class="logo" src="img/logo_Luxury-2.png" alt="logo">
+						</a>
 
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -114,7 +116,7 @@
 						</div> <!-- end navbar-header -->
 
 						<!-- Logo -->
-					<!-- 	<div class="logo-container" id="funciona">
+						<!-- 	<div class="logo-container" id="funciona">
 							<div class="logo-wrap local-scroll">
 								<a href="#home">
 									<img class="logo" src="img/logo_Luxury-2.png" alt="logo">
@@ -872,13 +874,15 @@ w.ds " target="_blank" class="relative oh">
 			<div class="row">
 				<!-- Checkout Adress-->
 				<div class="col-xl-7 col-lg-8">
-					<span class="intro-heading">Selecciona un plan</span>
+					<h4>Selecciona un plan</h4>
 					<!-- <input type="hidden" id="idConvenio" value="3"> -->
 					<div class="checkout-steps">
-						<a id='2' onclick="enviarConvenio(2)"><span class="angle"></span>PYMEBOX
+						<a id='2' href="#a" onclick="enviarConvenio(2)"><span class="angle"></span>PYMEBOX
 							BOXLUXURY</a>
-						<a id='3' onclick="enviarConvenio(3)"><span class="angle"></span>BOXLUXURY STANDART</a>
-						<a id='5' onclick="enviarConvenio(5)" class="active"><span class="angle"></span>BOXLUXURY
+						<a id='3' href="#a" onclick="enviarConvenio(3)"><span class="angle"></span>BOXLUXURY
+							STANDART</a>
+						<a id='5' href="#a" onclick="enviarConvenio(5)" class="active"><span
+								class="angle"></span>BOXLUXURY
 							CLUB</a>
 
 					</div></br></br></br>
@@ -1340,7 +1344,7 @@ w.ds " target="_blank" class="relative oh">
 							</div>
 
 							<div class="pricing-button">
-								<a href="#registro" class="btn btn-md btn-white">Regístrate</a>
+								<a href="#registro" class="btn btn-md btn-white" onclick="standartOpt()">Regístrate</a>
 							</div>
 						</div>
 					</div> <!-- end col -->
@@ -1373,7 +1377,7 @@ w.ds " target="_blank" class="relative oh">
 							</div>
 
 							<div class="pricing-button">
-								<a href="#registro" class="btn btn-md btn-white">Regístrate</a>
+								<a href="#registro" class="btn btn-md btn-white" onclick="boluxuryClubOpt()">Regístrate</a>
 							</div>
 						</div>
 					</div> <!-- end col -->
@@ -1407,7 +1411,7 @@ w.ds " target="_blank" class="relative oh">
 							</div>
 
 							<div class="pricing-button">
-								<a href="#registro" class="btn btn-md btn-color">Regístrate</a>
+								<a href="#registro" class="btn btn-md btn-color" onclick="pymeBoxOpt()">Regístrate</a>
 							</div>
 						</div>
 					</div> <!-- end col -->
@@ -1445,7 +1449,7 @@ w.ds " target="_blank" class="relative oh">
 								<div class="form-group">
 									<select class="form-control form-control-rounded form-control-sm"
 										id="convenioRegistro" name="convenioRegistro" title="Selecciona un plan">
-										<option selected value="">Escoge el Plan</option>
+										<option selected value="">Escoge el Plan *</option>
 										<option value="3">BOXLUXURY STANDART</option>
 										<option value="5">BOXLUXURY CLUB</option>
 										<option value="MuestraEmp">PYMEBOX BOXLUXURY</option>
@@ -1453,14 +1457,14 @@ w.ds " target="_blank" class="relative oh">
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="email"
-										id="emailRegistro" name="emailRegistro" placeholder="Email" id="email" value=""
-										required="" data-toggle="tooltip" data-placement="bottom" title=""
+										id="emailRegistro" name="emailRegistro" placeholder="Email *" id="email"
+										value="" required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Ingresa tu Email"><span class="input-group-addon"><i
 											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="email"
-										placeholder="Confirmar Email" id="emailRegistroConfirm"
+										placeholder="Confirmar Email *" id="emailRegistroConfirm"
 										name="emailRegistroConfirm" value="" required="" data-toggle="tooltip"
 										data-placement="bottom" title="" data-original-title="Confirma tu Email"><span
 										class="input-group-addon"><i class="fa fa-envelope fa"
@@ -1469,23 +1473,23 @@ w.ds " target="_blank" class="relative oh">
 								<h3 class="margin-bottom-1x">Información Personal</h3>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="nombre" name="nombre" maxlength="20" value="" placeholder="Nombres"
+										id="nombre" name="nombre" maxlength="20" value="" placeholder="Nombres *"
 										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Ingresa nombres"><span class="input-group-addon"><i
 											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										iname="apellidos" id="apellidos" value="" placeholder="Apellidos" required=""
+										iname="apellidos" id="apellidos" value="" placeholder="Apellidos *" required=""
 										data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Ingresa apellidos"><span class="input-group-addon"><i
 											class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
-								<div class="col-sm-8">
+								<div class="">
 									<div class="form-group">
 										<select class="form-control form-control-rounded form-control-sm" id="tipoDoc"
 											name="tipoDoc">
-											<option selected="">Seleccione Tipo Documento</option>
+											<option selected="">Seleccione Tipo Documento *</option>
 											<option>Cédula</option>
 											<option>Pasaporte</option>
 											<option>Nit</option>
@@ -1494,17 +1498,31 @@ w.ds " target="_blank" class="relative oh">
 
 									<div class="form-group input-group">
 										<input class="form-control form-control-rounded form-control-sm" type="text"
-											id="documento" name="documento" value="" placeholder="Identificación"
+											id="documento" name="documento" value="" placeholder="Identificación *"
 											required="" data-toggle="tooltip" data-placement="bottom" title=""
 											data-original-title="Digita tu Identificación"><span
 											class="input-group-addon"><i class="far fa-address-card"></i></span>
 									</div>
-
+									<div class="form-group">
+										<label for="pass">Contraseña * </label> <i class="fa fa-eye-slash icon"
+											onclick="mostrarContrasena()"></i>
+										<input type="Password" id="passwordRegistro" name="passwordRegistro"
+											class="form-control form-control-rounded form-control-sm" required=""
+											maxlength="50" placeholder="Digíte contraseña">
+									</div>
+									<div class="form-group">
+										<label for="pass">Confirmar Contraseña * </label> <i
+											class="fa fa-eye-slash icon" onclick="mostrarContrasenaConfirm()"></i>
+										<input type="Password" id="passwordRegistroConfirm"
+											name="passwordRegistroConfirm" required=""
+											class="form-control form-control-rounded form-control-sm" id="pass2"
+											placeholder="Confirmar Contraseña">
+									</div>
 									<!-- contraseña -->
-									<div class="row">
-										<div class="col-md-12 mt-10">
+									<!-- <div class="row">
+										<div class="col-md-12 mt-20 mb-20">
 											<div class="input-group">
-												<label for="pass">Contraseña</label> <i class="fa fa-eye-slash icon"
+												<label for="pass">Contraseña * </label> <i class="fa fa-eye-slash icon"
 													onclick="mostrarContrasena()"></i>
 												<input type="Password" id="passwordRegistro" name="passwordRegistro"
 													class="form-control form-control-rounded form-control-sm"
@@ -1514,7 +1532,7 @@ w.ds " target="_blank" class="relative oh">
 
 										<div class="col-md-12 mt-20 mb-20">
 											<div class="input-group">
-												<label for="pass">Confirmar Contraseña</label> <i
+												<label for="pass">Confirmar Contraseña * </label> <i
 													class="fa fa-eye-slash icon"
 													onclick="mostrarContrasenaConfirm()"></i>
 												<input type="Password" id="passwordRegistroConfirm"
@@ -1524,7 +1542,7 @@ w.ds " target="_blank" class="relative oh">
 											</div>
 										</div>
 
-									</div>
+									</div> -->
 
 									<!-- fin contraseña -->
 								</div>
@@ -1535,14 +1553,14 @@ w.ds " target="_blank" class="relative oh">
 								<div class="form-group">
 									<select name="mostrarEmp" class="form-control form-control-rounded form-control-sm"
 										id="account-TipoIdentificacion">
-										<option selected="">Tipo de Persona</option>
+										<option selected="">Tipo de Persona *</option>
 										<option value="MuestraEmp">Persona Natural</option>
 										<option value="MuestraEmp">Persona Jurídica</option>
 									</select> <!-- onchange="pagoOnChange(this)" -->
 								</div>
 								<div class="form-group" id="MuestroEmp" style="display:none;">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="empresa" maxlength="100" placeholder="Empresa" data-toggle="tooltip"
+										id="empresa" maxlength="100" placeholder="Empresa *" data-toggle="tooltip"
 										data-placement="bottom" title=""
 										data-original-title="Ingresa nombre de la empresa">
 
@@ -1550,13 +1568,13 @@ w.ds " target="_blank" class="relative oh">
 								<div class="form-group">
 									<select name="AsesorID" id="AsesorID" required=""
 										class="form-control form-control-rounded form-control-sm">
-										<option selected="" value="0">Seleccione Asesor (web)</option>
+										<option selected="" value="0">Seleccione Asesor (web) *</option>
 										<option value="1">Página WEB</option>
 									</select>
 								</div>
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="telefono" name="telefono" maxlength="20" value="" placeholder="Teléfono"
+										id="telefono" name="telefono" maxlength="20" value="" placeholder="Teléfono *"
 										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Ingresa tu número Telefónico"><span
 										class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
@@ -1567,7 +1585,7 @@ w.ds " target="_blank" class="relative oh">
 									<input
 										class="form-control form-control-rounded form-control-sm ui-autocomplete-input"
 										type="text" id="ciudadNombreRegistro" name="ciudadNombreRegistro"
-										placeholder="Ciudad" data-toggle="tooltip" data-placement="auto" title=""
+										placeholder="Ciudad *" data-toggle="tooltip" data-placement="auto" title=""
 										required="" data-original-title="Espera a que aparezca la Ciudad"><span
 										class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 									<input hidden="true" id="ciudadIdRegistro" value="0" />
@@ -1578,14 +1596,14 @@ w.ds " target="_blank" class="relative oh">
 
 								<div class="form-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="cpostal" value="" name="cpostal" placeholder="Código Postal" required=""
+										id="cpostal" value="" name="cpostal" placeholder="Código Postal *" required=""
 										maxlength="10" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Digita tu código postal, en caso contrario http://www.codigopostal.gov.co/">
 								</div>
 
 								<div class="form-group input-group">
 									<input class="form-control form-control-rounded form-control-sm" type="text"
-										id="direccion" name="direccion" maxlength="100" placeholder="Dirección"
+										id="direccion" name="direccion" maxlength="100" placeholder="Dirección *"
 										required="" data-toggle="tooltip" data-placement="bottom" title=""
 										data-original-title="Escribe tu dirección de entregas"><span
 										class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
@@ -1593,7 +1611,7 @@ w.ds " target="_blank" class="relative oh">
 
 								<div class="custom-control custom-checkbox">
 									<label class="custom-control-label" for="check">Acepto términos y
-										condiciones</label>
+										condiciones *</label>
 									<input class="custom-control-input" name="checkbox[]" type="checkbox"
 										id="checkbox1">
 
@@ -2799,7 +2817,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			}
 			return "";
 		}
-	
+
 		function logueo() {
 			debugger
 			let expiresdate = new Date(2068, 1, 02, 11, 20);
@@ -2929,7 +2947,6 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			return true;
 		}
 		/* funcion lleal cambio */
-
 		sessionStorage.setItem('appData', '5')
 		function enviarConvenio(convenio) {
 			debugger;
@@ -2950,7 +2967,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			}
 			/* convenio temporal de pruebas */
 			if (convenio == 2) {
-				convenio = 3; 
+				convenio = 3;
 				document.getElementById('2').classList.add('active');
 				document.getElementById('5').classList.remove('active');
 				document.getElementById('3').classList.remove('active');
@@ -3078,6 +3095,19 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		}
 	</script>
 	<!-- FIN CALCULADORA-->
+
+	<!--REGISTRO CAMBIO DE PLANES -->
+	<script>
+	function standartOpt(){
+		document.getElementById('convenioRegistro').selectedIndex = "1";
+	}
+	function boluxuryClubOpt(){
+		document.getElementById('convenioRegistro').selectedIndex = "2";
+	}
+	function pymeBoxOpt(){
+		document.getElementById('convenioRegistro').selectedIndex = "3";
+	}
+	</script>
 
 
 
