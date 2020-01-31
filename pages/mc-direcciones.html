@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Casillero virtual de compras por internet">
     <meta name="author" content="Casillero internacional fivepaq">
@@ -23,7 +24,7 @@
 
     <!-- Custom CSS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    
+
     <link rel="stylesheet" href="../css/animate.min.css">
 
     <!-- Css -->
@@ -143,8 +144,9 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planes</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" onclick="javascript:location.href='calculadora.html#headingCalculadora'"  class="dropdown-toggle"
-                                            data-toggle="dropdown">Calculadora</a>
+                                        <a href="#"
+                                            onclick="javascript:location.href='calculadora.html#headingCalculadora'"
+                                            class="dropdown-toggle" data-toggle="dropdown">Calculadora</a>
                                     </li> <!-- end portfolio -->
 
                                     <li class="dropdown">
@@ -297,15 +299,12 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="panel-body">
-                                                                                <div class="row">
-                                                                                    <!-- <div class="gap-40"></div> -->
+                                                                                <div class="row ">
                                                                                     <button onclick="showModal()"
                                                                                         class="btn btn-primary btn-lg btn-block"><i
                                                                                             class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Agregar
-                                                                                        Direccion de entrega</button>
-                                                                                    <!-- <div class="gap-40"></div> -->
-                                                                                    <!-- <modal v-if="showModal" v-bind:address="address" v-bind:ciudades="ciudades" @close="showModal = false">
-                            </modal> -->
+                                                                                        Direccion  </button>
+                                                                                   
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -583,7 +582,7 @@
 
 <!--INICIO MOSTRAR CONTRASEÑ REGISTRO-->
 <script>
-    function showModal(){
+    function showModal() {
         $('#show-modal').modal();
     }
 </script>

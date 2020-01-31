@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Boxluxury | Alerta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="compras por internet en el mundo, casillero internacional">
     <meta charset="utf-8">
     <meta name="description" content="Casillero virtual de compras por internet">
@@ -387,9 +388,9 @@
                                                     id="direcciones" name="direcciones" data-toggle="tooltip"
                                                     data-placement="auto" title="Selecciona la Dirección de Destino"
                                                     placeholder="Selecciona la Dirección de Destino"></select>
-                                                    <!-- onclick="DireccionesOK(data)" -->
-                                                    <!-- envioIdLocation -->
-                                                    <option value=''>Selecciona la Dirección de Destino </option>
+                                                <!-- onclick="DireccionesOK(data)" -->
+                                                <!-- envioIdLocation -->
+                                                <option value=''>Selecciona la Dirección de Destino </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -440,9 +441,35 @@
                                             </div>
                                         </div>
 
-                                        <!-- SECCION CARGA DE ARCHIVO -->
+                
 
                                         <div style="margin-top: 2em;" class="col-md-12">
+                                            <label for="idArchivo">Adjuntar factura de compra *</label>
+                                            <input type="file" id="ImageUrl" onchange="validarArchivo()" style="color: transparent"> 
+                                    
+
+                                             
+                                            <p> * Utilice archivos en formato: .gif, .jpg, .png, .pdf para
+                                                adjuntar la
+                                                factura.<br>
+                                                * Utilice archivos con un tamaño NO superior a 1 MB.</p>
+                                            <p>
+
+                                                <span><b>*De no estar seguro de su factura por favor NO adjunte
+                                                        el
+                                                        archivo</b>
+                                                    <input type="button" class="specialbtn" value="Eliminar Archivo"
+                                                        onclick="quitarArchivo()">
+
+                                                </span>
+                                            </p>
+
+
+                                        </div>
+
+                                        <!-- SECCION CARGA DE ARCHIVO -->
+
+                                        <!--                <div style="margin-top: 2em;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="idArchivo">Adjuntar factura de compra *</label>
                                                 <div class="input-group">
@@ -451,18 +478,20 @@
                                                         adjuntar la
                                                         factura.<br>
                                                         * Utilice archivos con un tamaño NO superior a 1 MB.</p>
-                                                </div>
-                                                <p>
-                                                    <span><b>*De no estar seguro de su factura por favor NO adjunte el
-                                                            archivo</b>
-                                                        <input type="button" class="specialbtn" value="Eliminar Archivo"
-                                                            onclick="quitarArchivo()">
 
-                                                    </span>
-                                                </p>
-                                                <!--  <button onclick="quitarArchivo()">Quitar Archivo</button> -->
+                                                    <p>
+                                                        <span><b>*De no estar seguro de su factura por favor NO adjunte
+                                                                el
+                                                                archivo</b>
+                                                            <input type="button" class="specialbtn"
+                                                                value="Eliminar Archivo" onclick="quitarArchivo()">
+
+                                                        </span>
+                                                    </p>
+                                                </div>
+
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
                                         <div class="col-md-12">
