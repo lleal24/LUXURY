@@ -875,17 +875,24 @@ w.ds " target="_blank" class="relative oh">
 				<!-- Checkout Adress-->
 				<div class="col-xl-7 col-lg-8">
 					<h4>Selecciona un plan</h4>
+
+					<select class="form-control form-control-rounded form-control-sm" id="idConvenio" value="" onchange="enviarConvenio()">
+						<option value=""  selected="">Selecciona un plan *</option>
+						<option value="2"  >PYMEBOX BOXLUXURY</option>
+						<option value="3"  >BOXLUXURY STANDART</option>
+						<option value="5"  >BOXLUXURY CLUB</option>
+					</select>
 					<!-- <input type="hidden" id="idConvenio" value="3"> -->
-					<div class="checkout-steps">
+					<!-- <div class="checkout-steps">
 						<a id='2' href="#a" onclick="enviarConvenio(2)"><span class="angle"></span>PYMEBOX
 							BOXLUXURY</a>
 						<a id='3' href="#a" onclick="enviarConvenio(3)"><span class="angle"></span>BOXLUXURY
 							STANDART</a>
 						<a id='5' href="#a" onclick="enviarConvenio(5)" class="active"><span
-								class="angle"></span>BOXLUXURY
-							CLUB</a>
+								class="angle"></span>BOXLUXURY   
+							CLUB        </a>
 
-					</div></br></br></br>
+					</div> -->
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
@@ -909,7 +916,7 @@ w.ds " target="_blank" class="relative oh">
 									type="text" id="ciudadNombre" value="" placeholder="Ciudad" data-toggle="tooltip"
 									data-placement="top" title="" required=""
 									data-original-title="Espera a que aparezca la Ciudad">
-								<input type="hidden" id="ciudadId" value="0">
+								<input type="hidden" id="ciudadId" value="0" >
 								<input type="hidden" id="ciudadTipo" value="">
 							</div>
 						</div>
@@ -1377,7 +1384,8 @@ w.ds " target="_blank" class="relative oh">
 							</div>
 
 							<div class="pricing-button">
-								<a href="#registro" class="btn btn-md btn-white" onclick="boluxuryClubOpt()">Regístrate</a>
+								<a href="#registro" class="btn btn-md btn-white"
+									onclick="boluxuryClubOpt()">Regístrate</a>
 							</div>
 						</div>
 					</div> <!-- end col -->
@@ -2948,10 +2956,11 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		}
 		/* funcion lleal cambio */
 		sessionStorage.setItem('appData', '5')
-		function enviarConvenio(convenio) {
+		function enviarConvenio() {
 			debugger;
 			limpiarClick();
-			if (convenio == 5) {
+			let convenio = document.getElementById("idConvenio").value;
+		/* 	if (convenio == 5) {
 				document.getElementById('5').classList.add('active');
 				document.getElementById('3').classList.remove('active');
 				document.getElementById('2').classList.remove('active');
@@ -2965,13 +2974,13 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 
 			}
-			/* convenio temporal de pruebas */
+		
 			if (convenio == 2) {
 				convenio = 3;
 				document.getElementById('2').classList.add('active');
 				document.getElementById('5').classList.remove('active');
 				document.getElementById('3').classList.remove('active');
-			}
+			} */
 
 			sessionStorage.setItem('appData', convenio);
 			console.log(convenio);
@@ -3098,15 +3107,15 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 
 	<!--REGISTRO CAMBIO DE PLANES -->
 	<script>
-	function standartOpt(){
-		document.getElementById('convenioRegistro').selectedIndex = "1";
-	}
-	function boluxuryClubOpt(){
-		document.getElementById('convenioRegistro').selectedIndex = "2";
-	}
-	function pymeBoxOpt(){
-		document.getElementById('convenioRegistro').selectedIndex = "3";
-	}
+		function standartOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "1";
+		}
+		function boluxuryClubOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "2";
+		}
+		function pymeBoxOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "3";
+		}
 	</script>
 
 
