@@ -876,23 +876,13 @@ w.ds " target="_blank" class="relative oh">
 				<div class="col-xl-7 col-lg-8">
 					<h4>Selecciona un plan</h4>
 
-					<select class="form-control form-control-rounded form-control-sm" id="idConvenio" value="" onchange="enviarConvenio()">
-						<option value=""  selected="">Selecciona un plan *</option>
-						<option value="2"  >PYMEBOX BOXLUXURY</option>
-						<option value="3"  >BOXLUXURY STANDART</option>
-						<option value="5"  >BOXLUXURY CLUB</option>
+					<select class="form-control form-control-rounded form-control-sm" id="idConvenio" value=""
+						onchange="enviarConvenio()">
+						<option value="" selected="">Selecciona un plan *</option>
+						<option value="20">PYMEBOX BOXLUXURY</option>
+						<option value="19">BOXLUXURY STANDART</option>
+						<option value="21">BOXLUXURY CLUB</option>
 					</select>
-					<!-- <input type="hidden" id="idConvenio" value="3"> -->
-					<!-- <div class="checkout-steps">
-						<a id='2' href="#a" onclick="enviarConvenio(2)"><span class="angle"></span>PYMEBOX
-							BOXLUXURY</a>
-						<a id='3' href="#a" onclick="enviarConvenio(3)"><span class="angle"></span>BOXLUXURY
-							STANDART</a>
-						<a id='5' href="#a" onclick="enviarConvenio(5)" class="active"><span
-								class="angle"></span>BOXLUXURY   
-							CLUB        </a>
-
-					</div> -->
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
@@ -901,7 +891,7 @@ w.ds " target="_blank" class="relative oh">
 								</label>
 								<select class="form-control form-control-rounded form-control-sm" id="idPaisOrigen"
 									value="">
-									<option value="1" selected="">USA</option>
+									<option value="78" selected="">USA</option>
 									<option value="75" selected="">China</option>
 									<option value="76" selected="">España</option>
 								</select>
@@ -916,7 +906,7 @@ w.ds " target="_blank" class="relative oh">
 									type="text" id="ciudadNombre" value="" placeholder="Ciudad" data-toggle="tooltip"
 									data-placement="top" title="" required=""
 									data-original-title="Espera a que aparezca la Ciudad">
-								<input type="hidden" id="ciudadId" value="0" >
+								<input type="hidden" id="ciudadId" value="0">
 								<input type="hidden" id="ciudadTipo" value="">
 							</div>
 						</div>
@@ -1061,7 +1051,7 @@ w.ds " target="_blank" class="relative oh">
 
 
 									<tr>
-										<td>Valor Total en USD </td>
+										<td id="euro">Valor Total en USD </td>
 										<td class="text-lg text-medium" id="lbTOTAL"> </td>
 									</tr>
 								</tbody>
@@ -1458,9 +1448,9 @@ w.ds " target="_blank" class="relative oh">
 									<select class="form-control form-control-rounded form-control-sm"
 										id="convenioRegistro" name="convenioRegistro" title="Selecciona un plan">
 										<option selected value="">Escoge el Plan *</option>
-										<option value="3">BOXLUXURY STANDART</option>
-										<option value="5">BOXLUXURY CLUB</option>
-										<option value="MuestraEmp">PYMEBOX BOXLUXURY</option>
+										<option value="19">BOXLUXURY STANDART</option>
+										<option value="21">BOXLUXURY CLUB</option>
+										<option value="20">PYMEBOX BOXLUXURY</option>
 									</select>
 								</div>
 								<div class="form-group input-group">
@@ -1526,33 +1516,7 @@ w.ds " target="_blank" class="relative oh">
 											class="form-control form-control-rounded form-control-sm" id="pass2"
 											placeholder="Confirmar Contraseña">
 									</div>
-									<!-- contraseña -->
-									<!-- <div class="row">
-										<div class="col-md-12 mt-20 mb-20">
-											<div class="input-group">
-												<label for="pass">Contraseña * </label> <i class="fa fa-eye-slash icon"
-													onclick="mostrarContrasena()"></i>
-												<input type="Password" id="passwordRegistro" name="passwordRegistro"
-													class="form-control form-control-rounded form-control-sm"
-													required="" maxlength="50" placeholder="Digíte contraseña">
-											</div>
-										</div>
-
-										<div class="col-md-12 mt-20 mb-20">
-											<div class="input-group">
-												<label for="pass">Confirmar Contraseña * </label> <i
-													class="fa fa-eye-slash icon"
-													onclick="mostrarContrasenaConfirm()"></i>
-												<input type="Password" id="passwordRegistroConfirm"
-													name="passwordRegistroConfirm" required=""
-													class="form-control form-control-rounded form-control-sm" id="pass2"
-													placeholder="Confirmar Contraseña">
-											</div>
-										</div>
-
-									</div> -->
-
-									<!-- fin contraseña -->
+							
 								</div>
 							</div>
 							<!-- end col -->
@@ -2434,7 +2398,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				swal("¡ha ocurrido un error! ", noCuenta.Error.ErrorMessage, "error");
 			} else {
 				limpiarRegistro();
-				swal("¡Ya eres un Fivepaq! ", "Tu casillero es: " + noCuenta.noCuenta, "success").then((value) => {
+				swal("¡Ya eres un cliente Luxury! ", "Tu casillero es: " + noCuenta.noCuenta, "success").then((value) => {
 					if (value) {
 						debugger;
 						location.href = "index.html";
@@ -2955,33 +2919,11 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			return true;
 		}
 		/* funcion lleal cambio */
-		sessionStorage.setItem('appData', '5')
+		sessionStorage.setItem('appData', '19')
 		function enviarConvenio() {
 			debugger;
 			limpiarClick();
 			let convenio = document.getElementById("idConvenio").value;
-		/* 	if (convenio == 5) {
-				document.getElementById('5').classList.add('active');
-				document.getElementById('3').classList.remove('active');
-				document.getElementById('2').classList.remove('active');
-
-
-			}
-			if (convenio == 3) {
-				document.getElementById('3').classList.add('active');
-				document.getElementById('5').classList.remove('active');
-				document.getElementById('2').classList.remove('active');
-
-
-			}
-		
-			if (convenio == 2) {
-				convenio = 3;
-				document.getElementById('2').classList.add('active');
-				document.getElementById('5').classList.remove('active');
-				document.getElementById('3').classList.remove('active');
-			} */
-
 			sessionStorage.setItem('appData', convenio);
 			console.log(convenio);
 
@@ -3037,14 +2979,23 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			console.log("request");
 			debugger;
 			console.log(request);
-			// var mensaje = "Exito ... ";
-			// mensaje += " <br /> "
-			// var mensaje = request.Error.ErrorMessage;
-			$("#lbflete").text("USD$ " + String(request.ValorFlete));
-			$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
-			$("#lbarancel").text("USD$ " + String(request.ValorArancel));
-			$("#lbiva").text("USD$ " + String(request.ValorIva));
-			$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+			let idPais = document.getElementById('idPaisOrigen').value;
+			if (idPais == 76) {
+				document.getElementById('euro').innerText = "Valor Total en EUR";
+				$("#lbflete").text("EUR €  " + String(request.ValorFlete));
+				$("#lbseguro").text("EUR €  " + String(request.ValorSeguro));
+				$("#lbarancel").text("EUR €  " + String(request.ValorArancel));
+				$("#lbiva").text("EUR €  " + String(request.ValorIva));
+				$("#lbTOTAL").text("€  " + String(request.ValorTotal));
+
+			} else {
+				$("#lbflete").text("USD$ " + String(request.ValorFlete));
+				$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
+				$("#lbarancel").text("USD$ " + String(request.ValorArancel));
+				$("#lbiva").text("USD$ " + String(request.ValorIva));
+				$("#lbTOTAL").text("$   " + String(request.ValorTotal));
+
+			}
 		}
 		var largo = "0";
 		if ($("#largo").val() != "") {
@@ -3105,20 +3056,18 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</script>
 	<!-- FIN CALCULADORA-->
 
-	<!--REGISTRO CAMBIO DE PLANES -->
-	<script>
-		function standartOpt() {
-			document.getElementById('convenioRegistro').selectedIndex = "1";
-		}
-		function boluxuryClubOpt() {
-			document.getElementById('convenioRegistro').selectedIndex = "2";
-		}
-		function pymeBoxOpt() {
-			document.getElementById('convenioRegistro').selectedIndex = "3";
-		}
-	</script>
-
-
+		<!--REGISTRO CAMBIO DE PLANES -->
+		<script>
+			function standartOpt() {
+				document.getElementById('convenioRegistro').selectedIndex = "1";
+			}
+			function boluxuryClubOpt() {
+				document.getElementById('convenioRegistro').selectedIndex = "2";
+			}
+			function pymeBoxOpt() {
+				document.getElementById('convenioRegistro').selectedIndex = "3";
+			}
+		</script>
 
 
 	<!-- Modal Politicas-->

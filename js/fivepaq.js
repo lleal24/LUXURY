@@ -154,10 +154,10 @@ var fivepaq = {
 	},
 	CuentaAdd: function (ConvenioCta, Documento, Empresa, Nombre, Direccion, CiudadId, CodigoPostal, Telefono, Password, EMail, Asesor, Ticket) {
 		Cuenta = new Object();
-		debugger;
-		if (ConvenioCta == 3) {
-			Cuenta.Convenio = "BX";
-			Cuenta.LlaveConvenio = "AAF1A8FD-199C-49E7-BC1F-830A922B4089";
+
+		if (ConvenioCta == 19) {
+			Cuenta.Convenio = "BL";
+			Cuenta.LlaveConvenio = "5d8a2833-3d5f-4e52-a73b-e60a69a851e5";
 			Cuenta.Documento = Documento
 			Cuenta.Empresa = Empresa
 			Cuenta.Nombre = Nombre
@@ -170,9 +170,9 @@ var fivepaq = {
 			Cuenta.Asesor = Asesor
 			Cuenta.TicketId = Ticket
 		} else
-			if (ConvenioCta == 5) {
-				Cuenta.Convenio = "VP";
-				Cuenta.LlaveConvenio = "56006b65-2194-4e94-8d43-97d5a0b66a46";
+			if (ConvenioCta == 20) {
+				Cuenta.Convenio = "PL";
+				Cuenta.LlaveConvenio = "874e3125-d9bf-436a-9dd2-c73f03ba256a";
 				Cuenta.Documento = Documento
 				Cuenta.Empresa = Empresa
 				Cuenta.Nombre = Nombre
@@ -185,6 +185,22 @@ var fivepaq = {
 				Cuenta.Asesor = Asesor
 				Cuenta.TicketId = Ticket
 			}
+			else
+				if (ConvenioCta == 21) {
+					Cuenta.Convenio = "TL";
+					Cuenta.LlaveConvenio = "cba5577a-f235-4b89-8988-1a384cdb931e";
+					Cuenta.Documento = Documento
+					Cuenta.Empresa = Empresa
+					Cuenta.Nombre = Nombre
+					Cuenta.Direccion = Direccion;
+					Cuenta.CiudadId = CiudadId;
+					Cuenta.CodigoPostal = CodigoPostal
+					Cuenta.Telefono = Telefono
+					Cuenta.Password = Password
+					Cuenta.Email = EMail
+					Cuenta.Asesor = Asesor
+					Cuenta.TicketId = Ticket
+				}
 
 		$.ajax({
 			url: "https://fpaq.azurewebsites.net/api/cuentas",
@@ -193,6 +209,7 @@ var fivepaq = {
 			data: JSON.stringify(Cuenta),
 			success: function (noCuenta) {
 				CuentaSuccess(noCuenta);
+				console.log(noCuenta)
 			},
 			error: function (request, message, error) {
 				handleException(request, message, error);
@@ -389,12 +406,12 @@ var fivepaq = {
 		debugger;
 		var dataIn = fivepaq.dataOut();
 		let formData = new FormData();
-		formData.append('clientID', clientID); 
+		formData.append('clientID', clientID);
 		formData.append('trackingNumber', trackingNumber);
-		let imagen = document.getElementById('ImageUrl').files[0]; 
-		formData.append('ImageUrl',imagen);
+		let imagen = document.getElementById('ImageUrl').files[0];
+		formData.append('ImageUrl', imagen);
 		formData.append('idCarrier', idCarrier);
-		formData.append('description', description); 
+		formData.append('description', description);
 		formData.append('idLocation', idLocation);
 		formData.append('TariffCode', TariffCode);
 
@@ -405,9 +422,9 @@ var fivepaq = {
 			contentType: false,
 			processData: false,
 			data: formData,
-			 headers: {
+			headers: {
 				'Authorization': 'Bearer ' + dataIn.T
-			}, 	
+			},
 			success: function (response) {
 				AlertSuccessImage(response);
 			},
