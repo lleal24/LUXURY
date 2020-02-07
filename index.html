@@ -720,10 +720,11 @@ w.ds " target="_blank" class="relative oh">
 						Boxluxury!</span>
 				</h2>
 			</div>
-
+			
 			<div class="row">
-
 				<div class="col-md-4 mb-60 wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".1s">
+					<div class="row padding-bottom-1x">
+					</div>
 					<div class="service-item-box">
 						<a href="#">
 							<i class="fas fa-box-open"></i>
@@ -869,10 +870,12 @@ w.ds " target="_blank" class="relative oh">
 					Calculadora<br>
 					<span style="font-size:19px;">¡Con nuestra calculadora puedes ver el costo aproximado de tus
 						envíos!</span>
-				</h2>
-			</div>
+				</h2> 
+			</div> 
 			<div class="row">
 				<!-- Checkout Adress-->
+				<div class="row padding-bottom-1x">
+				</div>
 				<div class="col-xl-7 col-lg-8">
 					<h4>Selecciona un plan</h4>
 
@@ -892,8 +895,8 @@ w.ds " target="_blank" class="relative oh">
 								<select class="form-control form-control-rounded form-control-sm" id="idPaisOrigen"
 									value="">
 									<option value="78" selected="">USA</option>
-									<option value="75" selected="">China</option>
-									<option value="76" selected="">España</option>
+									<option value="75" >China</option>
+									<option value="76" >España</option>
 								</select>
 							</div>
 						</div>
@@ -1013,21 +1016,21 @@ w.ds " target="_blank" class="relative oh">
 
 					<!--------------------- Fin Dimesiones volumetricas ------------->
 					<!-- ================================================================================================================== -->
-					<hr class="padding-bottom-1x">
+					<hr class="padding-bottom-1x" id="calculo">
 					<div class="row">
 						<div class="checkout-footer">
 							<div class="column"></div>
 							<div class="column">
 								<button style="margin-bottom: 2.3rem; margin-left: 1.5rem;" class="btn btn-md btn-blue"
-									onclick="calcularClick()">Calcular</button>
+									onclick="calcularClick()" >Calcular</button>
 							</div>
 						</div>
 					</div>
 					<!--=============================================================================================================== -->
-					<div class="col-sm-push-8 margin-top: 26px;">
+					<div class="col-sm-push-8 margin-top: 26px;" >
 						<!-- order="" summary="" widget="" -->
 						<section class="widget widget-order-summary">
-							<h3 class="widget-title">Estimación de Costos</h3>
+							<h3 class="widget-title" >Estimación de Costos</h3>
 							<table class="table">
 								<tbody>
 									<tr>
@@ -1076,7 +1079,7 @@ w.ds " target="_blank" class="relative oh">
 									<a href="#contact" class="btn btn-lg btn-blue">Cualquier Inquietud</a>
 
 								</p>
-							</div>
+							</div>			
 						</section>
 						<!-- Promo Banner-->
 
@@ -1114,6 +1117,8 @@ w.ds " target="_blank" class="relative oh">
 			</div>
 			<div class="row">
 				<div class="col-md-6 mb-40">
+					<div class="row padding-bottom-1x">
+					</div>
 					<div class="toggle">
 						<div class="acc-panel">
 							<a href="#" class="">¿Dónde puedo comprar con mi Casillero de Boxluxury?</a>
@@ -2955,6 +2960,8 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 					swal("¡ha ocurrido un error! ", message, "error");
 				}
 			});
+			location.href = "#calculo";
+			
 		}
 		function limpiarCalculadora() {
 			$("#idConvenio").val('');
