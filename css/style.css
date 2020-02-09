@@ -7047,6 +7047,15 @@ label {
   width: 30px;
   margin: 0 4.25px 10px;
 }
+/*-------------------------------------------------------*/
+/* Calculadora Style
+/*-------------------------------------------------------*/
+
+.textTotalCalc{
+  text-decoration: underline;
+  font-weight: 900;
+  background: whitesmoke;
+}
 
 @media (max-width: 767px) {
   #customizer {

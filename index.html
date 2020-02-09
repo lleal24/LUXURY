@@ -720,7 +720,7 @@ w.ds " target="_blank" class="relative oh">
 						Boxluxury!</span>
 				</h2>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-md-4 mb-60 wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".1s">
 					<div class="row padding-bottom-1x">
@@ -870,8 +870,8 @@ w.ds " target="_blank" class="relative oh">
 					Calculadora<br>
 					<span style="font-size:19px;">¡Con nuestra calculadora puedes ver el costo aproximado de tus
 						envíos!</span>
-				</h2> 
-			</div> 
+				</h2>
+			</div>
 			<div class="row">
 				<!-- Checkout Adress-->
 				<div class="row padding-bottom-1x">
@@ -895,8 +895,8 @@ w.ds " target="_blank" class="relative oh">
 								<select class="form-control form-control-rounded form-control-sm" id="idPaisOrigen"
 									value="">
 									<option value="78" selected="">USA</option>
-									<option value="75" >China</option>
-									<option value="76" >España</option>
+									<option value="75">China</option>
+									<option value="76">España</option>
 								</select>
 							</div>
 						</div>
@@ -1022,15 +1022,15 @@ w.ds " target="_blank" class="relative oh">
 							<div class="column"></div>
 							<div class="column">
 								<button style="margin-bottom: 2.3rem; margin-left: 1.5rem;" class="btn btn-md btn-blue"
-									onclick="calcularClick()" >Calcular</button>
+									onclick="calcularClick()">Calcular</button>
 							</div>
 						</div>
 					</div>
 					<!--=============================================================================================================== -->
-					<div class="col-sm-push-8 margin-top: 26px;" >
+					<div class="col-sm-push-8 margin-top: 26px;">
 						<!-- order="" summary="" widget="" -->
 						<section class="widget widget-order-summary">
-							<h3 class="widget-title" >Estimación de Costos</h3>
+							<h3 class="widget-title">Estimación de Costos</h3>
 							<table class="table">
 								<tbody>
 									<tr>
@@ -1054,8 +1054,8 @@ w.ds " target="_blank" class="relative oh">
 
 
 									<tr>
-										<td id="euro">Valor Total en USD </td>
-										<td class="text-lg text-medium" id="lbTOTAL"> </td>
+										<td class="textTotalCalc" id="euro">Valor Total en USD </td>
+										<td class="textTotalCalc text-medium" id="lbTOTAL"> </td>
 									</tr>
 								</tbody>
 							</table>
@@ -1063,35 +1063,35 @@ w.ds " target="_blank" class="relative oh">
 					</div>
 					<!-- Featured Products Widget-->
 					<!-- Seccion de datos seleccionados -->
-					<div class="col-sm-push-8 margin-top: 26px;" >
+					<div class="col-sm-push-8 margin-top: 26px;">
 						<!-- order="" summary="" widget="" -->
 						<section class="widget widget-order-summary">
-							<h3 class="widget-title" >Datos seleccionados para cotización</h3>
+							<h3 class="widget-title">Datos de cotización</h3>
 							<table class="table">
 								<tbody>
 									<tr>
 										<td>Plan: </td>
-										<td class="text-medium" id="lbflete"> </td>
+										<td class="text-medium" id="lbplan"> </td>
 									</tr>
 
 									<tr>
 										<td>Origen: </td>
-										<td class="text-medium" id="lbseguro"> </td>
+										<td class="text-medium" id="lborigen"> </td>
 									</tr>
 									<tr>
 										<td>Destino: </td>
-										<td class="text-medium" id="lbarancel"> </td>
+										<td class="text-medium" id="lbdestino"> </td>
 									</tr>
 
 									<tr>
 										<td>Valor declarado: </td>
-										<td class="text-medium" id="lbiva"> </td>
+										<td class="text-medium" id="lbvalordec"> </td>
 									</tr>
 
 
 									<tr>
 										<td id="euro">Peso: </td>
-										<td class="text-lg text-medium" id="lbTOTAL"> </td>
+										<td class="text-medium" id="lbpeso"> </td>
 									</tr>
 								</tbody>
 							</table>
@@ -1115,7 +1115,7 @@ w.ds " target="_blank" class="relative oh">
 									<a href="#contact" class="btn btn-lg btn-blue">Cualquier Inquietud</a>
 
 								</p>
-							</div>			
+							</div>
 						</section>
 						<!-- Promo Banner-->
 
@@ -1557,7 +1557,7 @@ w.ds " target="_blank" class="relative oh">
 											class="form-control form-control-rounded form-control-sm" id="pass2"
 											placeholder="Confirmar Contraseña">
 									</div>
-							
+
 								</div>
 							</div>
 							<!-- end col -->
@@ -2966,7 +2966,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			limpiarClick();
 			let convenio = document.getElementById("idConvenio").value;
 			sessionStorage.setItem('appData', convenio);
-			console.log(convenio);
+			/* console.log(convenio); */
 
 		}
 
@@ -2997,7 +2997,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				}
 			});
 			location.href = "#calculo";
-			
+
 		}
 		function limpiarCalculadora() {
 			$("#idConvenio").val('');
@@ -3017,11 +3017,11 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			$("#lbarancel").text("");
 			$("#lbiva").text("");
 			$("#lbTOTAL").text("");
+			$("#euro").text("Valor Total en USD");
 		}
 		function CalculadoraResult(request) {
-			console.log("request");
+			/* console.log("request"); */
 			debugger;
-			console.log(request);
 			let idPais = document.getElementById('idPaisOrigen').value;
 			if (idPais == 76) {
 				document.getElementById('euro').innerText = "Valor Total en EUR";
@@ -3029,14 +3029,29 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				$("#lbseguro").text("EUR €  " + String(request.ValorSeguro));
 				$("#lbarancel").text("EUR €  " + String(request.ValorArancel));
 				$("#lbiva").text("EUR €  " + String(request.ValorIva));
-				$("#lbTOTAL").text("€  " + String(request.ValorTotal));
-
+				$("#lbTOTAL").text("€    " + String(request.ValorTotal));
+				/* pintar datos de cotizacion EUR*/
+				var plan = document.getElementById("idConvenio");
+				$("#lbplan").text(plan.options[plan.selectedIndex].innerText);
+				var paisOrigen = document.getElementById("idPaisOrigen").innerText;
+				$("#lborigen").text(paisOrigen);
+				$("#lbdestino").text($("#ciudadNombre").val());
+				$("#lbvalordec").text("EUR €  " + $("#valorDeclarado").val());
+				$("#lbpeso").text($("#pesoTotal").val() + " Libras");
 			} else {
 				$("#lbflete").text("USD$ " + String(request.ValorFlete));
 				$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
 				$("#lbarancel").text("USD$ " + String(request.ValorArancel));
 				$("#lbiva").text("USD$ " + String(request.ValorIva));
 				$("#lbTOTAL").text("$   " + String(request.ValorTotal));
+				/* pintar datos de cotizacion USD */
+				var plan = document.getElementById("idConvenio");
+				$("#lbplan").text(plan.options[plan.selectedIndex].innerText);
+				var paisOrigen = document.getElementById("idPaisOrigen").innerText;
+				$("#lborigen").text(paisOrigen);
+				$("#lbdestino").text($("#ciudadNombre").val());
+				$("#lbvalordec").text("USD$ " + $("#valorDeclarado").val());
+				$("#lbpeso").text($("#pesoTotal").val() + " Libras");
 
 			}
 		}
@@ -3072,7 +3087,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			var url = "https://fpaq.azurewebsites.net/api/calculators/";
 			//var url = "https://fpaq.azurewebsites.net/api/calculators/";
 			// var url = "https://localhost:44347/api/calculators/";			
-			console.log(data);
+			/* console.log(data); */
 			url += $("#ciudadTipo").val() + "/";
 			url += data + "/";
 			/* url += $("#idConvenio").val() + "/"; */
@@ -3099,18 +3114,18 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 	</script>
 	<!-- FIN CALCULADORA-->
 
-		<!--REGISTRO CAMBIO DE PLANES -->
-		<script>
-			function standartOpt() {
-				document.getElementById('convenioRegistro').selectedIndex = "1";
-			}
-			function boluxuryClubOpt() {
-				document.getElementById('convenioRegistro').selectedIndex = "2";
-			}
-			function pymeBoxOpt() {
-				document.getElementById('convenioRegistro').selectedIndex = "3";
-			}
-		</script>
+	<!--REGISTRO CAMBIO DE PLANES -->
+	<script>
+		function standartOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "1";
+		}
+		function boluxuryClubOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "2";
+		}
+		function pymeBoxOpt() {
+			document.getElementById('convenioRegistro').selectedIndex = "3";
+		}
+	</script>
 
 
 	<!-- Modal Politicas-->
@@ -3452,519 +3467,650 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 					</p>
 					<p align="justify">
 						<h5 class="modal-title">CAPÍTULO II</h5><br />
-						<h5 class="modal-title">PRINCIPIOS</h5 </p> <p align="justify">Es un compromiso de AUROPAQ INC.
-						–
-						FIVEPAQ el entender y desarrollar de manera armónica los principios establecidos en la Ley
-						General.
-						A continuación, se relacionan los principios contenidos en la Ley General y en el Decreto
-						Reglamentario:<br />
-						2.1. PRINCIPIO DE LEGALIDAD EN MATERIA DE TRATAMIENTO DE DATOS<br />
-						El Tratamiento a que se refiere la presente ley es una actividad reglada que debe sujetarse a lo
-						establecido en ella y en las demás disposiciones que la desarrollen;<br />
-						2.2. PRINCIPIO DE FINALIDAD<br />
-						El Tratamiento debe obedecer a una finalidad legítima de acuerdo con la Constitución y la Ley,
-						la
-						cual debe ser informada al Titular;<br />
-						2.3. PRINCIPIO DE LIBERTAD<br />
-						El Tratamiento sólo puede ejercerse con el consentimiento, previo, expreso e informado del
-						Titular.
-						Los datos personales no podrán ser obtenidos o divulgados sin previa autorización, o en ausencia
-						de
-						mandato legal o judicial que releve el consentimiento;<br />
-						2.4. PRINCIPIO DE VERACIDAD O CALIDAD<br />
-						La información sujeta a Tratamiento debe ser veraz, completa, exacta, actualizada, comprobable y
-						comprensible. Se prohíbe el Tratamiento de datos parciales, incompletos, fraccionados o que
-						induzcan a error;<br />
-						2.5. PRINCIPIO DE TRANSPARENCIA:<br />
-						En el Tratamiento debe garantizarse el derecho del Titular a obtener del Responsable del
-						Tratamiento o del Encargado del Tratamiento, en cualquier momento y sin restricciones,
-						información
-						acerca de la existencia de datos que le conciernan;<br />
-						2.6. PRINCIPIO DE ACCESO Y CIRCULACIÓN RESTRINGIDA:<br />
-						El Tratamiento se sujeta a los límites que se derivan de la naturaleza de los datos personales,
-						de
-						las disposiciones de la presente ley y la Constitución. En este sentido, el Tratamiento sólo
-						podrá
-						hacerse por personas autorizadas por el Titular y/o por las personas previstas en la presente
-						ley;<br />
+						<h5 class="modal-title">PRINCIPIOS</h5 </p>
+						<p align="justify">Es un compromiso de AUROPAQ INC.
+							–
+							FIVEPAQ el entender y desarrollar de manera armónica los principios establecidos en la Ley
+							General.
+							A continuación, se relacionan los principios contenidos en la Ley General y en el Decreto
+							Reglamentario:<br />
+							2.1. PRINCIPIO DE LEGALIDAD EN MATERIA DE TRATAMIENTO DE DATOS<br />
+							El Tratamiento a que se refiere la presente ley es una actividad reglada que debe sujetarse
+							a lo
+							establecido en ella y en las demás disposiciones que la desarrollen;<br />
+							2.2. PRINCIPIO DE FINALIDAD<br />
+							El Tratamiento debe obedecer a una finalidad legítima de acuerdo con la Constitución y la
+							Ley,
+							la
+							cual debe ser informada al Titular;<br />
+							2.3. PRINCIPIO DE LIBERTAD<br />
+							El Tratamiento sólo puede ejercerse con el consentimiento, previo, expreso e informado del
+							Titular.
+							Los datos personales no podrán ser obtenidos o divulgados sin previa autorización, o en
+							ausencia
+							de
+							mandato legal o judicial que releve el consentimiento;<br />
+							2.4. PRINCIPIO DE VERACIDAD O CALIDAD<br />
+							La información sujeta a Tratamiento debe ser veraz, completa, exacta, actualizada,
+							comprobable y
+							comprensible. Se prohíbe el Tratamiento de datos parciales, incompletos, fraccionados o que
+							induzcan a error;<br />
+							2.5. PRINCIPIO DE TRANSPARENCIA:<br />
+							En el Tratamiento debe garantizarse el derecho del Titular a obtener del Responsable del
+							Tratamiento o del Encargado del Tratamiento, en cualquier momento y sin restricciones,
+							información
+							acerca de la existencia de datos que le conciernan;<br />
+							2.6. PRINCIPIO DE ACCESO Y CIRCULACIÓN RESTRINGIDA:<br />
+							El Tratamiento se sujeta a los límites que se derivan de la naturaleza de los datos
+							personales,
+							de
+							las disposiciones de la presente ley y la Constitución. En este sentido, el Tratamiento sólo
+							podrá
+							hacerse por personas autorizadas por el Titular y/o por las personas previstas en la
+							presente
+							ley;<br />
 
-						Los datos personales, salvo la información pública, no podrán estar disponibles en Internet u
-						otros
-						medios de divulgación o comunicación masiva, salvo que el acceso sea técnicamente controlable
-						para
-						brindar un conocimiento restringido sólo a los Titulares o terceros autorizados conforme a la
-						presente ley;<br />
-						2.7.PRINCIPIO DE SEGURIDAD<br />
-						La información sujeta a Tratamiento por el Responsable del Tratamiento o Encargado del
-						Tratamiento
-						a que se refiere la presente ley, se deberá manejar con las medidas técnicas, humanas y
-						administrativas que sean necesarias para otorgar seguridad a los registros evitando su
-						adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento;<br />
-						2.8. PRINCIPIO DE CONFIDENCIALIDAD:<br />
-						Todas las personas que intervengan en el Tratamiento de datos personales que no tengan la
-						naturaleza de públicos están obligadas a garantizar la reserva de la información, inclusive
-						después
-						de finalizada su relación con alguna de las labores que comprende el Tratamiento, pudiendo sólo
-						realizar suministro o comunicación de datos personales cuando ello corresponda al desarrollo de
-						las
-						actividades autorizadas en la presente ley y en los términos de la misma;<br />
-						2.9. NECESIDAD Y PROPORCIONALIDAD<br />
-						Los datos personales registrados en una base de datos deben ser los estrictamente necesarios
-						para
-						el cumplimiento de las finalidades del Tratamiento, informadas al titular. En tal sentido, deben
-						ser adecuados, pertinentes y acordes con las finalidades para los cuales fueron
-						recolectados;<br />
-						2.10. TEMPORALIDAD O CADUCIDAD<br />
-						El período de conservación de los datos personales será el necesario para alcanzar la finalidad
-						para la cual se han recolectado;<br />
-						2.11. INTERPRETACIÓN INTEGRAL DE DERECHOS CONSTITUCIONALES<br />
-						La Ley 1581 de 2012 se interpretará en el sentido de que se amparen adecuadamente los derechos
-						constitucionales, como son el hábeas data, el derecho al buen nombre, el derecho a la honra, el
-						derecho a la intimidad y el derecho a la información. Los derechos de los titulares se
-						interpretarán en armonía y en un plano de equilibrio con el derecho a la información previsto en
-						el
-						artículo 20 de la Constitución y con los demás derechos constitucionales aplicables.<br />
+							Los datos personales, salvo la información pública, no podrán estar disponibles en Internet
+							u
+							otros
+							medios de divulgación o comunicación masiva, salvo que el acceso sea técnicamente
+							controlable
+							para
+							brindar un conocimiento restringido sólo a los Titulares o terceros autorizados conforme a
+							la
+							presente ley;<br />
+							2.7.PRINCIPIO DE SEGURIDAD<br />
+							La información sujeta a Tratamiento por el Responsable del Tratamiento o Encargado del
+							Tratamiento
+							a que se refiere la presente ley, se deberá manejar con las medidas técnicas, humanas y
+							administrativas que sean necesarias para otorgar seguridad a los registros evitando su
+							adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento;<br />
+							2.8. PRINCIPIO DE CONFIDENCIALIDAD:<br />
+							Todas las personas que intervengan en el Tratamiento de datos personales que no tengan la
+							naturaleza de públicos están obligadas a garantizar la reserva de la información, inclusive
+							después
+							de finalizada su relación con alguna de las labores que comprende el Tratamiento, pudiendo
+							sólo
+							realizar suministro o comunicación de datos personales cuando ello corresponda al desarrollo
+							de
+							las
+							actividades autorizadas en la presente ley y en los términos de la misma;<br />
+							2.9. NECESIDAD Y PROPORCIONALIDAD<br />
+							Los datos personales registrados en una base de datos deben ser los estrictamente necesarios
+							para
+							el cumplimiento de las finalidades del Tratamiento, informadas al titular. En tal sentido,
+							deben
+							ser adecuados, pertinentes y acordes con las finalidades para los cuales fueron
+							recolectados;<br />
+							2.10. TEMPORALIDAD O CADUCIDAD<br />
+							El período de conservación de los datos personales será el necesario para alcanzar la
+							finalidad
+							para la cual se han recolectado;<br />
+							2.11. INTERPRETACIÓN INTEGRAL DE DERECHOS CONSTITUCIONALES<br />
+							La Ley 1581 de 2012 se interpretará en el sentido de que se amparen adecuadamente los
+							derechos
+							constitucionales, como son el hábeas data, el derecho al buen nombre, el derecho a la honra,
+							el
+							derecho a la intimidad y el derecho a la información. Los derechos de los titulares se
+							interpretarán en armonía y en un plano de equilibrio con el derecho a la información
+							previsto en
+							el
+							artículo 20 de la Constitución y con los demás derechos constitucionales aplicables.<br />
 
-						Dynamic Enterprises SAS, en desarrollo del principio de legalidad, velará porque los datos sean
-						adquiridos, tratados y administrados de manera lícita. Esto es, que en desarrollo de su objeto
-						social, consistente en la prestación del servicio de alquiler de casilleros en el exterior y
-						remisión de las mercancías y documentos allí recibidos con destino a la dirección del cliente
-						ubicada en Colombia, recabará los datos que sean estrictamente necesarios para el desarrollo de
-						dicha actividad.<br />
+							Dynamic Enterprises SAS, en desarrollo del principio de legalidad, velará porque los datos
+							sean
+							adquiridos, tratados y administrados de manera lícita. Esto es, que en desarrollo de su
+							objeto
+							social, consistente en la prestación del servicio de alquiler de casilleros en el exterior y
+							remisión de las mercancías y documentos allí recibidos con destino a la dirección del
+							cliente
+							ubicada en Colombia, recabará los datos que sean estrictamente necesarios para el desarrollo
+							de
+							dicha actividad.<br />
 
-						Así mismo, actuando en su calidad de Responsable de los datos personales que recaba, informará a
-						los Titulares de manera clara, suficiente y previa acerca de la o las finalidades de la
-						información
-						a ser suministrada. En el evento en que la finalidad cambie o se modifique de tal manera que el
-						Titular de manera razonable no lo espere, le informará a éste de manera previa, con el fin de
-						obtener de su consentimiento para ésta nueva finalidad.<br />
+							Así mismo, actuando en su calidad de Responsable de los datos personales que recaba,
+							informará a
+							los Titulares de manera clara, suficiente y previa acerca de la o las finalidades de la
+							información
+							a ser suministrada. En el evento en que la finalidad cambie o se modifique de tal manera que
+							el
+							Titular de manera razonable no lo espere, le informará a éste de manera previa, con el fin
+							de
+							obtener de su consentimiento para ésta nueva finalidad.<br />
 
-						En desarrollo del principio de razonabilidad y proporcionalidad, recaudará los datos que sean
-						estrictamente necesarios para llevar a cabo las finalidades perseguidas y los conservará por el
-						tiempo necesario para cumplir con la finalidad con que se han registrado.<br />
+							En desarrollo del principio de razonabilidad y proporcionalidad, recaudará los datos que
+							sean
+							estrictamente necesarios para llevar a cabo las finalidades perseguidas y los conservará por
+							el
+							tiempo necesario para cumplir con la finalidad con que se han registrado.<br />
 
-						Igualmente, respetará la libertad que tiene el Titular para autorizar o no el uso de sus datos
-						personales, y en consecuencia, los mecanismos que utilicen para obtener el consentimiento le
-						permitirán al Titular manifestar de manera inequívoca que otorga tal autorización.<br />
+							Igualmente, respetará la libertad que tiene el Titular para autorizar o no el uso de sus
+							datos
+							personales, y en consecuencia, los mecanismos que utilicen para obtener el consentimiento le
+							permitirán al Titular manifestar de manera inequívoca que otorga tal autorización.<br />
 
-						Informará al Titular acerca del Tratamiento que le dará a sus datos, de tal manera que para éste
-						sea claro que si su voluntad es contratar el servicio ofrecido, deberá aportar la información
-						que
-						se solicita en el formulario de registro.<br />
-					</p>
-					<p align="justify">
-						<h5 class="modal-title">CAPÍTULO III</h5><br />
-						<h5 class="modal-title">DERECHOS DE LOS TITULARES E IDENTIFICACIÓN DE LAS BASES DE DATOS</h5>
-						<br />
-						3.1. DERECHOS DE LOS TITULARES.<br />
-						a. Dirigirse a Dynamic Enterprises SAS, a través de los canales establecidos por ésta, los
-						cuales se
-						indican en el Aviso de Privacidad, que se adjunta como anexo del presente Manual, con el fin de
-						conocer, actualizar y rectificar sus datos personales. Este derecho se podrá ejercer, entre
-						otros
-						frente a datos parciales, inexactos, incompletos, fraccionados, que induzcan a error, o aquellos
-						cuyo Tratamiento esté expresamente prohibido o no haya sido autorizado;<br />
-						b. Solicitar prueba de la autorización otorgada a Dynamic Enterprises SAS salvo cuando, de
-						acuerdo
-						con la Ley, el Tratamiento que se está realizando no lo requiera;<br />
-						c. Ser informado por Dynamic Enterprises SAS, previa solicitud efectuada a través de los canales
-						dispuestos por éstas, respecto del uso que se le ha dado a sus datos personales;<br />
-						d. Presentar ante la Superintendencia de Industria y Comercio quejas por infracciones a la Ley
-						General y sus decretos reglamentarios; para lo cual deberá haberse surtido de manera previa el
-						trámite de consulta o reclamo ante la Compañía.<br />
-						e. Acceder en forma gratuita, a través de los canales dispuestos por la Compañía, a sus datos
-						personales que hayan sido objeto de Tratamiento.<br />
-						Dynamic Enterprises SAS a través de su Aviso de Privacidad (Anexo 1 de este Manual), informará
-						acerca de los canales y procedimientos previstos para que el Titular pueda ejercer sus derechos
-						de
-						manera efectiva.<br />
+							Informará al Titular acerca del Tratamiento que le dará a sus datos, de tal manera que para
+							éste
+							sea claro que si su voluntad es contratar el servicio ofrecido, deberá aportar la
+							información
+							que
+							se solicita en el formulario de registro.<br />
+						</p>
+						<p align="justify">
+							<h5 class="modal-title">CAPÍTULO III</h5><br />
+							<h5 class="modal-title">DERECHOS DE LOS TITULARES E IDENTIFICACIÓN DE LAS BASES DE DATOS
+							</h5>
+							<br />
+							3.1. DERECHOS DE LOS TITULARES.<br />
+							a. Dirigirse a Dynamic Enterprises SAS, a través de los canales establecidos por ésta, los
+							cuales se
+							indican en el Aviso de Privacidad, que se adjunta como anexo del presente Manual, con el fin
+							de
+							conocer, actualizar y rectificar sus datos personales. Este derecho se podrá ejercer, entre
+							otros
+							frente a datos parciales, inexactos, incompletos, fraccionados, que induzcan a error, o
+							aquellos
+							cuyo Tratamiento esté expresamente prohibido o no haya sido autorizado;<br />
+							b. Solicitar prueba de la autorización otorgada a Dynamic Enterprises SAS salvo cuando, de
+							acuerdo
+							con la Ley, el Tratamiento que se está realizando no lo requiera;<br />
+							c. Ser informado por Dynamic Enterprises SAS, previa solicitud efectuada a través de los
+							canales
+							dispuestos por éstas, respecto del uso que se le ha dado a sus datos personales;<br />
+							d. Presentar ante la Superintendencia de Industria y Comercio quejas por infracciones a la
+							Ley
+							General y sus decretos reglamentarios; para lo cual deberá haberse surtido de manera previa
+							el
+							trámite de consulta o reclamo ante la Compañía.<br />
+							e. Acceder en forma gratuita, a través de los canales dispuestos por la Compañía, a sus
+							datos
+							personales que hayan sido objeto de Tratamiento.<br />
+							Dynamic Enterprises SAS a través de su Aviso de Privacidad (Anexo 1 de este Manual),
+							informará
+							acerca de los canales y procedimientos previstos para que el Titular pueda ejercer sus
+							derechos
+							de
+							manera efectiva.<br />
 
-						3.2. AUTORIZACION<br />
+							3.2. AUTORIZACION<br />
 
-						Sin perjuicio de las excepciones previstas en la Ley, para efectuar el Tratamiento de datos
-						personales se requiere la autorización previa e informada del Titular, la cual deberá ser
-						obtenida
-						por cualquier medio que pueda ser objeto de consulta posterior.<br />
+							Sin perjuicio de las excepciones previstas en la Ley, para efectuar el Tratamiento de datos
+							personales se requiere la autorización previa e informada del Titular, la cual deberá ser
+							obtenida
+							por cualquier medio que pueda ser objeto de consulta posterior.<br />
 
-						La autorización del Titular no será necesaria cuando se trate de:
-						a. Información requerida por una entidad pública o administrativa en ejercicio de sus funciones
-						legales o por orden judicial;<br />
-						b. Datos de naturaleza pública;<br />
-						c. Casos de urgencia médica o sanitaria;<br />
-						d. Tratamiento de información autorizado por la ley para fines históricos, estadísticos o
-						científicos;<br />
-						e. Datos relacionados con el Registro Civil de las Personas.<br />
-						En el evento en que Dynamic Enterprises SAS se encuentre frente a alguna de estas situaciones,
-						lo
-						dejará claramente revelado y en todo caso cumplirá con las demás disposiciones contenidas en la
-						Ley.<br />
+							La autorización del Titular no será necesaria cuando se trate de:
+							a. Información requerida por una entidad pública o administrativa en ejercicio de sus
+							funciones
+							legales o por orden judicial;<br />
+							b. Datos de naturaleza pública;<br />
+							c. Casos de urgencia médica o sanitaria;<br />
+							d. Tratamiento de información autorizado por la ley para fines históricos, estadísticos o
+							científicos;<br />
+							e. Datos relacionados con el Registro Civil de las Personas.<br />
+							En el evento en que Dynamic Enterprises SAS se encuentre frente a alguna de estas
+							situaciones,
+							lo
+							dejará claramente revelado y en todo caso cumplirá con las demás disposiciones contenidas en
+							la
+							Ley.<br />
 
-						3.2. AUTORIZACION<br />
+							3.2. AUTORIZACION<br />
 
-						Dynamic Enterprises SAS ha identificado las siguientes bases de datos:<br />
-						• De Clientes Actuales.<br />
-						• De Clientes antiguos sin relación comercial vigente.<br />
-						• De Proveedores persona natural.<br />
-						• De Candidatos a proveedores personal natural.<br />
-						• De Ex proveedores persona natural.<br />
-						• De Empleados.<br />
-						• De candidatos a empleados.<br />
-						• De Ex empleados.<br />
+							Dynamic Enterprises SAS ha identificado las siguientes bases de datos:<br />
+							• De Clientes Actuales.<br />
+							• De Clientes antiguos sin relación comercial vigente.<br />
+							• De Proveedores persona natural.<br />
+							• De Candidatos a proveedores personal natural.<br />
+							• De Ex proveedores persona natural.<br />
+							• De Empleados.<br />
+							• De candidatos a empleados.<br />
+							• De Ex empleados.<br />
 
-						3.4. FINALIDAD.<br />
+							3.4. FINALIDAD.<br />
 
-						Se han identificado las finalidades del Tratamiento de cada una de las bases de datos
-						mencionadas,
-						y en particular:<br />
-						• De Clientes Actuales.<br />
-						La información de los clientes es obtenida a través del formulario de registro que se presenta
-						en
-						el Portal Web de Dynamic Enterprises SAS el cual puede ser accedido directamente por el Titular
-						o a
-						través del link dispuesto en las páginas web de los aliados. Si bien en la página de los aliados
-						se
-						hace referencia al servicio de casilleros en el exterior y envío de la mercancía y documentos,
-						los
-						usuarios que deseen obtener el servicio son remitidos al formulario de ingreso el cual está
-						ubicado
-						directamente en el servidor de la compañía.<br />
+							Se han identificado las finalidades del Tratamiento de cada una de las bases de datos
+							mencionadas,
+							y en particular:<br />
+							• De Clientes Actuales.<br />
+							La información de los clientes es obtenida a través del formulario de registro que se
+							presenta
+							en
+							el Portal Web de Dynamic Enterprises SAS el cual puede ser accedido directamente por el
+							Titular
+							o a
+							través del link dispuesto en las páginas web de los aliados. Si bien en la página de los
+							aliados
+							se
+							hace referencia al servicio de casilleros en el exterior y envío de la mercancía y
+							documentos,
+							los
+							usuarios que deseen obtener el servicio son remitidos al formulario de ingreso el cual está
+							ubicado
+							directamente en el servidor de la compañía.<br />
 
-						El sitio web de Dynamic Enterprises SAS es operado directamente por AUROPAQ. Los datos
-						personales
-						que allí se alojen son recibidos por Dynamic Enterprises SAS en calidad de Responsable para los
-						fines pertinentes.<br />
+							El sitio web de Dynamic Enterprises SAS es operado directamente por AUROPAQ. Los datos
+							personales
+							que allí se alojen son recibidos por Dynamic Enterprises SAS en calidad de Responsable para
+							los
+							fines pertinentes.<br />
 
-						El Tratamiento de la información contenida en bases de datos de clientes actuales tiene como
-						finalidad la debida prestación del servicio contratado con Dynamic Enterprises SAS.<br />
+							El Tratamiento de la información contenida en bases de datos de clientes actuales tiene como
+							finalidad la debida prestación del servicio contratado con Dynamic Enterprises SAS.<br />
 
-						Los datos de contacto de los clientes también podrán ser utilizados para comunicar información
-						propia del desarrollo de la relación contractual, por ejemplo, informar acerca del estado de
-						pagos
-						y advertir sobre irregularidades o restricciones de la mercancía recibida en el casillero, entre
-						otras.<br />
-						• De Clientes antiguos sin relación comercial vigente.<br />
-						La información de clientes cuyo contrato no se encuentra vigente, será conservada por un periodo
-						de
-						cinco (5) años contabilizados desde la terminación del vínculo. Lo anterior, con el fin de
-						conservar la información relativa al cumplimiento de las obligaciones generadas en el contrato
-						para
-						los efectos legales pertinentes.<br />
+							Los datos de contacto de los clientes también podrán ser utilizados para comunicar
+							información
+							propia del desarrollo de la relación contractual, por ejemplo, informar acerca del estado de
+							pagos
+							y advertir sobre irregularidades o restricciones de la mercancía recibida en el casillero,
+							entre
+							otras.<br />
+							• De Clientes antiguos sin relación comercial vigente.<br />
+							La información de clientes cuyo contrato no se encuentra vigente, será conservada por un
+							periodo
+							de
+							cinco (5) años contabilizados desde la terminación del vínculo. Lo anterior, con el fin de
+							conservar la información relativa al cumplimiento de las obligaciones generadas en el
+							contrato
+							para
+							los efectos legales pertinentes.<br />
 
-						Así mismo, los datos de contacto de los ex clientes podrán ser utilizados para informarles
-						acerca
-						de nuevos servicios desarrollados por la compañía que puedan resultar de su interés y de este
-						modo
-						incentivar la creación de un nuevo vínculo contractual.<br />
-						• De Proveedores persona natural.<br />
-						Los datos de los proveedores se utilizan para los fines propios de la relación contractual
-						establecida con éstos y para el consecuente cumplimiento de las obligaciones que se generan a
-						partir de dicha relación.
+							Así mismo, los datos de contacto de los ex clientes podrán ser utilizados para informarles
+							acerca
+							de nuevos servicios desarrollados por la compañía que puedan resultar de su interés y de
+							este
+							modo
+							incentivar la creación de un nuevo vínculo contractual.<br />
+							• De Proveedores persona natural.<br />
+							Los datos de los proveedores se utilizan para los fines propios de la relación contractual
+							establecida con éstos y para el consecuente cumplimiento de las obligaciones que se generan
+							a
+							partir de dicha relación.
 
-						Por lo anterior, dichos datos son administrados por las áreas administrativa y contable de la
-						Compañía, a través del software contable denominado SAP. Así mismo, la información personal de
-						proveedores que sean personas naturales y que reposa en soportes físicos es almacenada bajo
-						llave,
-						en el área administrativa.<br />
-						• De candidatos a proveedores persona natural.<br />
-						Los datos de proveedores persona natural que sean obtenidos en los procesos de selección de
-						proveedores permiten conocer la idoneidad y la experiencia del proveedor en la prestación del
-						servicio requerido, lo cual le permite a Dynamic Enterprises SAS tomar una decisión informada
-						acerca
-						del proveedor elegido.<br />
+							Por lo anterior, dichos datos son administrados por las áreas administrativa y contable de
+							la
+							Compañía, a través del software contable denominado SAP. Así mismo, la información personal
+							de
+							proveedores que sean personas naturales y que reposa en soportes físicos es almacenada bajo
+							llave,
+							en el área administrativa.<br />
+							• De candidatos a proveedores persona natural.<br />
+							Los datos de proveedores persona natural que sean obtenidos en los procesos de selección de
+							proveedores permiten conocer la idoneidad y la experiencia del proveedor en la prestación
+							del
+							servicio requerido, lo cual le permite a Dynamic Enterprises SAS tomar una decisión
+							informada
+							acerca
+							del proveedor elegido.<br />
 
-						Una vez finaliza el proceso de selección, el proveedor seleccionado adquiere la calidad de
-						proveedor actual y el Tratamiento de sus datos se realizará de conformidad con la finalidad
-						expuesta en el acápite anterior.<br />
+							Una vez finaliza el proceso de selección, el proveedor seleccionado adquiere la calidad de
+							proveedor actual y el Tratamiento de sus datos se realizará de conformidad con la finalidad
+							expuesta en el acápite anterior.<br />
 
-						Ahora bien, los datos de los candidatos a proveedores que no fueron seleccionados son
-						conservados
-						por el término de tres (3) años con el fin de poder contactarlo en el evento en que su perfil se
-						enmarque dentro de las necesidades actuales de la Compañía o para una nueva convocatoria.<br />
-						• De Ex proveedores persona natural.<br />
-						La información personal de los proveedores persona natural, cuyo vínculo con Dynamic Enterprises
-						SAS
-						ya ha finalizado, será conservada por diez (10) años contabilizados desde la terminación del
-						contrato. Esta información se conserva a manera de registro del cumplimiento de las obligaciones
-						contraídas, para todos los efectos legales que se requieran, así como para tener los soportes
-						necesarios que permitan emitir las referencias que sobre los proveedores se soliciten a la
-						Compañía.<br />
-						• De Empleados.<br />
-						El Tratamiento de la base de datos de empleados tiene como finalidad exclusiva el adecuado
-						desarrollo de la relación laboral y el cumplimiento de las obligaciones que de la misma se
-						derivan.<br />
+							Ahora bien, los datos de los candidatos a proveedores que no fueron seleccionados son
+							conservados
+							por el término de tres (3) años con el fin de poder contactarlo en el evento en que su
+							perfil se
+							enmarque dentro de las necesidades actuales de la Compañía o para una nueva
+							convocatoria.<br />
+							• De Ex proveedores persona natural.<br />
+							La información personal de los proveedores persona natural, cuyo vínculo con Dynamic
+							Enterprises
+							SAS
+							ya ha finalizado, será conservada por diez (10) años contabilizados desde la terminación del
+							contrato. Esta información se conserva a manera de registro del cumplimiento de las
+							obligaciones
+							contraídas, para todos los efectos legales que se requieran, así como para tener los
+							soportes
+							necesarios que permitan emitir las referencias que sobre los proveedores se soliciten a la
+							Compañía.<br />
+							• De Empleados.<br />
+							El Tratamiento de la base de datos de empleados tiene como finalidad exclusiva el adecuado
+							desarrollo de la relación laboral y el cumplimiento de las obligaciones que de la misma se
+							derivan.<br />
 
-						Para ello, los datos personales de empleados son administrados por el área administrativa y
-						contable a través del sistema contable denominado SAP. Así mismo, la información personal los
-						trabajadores que reposa en soportes físicos es almacenada bajo llave, en el área
-						administrativa.<br />
-						• De candidatos a empleados.<br />
-						La base de datos de candidatos en proceso de selección recoge la información proveniente de las
-						hojas de vida, certificaciones y referencias personales de quienes se presentan a procesos de
-						selección. A partir de dicha información, Dynamic Enterprises SAS busca identificar los
-						candidatos
-						más idóneos para ser vinculados.<br />
+							Para ello, los datos personales de empleados son administrados por el área administrativa y
+							contable a través del sistema contable denominado SAP. Así mismo, la información personal
+							los
+							trabajadores que reposa en soportes físicos es almacenada bajo llave, en el área
+							administrativa.<br />
+							• De candidatos a empleados.<br />
+							La base de datos de candidatos en proceso de selección recoge la información proveniente de
+							las
+							hojas de vida, certificaciones y referencias personales de quienes se presentan a procesos
+							de
+							selección. A partir de dicha información, Dynamic Enterprises SAS busca identificar los
+							candidatos
+							más idóneos para ser vinculados.<br />
 
-						Una vez el proceso de selección finalice, la información de los candidatos que no fueron
-						vinculados
-						será conservada por tres (3) años con el fin de poder contactarlos en el evento en que su perfil
-						se
-						adecúe a una nueva vacante.<br />
-						• De Ex empleados.<br />
-						La información de los Titulares cuya vinculación laboral con Dynamic Enterprises SAS haya
-						finalizado, será conservada, si no existe un término legal de conservación superior establecido,
-						esta información será conservada por un término de diez (10) años, con el fin de atender las
-						inquietudes que se puedan generar a partir de la relación contractual que existió y las
-						obligaciones que se cumplieron en virtud de tal contrato laboral. El registro de dicha
-						información
-						permite tener a disposición de las autoridades, o del mismo Titular, su información durante el
-						término establecido en la ley laboral.<br />
+							Una vez el proceso de selección finalice, la información de los candidatos que no fueron
+							vinculados
+							será conservada por tres (3) años con el fin de poder contactarlos en el evento en que su
+							perfil
+							se
+							adecúe a una nueva vacante.<br />
+							• De Ex empleados.<br />
+							La información de los Titulares cuya vinculación laboral con Dynamic Enterprises SAS haya
+							finalizado, será conservada, si no existe un término legal de conservación superior
+							establecido,
+							esta información será conservada por un término de diez (10) años, con el fin de atender las
+							inquietudes que se puedan generar a partir de la relación contractual que existió y las
+							obligaciones que se cumplieron en virtud de tal contrato laboral. El registro de dicha
+							información
+							permite tener a disposición de las autoridades, o del mismo Titular, su información durante
+							el
+							término establecido en la ley laboral.<br />
 
-						3.5. VIGENCIA.<br />
+							3.5. VIGENCIA.<br />
 
-						Los datos se conservan de acuerdo con los principios de necesidad y razonabilidad; de caducidad
-						y
-						temporalidad y con lo dispuesto en las normas especiales que regulan la conservación de
-						documentos.<br />
-						3.6. CANALES DE COMUNICACIÓN CON LOS TITULARES.<br />
+							Los datos se conservan de acuerdo con los principios de necesidad y razonabilidad; de
+							caducidad
+							y
+							temporalidad y con lo dispuesto en las normas especiales que regulan la conservación de
+							documentos.<br />
+							3.6. CANALES DE COMUNICACIÓN CON LOS TITULARES.<br />
 
-						Dynamic Enterprises SAS establece como canales de comunicación con los Titulares el correo
-						electrónico servicioalcliente@auropaq.com; y la línea telefónica xxxxxx<br />
-					</p>
-					<p align="justify">
-						<h5 class="modal-title">CAPITULO IV</h5><br />
-						<h5 class="modal-title">DEBERES EN CALIDAD DE RESPONSABLE Y ENCARGADO DEL TRATAMIENTO.</h5>
-						<br />
-						4.1. DEBERES EN CALIDAD DE RESPONSABLE DEL TRATAMIENTO.<br />
+							Dynamic Enterprises SAS establece como canales de comunicación con los Titulares el correo
+							electrónico servicioalcliente@auropaq.com; y la línea telefónica xxxxxx<br />
+						</p>
+						<p align="justify">
+							<h5 class="modal-title">CAPITULO IV</h5><br />
+							<h5 class="modal-title">DEBERES EN CALIDAD DE RESPONSABLE Y ENCARGADO DEL TRATAMIENTO.</h5>
+							<br />
+							4.1. DEBERES EN CALIDAD DE RESPONSABLE DEL TRATAMIENTO.<br />
 
-						Con el fin de facilitar el entendimiento respecto de en qué situaciones actúan AUROPAQ INC. –
-						FIVEPAQ en calidad de RESPONSABLE, a continuación se define este término: RESPONSABLE: La Ley
-						General lo define como la persona natural o jurídica, pública o privada, que por sí misma o en
-						asocio con otros, decide sobre la base de datos y/o el tratamiento de los datos.<br />
+							Con el fin de facilitar el entendimiento respecto de en qué situaciones actúan AUROPAQ INC.
+							–
+							FIVEPAQ en calidad de RESPONSABLE, a continuación se define este término: RESPONSABLE: La
+							Ley
+							General lo define como la persona natural o jurídica, pública o privada, que por sí misma o
+							en
+							asocio con otros, decide sobre la base de datos y/o el tratamiento de los datos.<br />
 
-						Ahora bien, de conformidad con la Sentencia C-748 de 2011, es “el que define los fines y medios
-						esenciales para el tratamiento del dato, incluidos quienes fungen como fuente y Usuario”.
-						Pudiendo
-						poner los datos en circulación o utilizarlos de cierta manera.<br />
+							Ahora bien, de conformidad con la Sentencia C-748 de 2011, es “el que define los fines y
+							medios
+							esenciales para el tratamiento del dato, incluidos quienes fungen como fuente y Usuario”.
+							Pudiendo
+							poner los datos en circulación o utilizarlos de cierta manera.<br />
 
-						Una vez descrito el término Responsable de la Información, a continuación, se exponen las
-						medidas
-						que adoptará Dynamic Enterprises SAS en cumplimiento de los deberes que asume en tal calidad:
-						<br />
-						• La compañía solicitará consentimiento informado a los Titulares de la información para la
-						recolección y tratamiento de sus datos. Para ello, informará acerca de la finalidad de la
-						recolección tanto en el formato que se utilice para obtener la autorización, como en el Aviso de
-						Privacidad, permitiendo que el Titular tenga pleno conocimiento sobre el Tratamiento que se le
-						dará
-						a sus datos.<br />
+							Una vez descrito el término Responsable de la Información, a continuación, se exponen las
+							medidas
+							que adoptará Dynamic Enterprises SAS en cumplimiento de los deberes que asume en tal
+							calidad:
+							<br />
+							• La compañía solicitará consentimiento informado a los Titulares de la información para la
+							recolección y tratamiento de sus datos. Para ello, informará acerca de la finalidad de la
+							recolección tanto en el formato que se utilice para obtener la autorización, como en el
+							Aviso de
+							Privacidad, permitiendo que el Titular tenga pleno conocimiento sobre el Tratamiento que se
+							le
+							dará
+							a sus datos.<br />
 
-						Las autorizaciones emitidas por los Titulares serán conservadas de manera que se garantice su
-						consulta posterior.<br />
-						• Dynamic Enterprises SAS respetará y velará por el pleno ejercicio del derecho de habeas data
-						de
-						los Titulares. Para tal fin, indicará en el Aviso de Privacidad, disponible para su consulta en
-						página web http://www.auropaq.com.co, los derechos que le asisten a los Titulares de la
-						información.<br />
-						• El área de Servicio al Cliente de la Compañía tramitará las consultas y reclamos relacionadas
-						con
-						el Tratamiento de Datos Personales, elevadas por los Titulares a través de los canales de
-						atención
-						establecidos en el Num. 3.6 de este Manual. No obstante, en el evento en que la consulta o
-						reclamo
-						lo amerite, el Área de Servicio al Cliente podrá remitirlo al Área de Gerencia Administrativa, a
-						fin de que el reclamo o la consulta en cuestión sea atendida por ésta última área. <br />
+							Las autorizaciones emitidas por los Titulares serán conservadas de manera que se garantice
+							su
+							consulta posterior.<br />
+							• Dynamic Enterprises SAS respetará y velará por el pleno ejercicio del derecho de habeas
+							data
+							de
+							los Titulares. Para tal fin, indicará en el Aviso de Privacidad, disponible para su consulta
+							en
+							página web http://www.auropaq.com.co, los derechos que le asisten a los Titulares de la
+							información.<br />
+							• El área de Servicio al Cliente de la Compañía tramitará las consultas y reclamos
+							relacionadas
+							con
+							el Tratamiento de Datos Personales, elevadas por los Titulares a través de los canales de
+							atención
+							establecidos en el Num. 3.6 de este Manual. No obstante, en el evento en que la consulta o
+							reclamo
+							lo amerite, el Área de Servicio al Cliente podrá remitirlo al Área de Gerencia
+							Administrativa, a
+							fin de que el reclamo o la consulta en cuestión sea atendida por ésta última área. <br />
 
-						En todo caso el trámite de consultas y reclamos se realizará de conformidad con lo establecido
-						en
-						el Título V de la Ley General de Protección de Datos Personales.<br />
-						• Las instrucciones y requerimientos formulados por la Superintendencia de Industria y Comercio
-						en
-						materia de protección de datos personales serán recibidos y gestionados por el área de Gerencia
-						Administrativa, encargada del seguimiento de la adopción y cumplimiento de estas
-						políticas.<br />
-						• En lo concerniente al deber de seguridad sobre la Información, conviene señalar que la
-						información administrada por Dynamic Enterprises SAS cuenta con las medidas de seguridad y
-						confidencialidad, tanto físicas como electrónicas, que requiere el tipo de datos que administra.
-						Lo
-						anterior con la finalidad de impedir la adulteración, pérdida, consulta o uso no autorizado de
-						la
-						información.<br />
+							En todo caso el trámite de consultas y reclamos se realizará de conformidad con lo
+							establecido
+							en
+							el Título V de la Ley General de Protección de Datos Personales.<br />
+							• Las instrucciones y requerimientos formulados por la Superintendencia de Industria y
+							Comercio
+							en
+							materia de protección de datos personales serán recibidos y gestionados por el área de
+							Gerencia
+							Administrativa, encargada del seguimiento de la adopción y cumplimiento de estas
+							políticas.<br />
+							• En lo concerniente al deber de seguridad sobre la Información, conviene señalar que la
+							información administrada por Dynamic Enterprises SAS cuenta con las medidas de seguridad y
+							confidencialidad, tanto físicas como electrónicas, que requiere el tipo de datos que
+							administra.
+							Lo
+							anterior con la finalidad de impedir la adulteración, pérdida, consulta o uso no autorizado
+							de
+							la
+							información.<br />
 
-						En el evento en el que se presenten incidentes de seguridad que puedan poner en riesgo la
-						información de los Titulares, se tendrá que informar a la Superintendencia de Industria y
-						Comercio,
-						con base en los procesos de seguridad y manejo de incidentes desarrollados internamente por la
-						Compañía, los cuales se encuentran debidamente documentados.<br />
-						• En relación con la información que Dynamic Enterprises SAS da a conocer a los proveedores de
-						los
-						servicios de mensajería y manejo de aduanas, quienes actúan en calidad de Encargados de la
-						información, la Compañía garantizará que la información sea veraz, completa, exacta, actualizada
-						y
-						comprensible. Así mismo, se le hará saber al Encargado cuando la información suministrada se
-						encuentre en trámite de reclamo o sea objeto de discusión judicial.<br />
+							En el evento en el que se presenten incidentes de seguridad que puedan poner en riesgo la
+							información de los Titulares, se tendrá que informar a la Superintendencia de Industria y
+							Comercio,
+							con base en los procesos de seguridad y manejo de incidentes desarrollados internamente por
+							la
+							Compañía, los cuales se encuentran debidamente documentados.<br />
+							• En relación con la información que Dynamic Enterprises SAS da a conocer a los proveedores
+							de
+							los
+							servicios de mensajería y manejo de aduanas, quienes actúan en calidad de Encargados de la
+							información, la Compañía garantizará que la información sea veraz, completa, exacta,
+							actualizada
+							y
+							comprensible. Así mismo, se le hará saber al Encargado cuando la información suministrada se
+							encuentre en trámite de reclamo o sea objeto de discusión judicial.<br />
 
-						Conviene anotar que la colaboración efectiva de los Titulares respecto de la actualización de su
-						información será fundamental para el cumplimiento óptimo del deber de informar al Encargado
-						acerca
-						de todas las novedades respecto de los datos que le hayan sido suministrados.<br />
-						• Adicionalmente, los contratos que se celebren con los Encargados del Tratamiento incorporarán
-						previsiones tendientes a procurar el uso actualizado y adecuado de la información.<br />
+							Conviene anotar que la colaboración efectiva de los Titulares respecto de la actualización
+							de su
+							información será fundamental para el cumplimiento óptimo del deber de informar al Encargado
+							acerca
+							de todas las novedades respecto de los datos que le hayan sido suministrados.<br />
+							• Adicionalmente, los contratos que se celebren con los Encargados del Tratamiento
+							incorporarán
+							previsiones tendientes a procurar el uso actualizado y adecuado de la información.<br />
 
-						4.2. DEBERES EN CALIDAD DE ENCARGADO DEL TRATAMIENTO.<br />
+							4.2. DEBERES EN CALIDAD DE ENCARGADO DEL TRATAMIENTO.<br />
 
-						Con el fin de facilitar el entendimiento respecto de en qué situaciones Dynamic Enterprises SAS
-						podría actuar en calidad de Encargado del Tratamiento, a continuación se define este término:
-						ENCARGADO: La ley señala que es la persona natural o jurídica, pública o privada, que por sí
-						misma
-						o en asocio con otros, realiza el tratamiento de los datos personales por cuenta del responsable
-						del tratamiento.<br />
+							Con el fin de facilitar el entendimiento respecto de en qué situaciones Dynamic Enterprises
+							SAS
+							podría actuar en calidad de Encargado del Tratamiento, a continuación se define este
+							término:
+							ENCARGADO: La ley señala que es la persona natural o jurídica, pública o privada, que por sí
+							misma
+							o en asocio con otros, realiza el tratamiento de los datos personales por cuenta del
+							responsable
+							del tratamiento.<br />
 
-						En atención a que la mayoría de las obligaciones establecidas en la calidad de Encargado
-						coinciden
-						con las señaladas en la calidad de Responsable, solamente se hará referencia expresa en este
-						numeral a los deberes adicionales que asumiría Dynamic Enterprises SAS en calidad de Encargado y
-						que
-						no quedaron listadas en el Numeral 4.1. de éste Instructivo: <br />
-						• Habilitar canales eficientes que permitan que las actualizaciones de la información realizadas
-						por el Responsable se reciban y tramiten en el término de cinco (5) días hábiles previsto en la
-						Ley. Estos estarán referidos a un correo electrónico y al contacto telefónico generado desde el
-						Área competente.<br />
-						• Cuando exista información que esté siendo controvertida por el Titular y cuyo bloqueo haya
-						sido
-						ordenado por la Superintendencia de Industria y Comercio, se deberán impartir las instrucciones
-						correspondientes por parte de la Gerencia Administrativa con el fin de que ésta no sea
-						circulada.<br />
-						• Permitir el acceso a la información únicamente a las personas autorizadas por la Ley para
-						ello.
-						Para estos efectos se establecerán de manera clara los requisitos que deben cumplir las
-						Autoridades
-						Judiciales y Administrativas que soliciten este tipo de información, los cuales estarán
-						referidos a
-						la identificación clara de las funciones, en virtud de las cuales se efectúa el requerimiento y
-						el
-						número asignado a la investigación que se adelanta; así como los que deben cumplir los
-						Titulares,
-						apoderados o causahabientes, en particular la manera de acreditar su calidad y los soportes que
-						se
-						requieran.<br />
-						4.3. NIVEL DE MEDIDAS DE SEGURIDAD APLICADO AL TRATAMIENTO.<br />
+							En atención a que la mayoría de las obligaciones establecidas en la calidad de Encargado
+							coinciden
+							con las señaladas en la calidad de Responsable, solamente se hará referencia expresa en este
+							numeral a los deberes adicionales que asumiría Dynamic Enterprises SAS en calidad de
+							Encargado y
+							que
+							no quedaron listadas en el Numeral 4.1. de éste Instructivo: <br />
+							• Habilitar canales eficientes que permitan que las actualizaciones de la información
+							realizadas
+							por el Responsable se reciban y tramiten en el término de cinco (5) días hábiles previsto en
+							la
+							Ley. Estos estarán referidos a un correo electrónico y al contacto telefónico generado desde
+							el
+							Área competente.<br />
+							• Cuando exista información que esté siendo controvertida por el Titular y cuyo bloqueo haya
+							sido
+							ordenado por la Superintendencia de Industria y Comercio, se deberán impartir las
+							instrucciones
+							correspondientes por parte de la Gerencia Administrativa con el fin de que ésta no sea
+							circulada.<br />
+							• Permitir el acceso a la información únicamente a las personas autorizadas por la Ley para
+							ello.
+							Para estos efectos se establecerán de manera clara los requisitos que deben cumplir las
+							Autoridades
+							Judiciales y Administrativas que soliciten este tipo de información, los cuales estarán
+							referidos a
+							la identificación clara de las funciones, en virtud de las cuales se efectúa el
+							requerimiento y
+							el
+							número asignado a la investigación que se adelanta; así como los que deben cumplir los
+							Titulares,
+							apoderados o causahabientes, en particular la manera de acreditar su calidad y los soportes
+							que
+							se
+							requieran.<br />
+							4.3. NIVEL DE MEDIDAS DE SEGURIDAD APLICADO AL TRATAMIENTO.<br />
 
-						Dynamic Enterprises SAS cuenta con medidas de seguridad de la información suficientes.<br />
+							Dynamic Enterprises SAS cuenta con medidas de seguridad de la información suficientes.<br />
 
-						Entre las medidas que la Compañía ha adoptado para efectos de garantizar la seguridad y
-						confidencialidad de la información, se encuentran aquellas que permiten cumplir con las
-						exigencias
-						establecidas a los aliados comerciales por parte de la Superintendencia Financiera contenidas en
-						las Circulares 052 de 2007 y 042 de 2012, entre otras el uso de perfiles y contraseñas de acceso
-						por parte de los funcionarios, las cuales tienen un término de expiración y se conserva el
-						historial de las mismas. Así como también, sistemas de bloqueo de acceso a la información en los
-						casos de ingreso erróneo de la contraseña de seguridad. <br />
+							Entre las medidas que la Compañía ha adoptado para efectos de garantizar la seguridad y
+							confidencialidad de la información, se encuentran aquellas que permiten cumplir con las
+							exigencias
+							establecidas a los aliados comerciales por parte de la Superintendencia Financiera
+							contenidas en
+							las Circulares 052 de 2007 y 042 de 2012, entre otras el uso de perfiles y contraseñas de
+							acceso
+							por parte de los funcionarios, las cuales tienen un término de expiración y se conserva el
+							historial de las mismas. Así como también, sistemas de bloqueo de acceso a la información en
+							los
+							casos de ingreso erróneo de la contraseña de seguridad. <br />
 
-						Por otra parte, se ha establecido que en los contratos celebrados con los Encargados se incluyan
-						cláusulas que señalen de manera clara el deber de éstos de garantizar la seguridad y privacidad
-						de
-						la información del Titular.<br />
-					</p>
-					<p align="justify">
-						<h5 class="modal-title">CAPÍTULO V</h5><br />
-						<h5 class="modal-title">PROCEDIMIENTOS ESTABLECIDOS PARA GARANTIZAR EL EJERCICIO DE LOS DERECHOS
-							DE
-							LOS TITULARES.</h5><br />
-						5.1. CONSULTAS.<br />
+							Por otra parte, se ha establecido que en los contratos celebrados con los Encargados se
+							incluyan
+							cláusulas que señalen de manera clara el deber de éstos de garantizar la seguridad y
+							privacidad
+							de
+							la información del Titular.<br />
+						</p>
+						<p align="justify">
+							<h5 class="modal-title">CAPÍTULO V</h5><br />
+							<h5 class="modal-title">PROCEDIMIENTOS ESTABLECIDOS PARA GARANTIZAR EL EJERCICIO DE LOS
+								DERECHOS
+								DE
+								LOS TITULARES.</h5><br />
+							5.1. CONSULTAS.<br />
 
-						En desarrollo del artículo 14 de la Ley General denominado “Consultas”, Dynamic Enterprises SAS
-						ha
-						habilitado el canal telefónico y el de recepción de comunicaciones escritas para atender las
-						consultas presentadas por sus Titulares o causahabientes.<br />
+							En desarrollo del artículo 14 de la Ley General denominado “Consultas”, Dynamic Enterprises
+							SAS
+							ha
+							habilitado el canal telefónico y el de recepción de comunicaciones escritas para atender las
+							consultas presentadas por sus Titulares o causahabientes.<br />
 
-						Los Titulares deberán acreditar su identidad allegando fotocopia escaneada de su documento de
-						identidad cuando se trate de solicitudes remitidas al correo electrónico
-						servicioalcliente@auropaq.com; y cuando se trate de consultas presentadas a través de la línea
-						telefónica xxxxxxxx, el Titular deberá responder algunas preguntas que permitan validar su
-						identidad.<br />
+							Los Titulares deberán acreditar su identidad allegando fotocopia escaneada de su documento
+							de
+							identidad cuando se trate de solicitudes remitidas al correo electrónico
+							servicioalcliente@auropaq.com; y cuando se trate de consultas presentadas a través de la
+							línea
+							telefónica xxxxxxxx, el Titular deberá responder algunas preguntas que permitan validar su
+							identidad.<br />
 
-						Por su parte, los causahabientes deberán acreditar el parentesco adjuntando copia de la
-						escritura
-						donde se de apertura a la sucesión y copia de su documento de identidad.<br />
+							Por su parte, los causahabientes deberán acreditar el parentesco adjuntando copia de la
+							escritura
+							donde se de apertura a la sucesión y copia de su documento de identidad.<br />
 
-						Los apoderados, deberán presentar copia auténtica del poder y de su documento de
-						identidad.<br />
+							Los apoderados, deberán presentar copia auténtica del poder y de su documento de
+							identidad.<br />
 
-						Una vez la Compañía reciba la solicitud de información por cualquiera de los canales atrás
-						señalados, procederá a revisar el registro individual que corresponda al nombre del Titular y al
-						número de documento de identidad aportado, si encontraré alguna diferencia entre estos dos datos
-						lo
-						informará dentro de los cinco (5) días hábiles siguientes a su recibo, con el fin de que el
-						solicitante la aclare.<br />
+							Una vez la Compañía reciba la solicitud de información por cualquiera de los canales atrás
+							señalados, procederá a revisar el registro individual que corresponda al nombre del Titular
+							y al
+							número de documento de identidad aportado, si encontraré alguna diferencia entre estos dos
+							datos
+							lo
+							informará dentro de los cinco (5) días hábiles siguientes a su recibo, con el fin de que el
+							solicitante la aclare.<br />
 
-						Si revisado el documento aportado y el nombre del Titular encuentra que hay conformidad en los
-						mismos procederá a dar respuesta en un término de diez (10) días hábiles.<br />
+							Si revisado el documento aportado y el nombre del Titular encuentra que hay conformidad en
+							los
+							mismos procederá a dar respuesta en un término de diez (10) días hábiles.<br />
 
-						En el evento en que Dynamic Enterprises SAS considere que requiere de un tiempo mayor para dar
-						respuesta a la consulta, informará al Titular de tal situación y dará respuesta en un término
-						que
-						no excederá de cinco (5) días hábiles siguientes al vencimiento del término.<br />
-						5.2. RECLAMOS.<br />
+							En el evento en que Dynamic Enterprises SAS considere que requiere de un tiempo mayor para
+							dar
+							respuesta a la consulta, informará al Titular de tal situación y dará respuesta en un
+							término
+							que
+							no excederá de cinco (5) días hábiles siguientes al vencimiento del término.<br />
+							5.2. RECLAMOS.<br />
 
-						Atendiendo a lo previsto en el Art.15 de la Ley General, denominado “Reclamos”, en el evento en
-						que
-						el Titular presente un reclamo, con el fin de que la información recogida en la base de datos
-						sea
-						corregida, actualizada o suprimida, o cuando advierta incumplimiento de esta Ley, AUROPAQ INC. –
-						FIVEPAQ validará que el reclamo esté acompañado del documento que identifique al Titular, la
-						descripción clara de los hechos que dan lugar al reclamo, la dirección donde desea recibir
-						notificaciones, pudiendo ser esta física o electrónica, y adjuntando los documentos que pretenda
-						hacer valer.<br />
+							Atendiendo a lo previsto en el Art.15 de la Ley General, denominado “Reclamos”, en el evento
+							en
+							que
+							el Titular presente un reclamo, con el fin de que la información recogida en la base de
+							datos
+							sea
+							corregida, actualizada o suprimida, o cuando advierta incumplimiento de esta Ley, AUROPAQ
+							INC. –
+							FIVEPAQ validará que el reclamo esté acompañado del documento que identifique al Titular, la
+							descripción clara de los hechos que dan lugar al reclamo, la dirección donde desea recibir
+							notificaciones, pudiendo ser esta física o electrónica, y adjuntando los documentos que
+							pretenda
+							hacer valer.<br />
 
-						Si el reclamo resulta incompleto, se requerirá al interesado dentro de los cinco (5) días
-						siguientes a la recepción del reclamo para que subsane las fallas. Si el reclamante no subsana
-						las
-						fallas presentadas e informadas por Dynamic Enterprises SAS, dentro de los dos (2) meses
-						siguientes,
-						se entenderá que aquel ha desistido del reclamo.<br />
+							Si el reclamo resulta incompleto, se requerirá al interesado dentro de los cinco (5) días
+							siguientes a la recepción del reclamo para que subsane las fallas. Si el reclamante no
+							subsana
+							las
+							fallas presentadas e informadas por Dynamic Enterprises SAS, dentro de los dos (2) meses
+							siguientes,
+							se entenderá que aquel ha desistido del reclamo.<br />
 
-						Una vez se reciba el reclamo completo se debe incluir en la base de datos correspondiente la
-						leyenda “reclamo en trámite” y el motivo del mismo, esto debe ocurrir en un término máximo de
-						dos
-						(2) días hábiles. Igual procedimiento se seguirá para insertar la leyenda de “Información en
-						Discusión Judicial”<br />
+							Una vez se reciba el reclamo completo se debe incluir en la base de datos correspondiente la
+							leyenda “reclamo en trámite” y el motivo del mismo, esto debe ocurrir en un término máximo
+							de
+							dos
+							(2) días hábiles. Igual procedimiento se seguirá para insertar la leyenda de “Información en
+							Discusión Judicial”<br />
 
-						El reclamo debe ser atendido en un término máximo de 15 días hábiles, si no es posible hacerlo
-						en
-						este término se informará al interesado los motivos de la demora y la fecha en que éste se
-						atenderá, la cual no podrá exceder de ocho (8) días hábiles siguientes al vencimiento del primer
-						término.<br />
+							El reclamo debe ser atendido en un término máximo de 15 días hábiles, si no es posible
+							hacerlo
+							en
+							este término se informará al interesado los motivos de la demora y la fecha en que éste se
+							atenderá, la cual no podrá exceder de ocho (8) días hábiles siguientes al vencimiento del
+							primer
+							término.<br />
 
-						El Área de Servicio al Cliente será la responsable de atender los reclamos de manera oportuna y
-						completa. No obstante, en los casos en que el reclamo lo amerite, será remitido internamente a
-						la
-						Gerencia para emitir la respuesta.<br />
-						5.3. QUEJAS ANTE LA SUPERINTENDENCIA DE INDUSTRIA Y COMERCIO.<br />
+							El Área de Servicio al Cliente será la responsable de atender los reclamos de manera
+							oportuna y
+							completa. No obstante, en los casos en que el reclamo lo amerite, será remitido internamente
+							a
+							la
+							Gerencia para emitir la respuesta.<br />
+							5.3. QUEJAS ANTE LA SUPERINTENDENCIA DE INDUSTRIA Y COMERCIO.<br />
 
-						El Titular, Causahabiente o apoderado deberá agotar en primer lugar este trámite de consulta o
-						reclamo expuesto, antes de dirigirse a la Superintendencia de Industria y Comercio (SIC), a
-						formular una queja.<br />
-						5.4. PERSONA O DEPENDENCIA RESPONSABLE DE LA ATENCIÓN DE PETICIONES, CONSULTAS Y RECLAMOS.<br />
+							El Titular, Causahabiente o apoderado deberá agotar en primer lugar este trámite de consulta
+							o
+							reclamo expuesto, antes de dirigirse a la Superintendencia de Industria y Comercio (SIC), a
+							formular una queja.<br />
+							5.4. PERSONA O DEPENDENCIA RESPONSABLE DE LA ATENCIÓN DE PETICIONES, CONSULTAS Y
+							RECLAMOS.<br />
 
-						El Área de Gerencia Administrativa será la encargada de velar por el cumplimiento de las
-						disposiciones relacionadas con la protección de datos personales y garantizará que todos los
-						aspectos señalados queden debidamente recogidos y que los deberes que estipula la ley se cumplan
-						a
-						cabalidad.<br />
-						5.5. FECHA DE ENTRADA EN VIGENCIA DE LA POLÍTICA DE TRATAMIENTO.<br />
+							El Área de Gerencia Administrativa será la encargada de velar por el cumplimiento de las
+							disposiciones relacionadas con la protección de datos personales y garantizará que todos los
+							aspectos señalados queden debidamente recogidos y que los deberes que estipula la ley se
+							cumplan
+							a
+							cabalidad.<br />
+							5.5. FECHA DE ENTRADA EN VIGENCIA DE LA POLÍTICA DE TRATAMIENTO.<br />
 
-						Esta Política de Tratamiento de la información se publicó en la página web el día________ .El
-						personal de Dynamic Enterprises SAS especialmente expuesto al Tratamiento de datos personales
-						fue
-						informado de estas disposiciones de manera previa a su publicación.<br />
-						5.6 CONSIDERACIONES FINALES:<br /><br />
+							Esta Política de Tratamiento de la información se publicó en la página web el día________
+							.El
+							personal de Dynamic Enterprises SAS especialmente expuesto al Tratamiento de datos
+							personales
+							fue
+							informado de estas disposiciones de manera previa a su publicación.<br />
+							5.6 CONSIDERACIONES FINALES:<br /><br />
 
-						Estas políticas fueron concebidas con el fin de cumplir con las normas expedidas en Colombia
-						sobre
-						Protección de Datos Personales, y de contribuir a la generación de una cultura que garantice el
-						uso
-						adecuado y razonable de dicha información. El Manual estará a disposición de los Titulares en la
-						página web http://www.auropaq.com.<br />
-					</p>
+							Estas políticas fueron concebidas con el fin de cumplir con las normas expedidas en Colombia
+							sobre
+							Protección de Datos Personales, y de contribuir a la generación de una cultura que garantice
+							el
+							uso
+							adecuado y razonable de dicha información. El Manual estará a disposición de los Titulares
+							en la
+							página web http://www.auropaq.com.<br />
+						</p>
 
 				</div>
 				<div class="modal-footer">
