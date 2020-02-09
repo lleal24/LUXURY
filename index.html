@@ -3018,6 +3018,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			$("#lbiva").text("");
 			$("#lbTOTAL").text("");
 			$("#euro").text("Valor Total en USD");
+
 		}
 		function CalculadoraResult(request) {
 			/* console.log("request"); */
@@ -3033,8 +3034,8 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				/* pintar datos de cotizacion EUR*/
 				var plan = document.getElementById("idConvenio");
 				$("#lbplan").text(plan.options[plan.selectedIndex].innerText);
-				var paisOrigen = document.getElementById("idPaisOrigen").innerText;
-				$("#lborigen").text(paisOrigen);
+				var paisOrigen = document.getElementById("idPaisOrigen");
+				$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
 				$("#lbdestino").text($("#ciudadNombre").val());
 				$("#lbvalordec").text("EUR €  " + $("#valorDeclarado").val());
 				$("#lbpeso").text($("#pesoTotal").val() + " Libras");
@@ -3047,8 +3048,8 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 				/* pintar datos de cotizacion USD */
 				var plan = document.getElementById("idConvenio");
 				$("#lbplan").text(plan.options[plan.selectedIndex].innerText);
-				var paisOrigen = document.getElementById("idPaisOrigen").innerText;
-				$("#lborigen").text(paisOrigen);
+				var paisOrigen = document.getElementById("idPaisOrigen");
+				$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
 				$("#lbdestino").text($("#ciudadNombre").val());
 				$("#lbvalordec").text("USD$ " + $("#valorDeclarado").val());
 				$("#lbpeso").text($("#pesoTotal").val() + " Libras");
@@ -3084,9 +3085,7 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 		function getUrlCalculadora() {
 			let data = sessionStorage.getItem('appData');
 			validarDimensiones();
-			var url = "https://fpaq.azurewebsites.net/api/calculators/";
-			//var url = "https://fpaq.azurewebsites.net/api/calculators/";
-			// var url = "https://localhost:44347/api/calculators/";			
+			var url = "https://fpaq.azurewebsites.net/api/calculators/";			
 			/* console.log(data); */
 			url += $("#ciudadTipo").val() + "/";
 			url += data + "/";
@@ -3095,7 +3094,9 @@ AR3EAAYASAAEgILG_D_BwE " target="_blank">Para un gusto femenino.</a>
 			url += $("#tUnidad").val() + "/";
 			url += $("#tDimension").val() + "/";
 			url += $("#pesoTotal").val() + "/";
-			url += $("#valorDeclarado").val() + "/";
+			var remplazo = document.getElementById("valorDeclarado").value;
+			var cambio = remplazo.replace(",",".")
+			url += cambio + "/";
 			url += $("#largo").val() + "/";
 			url += $("#ancho").val() + "/";
 			url += $("#alto").val() + "/";
