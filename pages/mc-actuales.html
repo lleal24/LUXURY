@@ -217,9 +217,6 @@
 										<div class="col-md-4">
 											<!-- Testimonial -->
 											<div class="testimonial">
-												<figure class="testimonial-thumb">
-													<img src="images/samples/person2.png" alt="" class="img-round">
-												</figure>
 												<div class="testimonial-body">
 													<h5 id="nomUsuario"></h5>
 													<p><strong style="font-size: 22px;">Casillero:</strong><br /><span
@@ -228,6 +225,7 @@
 														<!-- <strong>Direccion
 														</strong><span id="direccionPrincipal"
 														style="font-size: 1em"><br /></span> -->
+														<strong>Plan: </strong><span id="idplan"></span></br>
 														<strong>Correo
 															Electrónico:</strong><br /><span id="emailUsuario"
 															style="font-size: 1em"><br /></span><br /><strong>Teléfono:</strong><br /><span
@@ -543,7 +541,7 @@
 
 	if (dataout == null || dataout.L !== true) {
 		location.href = "";
-	}
+	}	
 
 	$("#nomUsuario").html(dataout.U);//este es el campo del usuario
 	$("#emailUsuario").html(dataout.E);//este es el campo del Email
