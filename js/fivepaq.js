@@ -148,7 +148,7 @@ var fivepaq = {
 			DireccionesOk(result);
 		});
 		request.fail(function (jqXHR, textStatus) {
-			console.log(jqXHR);
+			/* console.log(jqXHR); */
 			// DireccionesFail();
 		});
 	},
