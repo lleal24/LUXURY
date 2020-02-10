@@ -188,11 +188,6 @@
 				<div class="title-holder">
 					<div class="title-text">
 						<h1 class="uppercase">Bienvenido</h1>
-						<ol class="breadcrumb">
-							<li>
-								<a href="index.html">Inicio</a>
-							</li>
-						</ol>
 					</div>
 				</div>
 			</div>
@@ -518,7 +513,7 @@
 
 
 													<tr>
-														<td><b>Valor Total en USD</b> </td>
+														<td class="textTotalCalc" id="euro">Valor Total en USD </td>
 														<td class="text-lg text-medium" id="lbTOTAL"></td>
 													</tr>
 												</tbody>
@@ -895,7 +890,6 @@
 	}
 
 	function limpiarCalculadora() {
-
 		$("#idConvenio").val('');
 		$("#ciudadTipo").val('');
 		$("#ciudadId").val('');
@@ -906,27 +900,47 @@
 		$("#largo").val('');
 		$("#ancho").val('');
 		$("#alto ").val('');
-
 	}
 
 	function CalculadoraResult(request) {
-		console.log("request");
+		/* console.log("request"); */
 		debugger;
-		console.log(request);
-		$("#lbflete").text("USD$ " + String(request.ValorFlete));
-		$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
-		$("#lbarancel").text("USD$ " + String(request.ValorArancel));
-		$("#lbiva").text("USD$ " + String(request.ValorIva));
-		$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+		/* console.log(request); */
+		let idPais = document.getElementById('idPaisOrigen').value;
+		if (idPais == 76) {
+			document.getElementById('euro').innerText = "Valor Total en EUR";
+			$("#lbflete").text("EUR €  " + String(request.ValorFlete));
+			$("#lbseguro").text("EUR €  " + String(request.ValorSeguro));
+			$("#lbarancel").text("EUR €  " + String(request.ValorArancel));
+			$("#lbiva").text("EUR €  " + String(request.ValorIva));
+			$("#lbTOTAL").text("€    " + String(request.ValorTotal));
 
-		/* pintar datos de cotizacion USD */
-		$("#lbplan").text($("#idplan").text());
-		var paisOrigen = document.getElementById("idPaisOrigen");
-		$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
-		$("#lbdestino").text($("#ciudadNombre").val());
-		$("#lbvalordec").text("USD$ " + $("#valorDeclarado").val());
-		$("#lbpeso").text($("#pesoTotal").val() + " Libras");
+			/* pintar datos de cotizacion USD */
+			$("#lbplan").text($("#idplan").text());
+			var paisOrigen = document.getElementById("idPaisOrigen");
+			$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
+			$("#lbdestino").text($("#ciudadNombre").val());
+			$("#lbvalordec").text("EUR €  " + $("#valorDeclarado").val());
+			$("#lbpeso").text($("#pesoTotal").val() + " Libras");
+			$("#euro").text("Valor Total en USD");
 
+
+		} else {
+			$("#lbflete").text("USD$ " + String(request.ValorFlete));
+			$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
+			$("#lbarancel").text("USD$ " + String(request.ValorArancel));
+			$("#lbiva").text("USD$ " + String(request.ValorIva));
+			$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+
+			/* pintar datos de cotizacion USD */
+			$("#lbplan").text($("#idplan").text());
+			var paisOrigen = document.getElementById("idPaisOrigen");
+			$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
+			$("#lbdestino").text($("#ciudadNombre").val());
+			$("#lbvalordec").text("USD$ " + $("#valorDeclarado").val());
+			$("#lbpeso").text($("#pesoTotal").val() + " Libras");
+
+		}
 	}
 	var largo = "0";
 	if ($("#largo").val() != "") {
