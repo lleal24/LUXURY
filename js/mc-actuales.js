@@ -4,7 +4,7 @@ const paqBaseUrl = "https://fpaq.azurewebsites.net/api/packages/";
 var cuenta = dataout.N;
 var expression = /PL|BL|TL\b/g;
 var result = cuenta.match(expression);
-console.log(result[0]);
+/* console.log(result[0]); */
 if(result[0] == "PL"){
   document.getElementById("idplan").innerText = "PYMEBOX BOXLUXURY";
 }else{

@@ -314,53 +314,11 @@
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingOne_2">
 							<h5 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion2" href="" aria-expanded="true"
-									aria-controls="collapse3-1">
+								<a href="../pages/mc-actuales.html#collapse3-1">
 									<i class="fa fa-eye"></i>
 									Envios Actuales
 									<span class="panel-icon"></span></a>
 							</h5>
-						</div>
-						<div id="collapse3-1" class="panel-collapse collapse in" role="tabpanel"
-							aria-labelledby="headingOne_2">
-							<div class="panel-body">
-								<div class="gap-10"></div>
-								<!-- Table – Bordered -->
-								<div id="appPaq" class="table-responsive" v-cloak>
-									<table class="table table-bordered table-striped  table-bordered ">
-										<thead class="table-responsive">
-											<th>Fecha</th>
-											<th>Guía</th>
-											<th>Contenido</th>
-											<th>VR-USD</th>
-											<th>Peso (Grs)</th>
-											<th>Estado</th>
-											<th>&nbsp;</th>
-										</thead>
-										<tbody v-for="paq in results" class="table-responsive">
-											<tr>
-												<td class="table-responsive">
-													{{ paq.ArrivalWinery | formatDate }} </td>
-												<td class="table-responsive">{{ paq.PackageId }}</td>
-												<td class="table-responsive" v-if="paq.Description.length <20">
-													{{ paq.Description }}</td>
-												<td class="table-responsive" v-else="paq.Description.length >=20">
-													{{ paq.Description.substring(0,18)+".."}}</td>
-												<td class="table-responsive">{{ paq.DeclaredValue }}</td>
-												<td class="table-responsive">{{ paq.Weight }}</td>
-												<td class="table-responsive">{{ paq.StateDescription }}</td>
-												<td class="table-responsive"><a
-														:href="'mc-tracking.html?id=' + paq.PackageId +'#headingTrack'">Tracking</a>
-												</td>
-											</tr>
-
-										</tbody>
-									</table>
-
-								</div>
-								<!-- Table – Bordered / End -->
-								<div class="gap-100"></div>
-							</div>
 						</div>
 					</div>
 					<div class="panel panel-default">
@@ -573,7 +531,42 @@
 								<div class="col-xl-5 col-lg-4">
 									<aside class="sidebar">
 										<div class="padding-top-2x hidden-lg-up"></div>
+										<!-- seccion datos cotizados -->
+										<div class="padding-top-2x hidden-lg-up"></div>
 
+										<section class="widget widget-featured-products">
+											<h3 class="widget-title">Datos de cotización</h3>
+											<table class="table">
+												<tbody>
+													<tr>
+														<td>Plan: </td>
+														<td class="text-medium" id="lbplan"> </td>
+													</tr>
+
+													<tr>
+														<td>Origen: </td>
+														<td class="text-medium" id="lborigen"> </td>
+													</tr>
+													<tr>
+														<td>Destino: </td>
+														<td class="text-medium" id="lbdestino"> </td>
+													</tr>
+
+													<tr>
+														<td>Valor declarado: </td>
+														<td class="text-medium" id="lbvalordec"> </td>
+													</tr>
+
+
+													<tr>
+														<td>Peso: </td>
+														<td class="text-lg text-medium" id="lbpeso"></td>
+													</tr>
+												</tbody>
+											</table>
+
+										</section>
+										<!-- End seccion datos cotizados -->
 										<section class="widget widget-featured-products">
 											<h3 class="widget-title">¿Cómo funciona el cálculo?</h3>
 											<!-- Entry-->
@@ -592,7 +585,6 @@
 											</div>
 										</section>
 										<!-- Promo Banner-->
-
 									</aside>
 								</div>
 							</div>
@@ -764,7 +756,6 @@
 	if (dataout == null || dataout.L !== true) {
 		location.href = "../index.html";
 	}
-
 	function mostrarPlan() {
 		var cuenta = dataout.N;
 		var expression = /PL|BL|TL\b/g;
@@ -922,14 +913,19 @@
 		console.log("request");
 		debugger;
 		console.log(request);
-		// var mensaje = "Exito ... ";
-		// mensaje += " <br /> "
-		// var mensaje = request.Error.ErrorMessage;
 		$("#lbflete").text("USD$ " + String(request.ValorFlete));
 		$("#lbseguro").text("USD$ " + String(request.ValorSeguro));
 		$("#lbarancel").text("USD$ " + String(request.ValorArancel));
 		$("#lbiva").text("USD$ " + String(request.ValorIva));
 		$("#lbTOTAL").text("$ " + String(request.ValorTotal));
+
+		/* pintar datos de cotizacion USD */
+		$("#lbplan").text($("#idplan").text());
+		var paisOrigen = document.getElementById("idPaisOrigen");
+		$("#lborigen").text(paisOrigen.options[paisOrigen.selectedIndex].innerText);
+		$("#lbdestino").text($("#ciudadNombre").val());
+		$("#lbvalordec").text("USD$ " + $("#valorDeclarado").val());
+		$("#lbpeso").text($("#pesoTotal").val() + " Libras");
 
 	}
 	var largo = "0";
@@ -964,7 +960,7 @@
 		/* obtener dato del sessionStorage */
 		let data = sessionStorage.getItem('appData');
 		let datFormat = JSON.parse(data)
-		console.log(datFormat.Con);
+		/* console.log(datFormat.Con); */
 		/* ---------------------------------------------------------- */
 		var url = "https://fpaq.azurewebsites.net/api/calculators/";
 		// var url = "https://localhost:44347/api/calculators/";
