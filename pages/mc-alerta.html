@@ -233,9 +233,6 @@
                                         <div class="col-md-4">
                                             <!-- Testimonial -->
                                             <div class="testimonial">
-                                                <figure class="testimonial-thumb">
-                                                    <img src="images/samples/person2.png" alt="" class="img-round">
-                                                </figure>
                                                 <div class="testimonial-body">
                                                     <h5 id="nomUsuario"></h5>
                                                     <p><strong style="font-size: 22px;">Casillero:</strong><br /><span
@@ -243,7 +240,8 @@
                                                             style="font-size: 22px; color: #e91b43; font-weight: 800;"></span><br />
                                                         <!-- <strong>Direccion
 														</strong><span id="direccionPrincipal"
-														style="font-size: 1em"><br /></span> -->
+                                                        style="font-size: 1em"><br /></span> -->
+                                                        <strong>Plan: </strong><span id="idplan"></span></br>
                                                         <strong>Correo
                                                             Electrónico:</strong><br /><span id="emailUsuario"
                                                             style="font-size: 1em"><br /></span><br /><strong>Teléfono:</strong><br /><span
@@ -441,14 +439,15 @@
                                             </div>
                                         </div>
 
-                
+
 
                                         <div style="margin-top: 2em;" class="col-md-12">
                                             <label for="idArchivo">Adjuntar factura de compra *</label>
-                                            <input type="file" id="ImageUrl" onchange="validarArchivo()" style="color: transparent"> 
-                                    
+                                            <input type="file" id="ImageUrl" onchange="validarArchivo()"
+                                                style="color: transparent">
 
-                                             
+
+
                                             <p> * Utilice archivos en formato: .gif, .jpg, .png, .pdf para
                                                 adjuntar la
                                                 factura.<br>
@@ -684,7 +683,24 @@
     if (dataout == null || dataout.L !== true) {
         location.href = "";
     }
-
+    function mostrarPlan() {
+        var cuenta = dataout.N;
+        var expression = /PL|BL|TL\b/g;
+        var result = cuenta.match(expression);
+        console.log(result[0]);
+        if (result[0] == "PL") {
+            document.getElementById("idplan").innerText = "PYMEBOX BOXLUXURY";
+        } else {
+            if (result[0] == "BL") {
+                document.getElementById("idplan").innerText = "BOLUXURY STANDART";
+            } else {
+                if (result[0] == "TL") {
+                    document.getElementById("idplan").innerText = "BOLUXURY CLUB";
+                }
+            }
+        }
+    }
+    mostrarPlan();
     $("#nomUsuario").html(dataout.U);//este es el campo del usuario
     $("#emailUsuario").html(dataout.E);//este es el campo del Email
     $("#numCasillero").html(dataout.N);//Este es campo del casillero
